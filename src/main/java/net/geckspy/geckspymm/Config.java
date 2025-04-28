@@ -1,4 +1,4 @@
-package com.geckspy.mymod;
+package net.geckspy.geckspymm;
 
 import java.util.List;
 import java.util.Set;
