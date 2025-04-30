@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+      "geckspymm:end_cristal_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "geckspymm:end_cristal"
+  }
+}

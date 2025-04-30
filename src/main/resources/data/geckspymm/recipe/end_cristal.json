@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "geckspymm:impure_end_cristal",
+  "result": {
+    "count": 1,
+    "id": "geckspymm:end_cristal"
+  }
+}

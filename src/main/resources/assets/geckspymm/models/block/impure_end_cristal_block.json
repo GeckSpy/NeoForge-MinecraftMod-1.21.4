@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all":"geckspymm:block/impure_end_cristal_block"
+  }
+}

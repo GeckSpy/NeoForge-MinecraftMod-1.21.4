@@ -1,3 +1,26 @@
 {
-  "item.geckspymm.end_cristal": "End Cristal"
+  "item.geckspymm.copper_sword": "Copper Sword",
+  "item.geckspymm.copper_axe": "Copper Axe",
+  "item.geckspymm.copper_pickaxe": "Copper Pickaxe",
+  "item.geckspymm.copper_shovel": "Copper Shovel",
+  "item.geckspymm.copper_hoe": "Copper Hoe",
+
+
+
+  "item.geckspymm.impure_end_cristal": "Impure End Cristal",
+  "item.geckspymm.end_cristal": "End Cristal",
+  "item.geckspymm.magic_cristal": "Magic Cristal",
+  "item.geckspymm.magic_orb": "Magic Orb",
+  "item.geckspymm.invocation_orb": "Invocation Orb",
+  "item.geckspymm.impure_end_cristal_block": "Impure End Cristal Block",
+  "item.geckspymm.end_cristal_block": "End Cristal Block",
+
+  "item.geckspymm.magic_stick": "Magic Stick",
+  "item.geckspymm.lightning_staff": "Lightning Staff",
+
+  "block.geckspymm.impure_end_cristal_block": "Impure End Cristal Block",
+  "block.geckspymm.end_cristal_block": "End Cristal Block",
+
+  "creativetab.geckspymm.magic": "Magic",
+  "creativetab.geckspymm.mutant": "Mutant"
 }
