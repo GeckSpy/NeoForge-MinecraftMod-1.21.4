@@ -11,21 +11,16 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MyMod.MOD_ID);
 
 // Better Minecraft
-    public static final DeferredItem<Item> COPPER_SWORD = ITEMS.registerItem(
-            "copper_sword",
-            properties -> new SwordItem(ModToolMaterials.COPPER_MATERIAL, 5.5f, -2.4f, properties));
-    public static final DeferredItem<Item> COPPER_AXE = ITEMS.registerItem(
-            "copper_axe",
-            properties -> new AxeItem(ModToolMaterials.COPPER_MATERIAL, 9, -3.2f, properties));
-    public static final DeferredItem<Item> COPPER_PICKAXE = ITEMS.registerItem(
-            "copper_pickaxe",
-            properties -> new PickaxeItem(ModToolMaterials.COPPER_MATERIAL, 3, -2.8f, properties));
-    public static final DeferredItem<Item> COPPER_SHOVEL = ITEMS.registerItem(
-            "copper_shovel",
-            properties -> new ShovelItem(ModToolMaterials.COPPER_MATERIAL, 2, -3f, properties));
-    public static final DeferredItem<Item> COPPER_HOE = ITEMS.registerItem(
-            "copper_hoe",
-            properties -> new HoeItem(ModToolMaterials.COPPER_MATERIAL, 0.5f, -2f, properties));
+    public static final DeferredItem<SwordItem> COPPER_SWORD = ITEMS.registerItem("copper_sword",
+            properties -> new SwordItem(ModToolMaterials.COPPER, 4.5f, -2.4f, properties));
+    public static final DeferredItem<AxeItem> COPPER_AXE = ITEMS.registerItem("copper_axe",
+            properties -> new AxeItem(ModToolMaterials.COPPER, 8, -3.15f, properties));
+    public static final DeferredItem<PickaxeItem> COPPER_PICKAXE = ITEMS.registerItem("copper_pickaxe",
+            properties -> new PickaxeItem(ModToolMaterials.COPPER, 2.5f, -2.8f, properties));
+    public static final DeferredItem<ShovelItem> COPPER_SHOVEL = ITEMS.registerItem("copper_shovel",
+            properties -> new ShovelItem(ModToolMaterials.COPPER, 3, -3f, properties));
+    public static final DeferredItem<HoeItem> COPPER_HOE = ITEMS.registerItem("copper_hoe",
+            properties -> new HoeItem(ModToolMaterials.COPPER, 0f, -2f, properties));
 
 
 

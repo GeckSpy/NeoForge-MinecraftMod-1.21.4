@@ -72,6 +72,7 @@ New lead craft only based on strings:
     S
 
 Copper tools
+    TODO: Recipe
 
 TODO: Copper armor
 
