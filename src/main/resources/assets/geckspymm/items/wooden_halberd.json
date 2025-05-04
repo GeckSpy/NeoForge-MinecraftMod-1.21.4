@@ -2,5 +2,8 @@
   "model": {
     "type": "minecraft:model",
     "model": "geckspymm:item/wooden_halberd"
+  },
+  "properties": {
+    "hand_animation_on_swap": true
   }
 }

@@ -28,11 +28,13 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         //add(ModBlocks.IMPURE_END_CRISTAL_BLOCK.get(),block->createOreDrop(ModBlocks.IMPURE_END_CRISTAL_BLOCK.get(), ModItems.IMPURE_END_CRISTAL.get()));
-        add(ModBlocks.IMPURE_END_CRISTAL_BLOCK.get(),
+        /*add(ModBlocks.IMPURE_END_CRISTAL_BLOCK.get(),
                 block->createMultipleDrops(
                         ModBlocks.IMPURE_END_CRISTAL_BLOCK.get(),
                         ModItems.IMPURE_END_CRISTAL.get(),
                         1.0F, 4.0F));
+
+         */
 
         dropSelf(ModBlocks.END_CRISTAL_BLOCK.get());
     }

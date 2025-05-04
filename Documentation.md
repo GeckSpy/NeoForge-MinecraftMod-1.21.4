@@ -89,7 +89,7 @@ Copper tools (sword, pickaxe, axe, hoe, shovel)
     TODO: enchantability
 
 Copper armor: helmet, chestplate, leggings, boots, horse_armor
-    TODO: enchantability
+    TODO: trim -> not visible in item form yet
 
 
 ### New weapons
@@ -110,24 +110,24 @@ armor_stand with arms
 Backpack ?
 more tnt, throwable dynamit
 throwable rock
-new bow
+new bow ?
 pipes, entering/closing pipes
-farmable wood
+farmable wood -> plants that become a wood block?
 new animals: ants, lion, rhinoceros, elephant, lizard, butterfly, snake, shark, whale, small spider
 new mobs: ghost (make you fly)
 new armor trim
 block breaker
 new elytra
 
-new material: royal gem: made with all minerals
-new armor & tools (before netherite): kings armor
+new material: royal gem: made with all minerals ?
+new armor & tools (before netherite): kings armor ?
 
 new armor: reinforced armor: better basic minecraft armor made with addind this material to get better armor
 
 new weapon:
     - spear: sthrowable, mid-long range, slow
     - knifes/daggers: short range, very fast
-    - kunai: trhowable knife
+    - roped kunai: trhowable knife, comes back
 
 
 ## Magical Minecraft

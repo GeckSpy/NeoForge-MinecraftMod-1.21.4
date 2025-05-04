@@ -1,6 +1,14 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "item/generated",
   "textures": {
     "layer0": "geckspymm:item/copper_helmet"
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "trim_type": 1
+      },
+      "model": "geckspymm:trim/copper_helmet_trim"
+    }
+  ]
 }
