@@ -129,6 +129,7 @@ new weapon:
     - knifes/daggers: short range, very fast
     - roped kunai: trhowable knife, comes back
 
+baby ender dragon (-> middle_aged ender dragon -> old ender dragon ?)
 
 ## Magical Minecraft
 
@@ -142,6 +143,7 @@ new weapon:
 new armor:
     - necromancian
     - fire
+    - ice: slowness
     - water
     - plant
     - angel

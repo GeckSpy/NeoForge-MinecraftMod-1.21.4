@@ -2,6 +2,7 @@ package net.geckspy.geckspymm;
 
 import net.geckspy.geckspymm.attribute.ModAttributes;
 import net.geckspy.geckspymm.block.ModBlocks;
+import net.geckspy.geckspymm.enchantment.ModEnchantmentEffects;
 import net.geckspy.geckspymm.item.ModCreativeModeTabs;
 import net.geckspy.geckspymm.item.ModItems;
 import net.geckspy.geckspymm.item.custom.HalberdItem;
@@ -56,6 +57,7 @@ public class MyMod {
         ModBlocks.register(modEventBus);
         ModParticles.register(modEventBus);
         ModAttributes.register(modEventBus);
+        ModEnchantmentEffects.register(modEventBus);
 
 
         // Register the item to a creative tab

@@ -44,6 +44,10 @@
   "block.geckspymm.impure_end_cristal_block": "Impure End Cristal Block",
   "block.geckspymm.end_cristal_block": "End Cristal Block",
 
+  "enchantment.geckspymm.particle_summoner": "Particule Summoner",
+
+
+// Tabs
   "creativetab.geckspymm.magic": "Magic",
   "creativetab.geckspymm.mutant": "Mutant"
 }
