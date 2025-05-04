@@ -13,6 +13,14 @@
   "item.geckspymm.copper_boots": "Copper Boots",
   "item.geckspymm.copper_horse_armor": "Copper Horse Armor",
 
+    // Pure quartz
+  "item.geckspymm.pure_quartz": "Pure Quartz",
+  "item.geckspymm.pure_quartz_helmet": "Pure QuartzHelmet",
+  "item.geckspymm.pure_quartz_chestplate": "Pure Quartz Chestplate",
+  "item.geckspymm.pure_quartz_leggings": "Pure Quartz Leggings",
+  "item.geckspymm.pure_quartz_boots": "Pure Quartz Boots",
+  "item.geckspymm.pure_quartz_horse_armor": "Pure Quartz Horse Armor",
+
     // Weapons
       // Halberd
   "item.geckspymm.wooden_halberd": "Wooden Halberd",

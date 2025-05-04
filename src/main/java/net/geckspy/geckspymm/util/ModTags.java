@@ -28,6 +28,9 @@ public class ModTags {
     public static class Items{
 
         //public static final TagKey<Item> TRANSFORMABLE_ITEMS = createTag("transformable_items")
+        public static final TagKey<Item> PURE_QUARTZ_MATERIALS = TagKey.create(
+                BuiltInRegistries.ITEM.key(),
+                ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "pure_quartz_materials"));
 
         private static TagKey<Item> createTag(String name){
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, name));

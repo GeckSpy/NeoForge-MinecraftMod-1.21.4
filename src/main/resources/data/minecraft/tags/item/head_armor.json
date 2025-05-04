@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "geckspymm:copper_helmet"
+    "geckspymm:copper_helmet",
+    "geckspymm:pure_quartz_helmet"
   ]
 }

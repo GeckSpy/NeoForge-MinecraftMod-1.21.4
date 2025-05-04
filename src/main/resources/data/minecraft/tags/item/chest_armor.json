@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "geckspymm:copper_chestplate"
+    "geckspymm:copper_chestplate",
+    "geckspymm:pure_quartz_chestplate"
   ]
 }

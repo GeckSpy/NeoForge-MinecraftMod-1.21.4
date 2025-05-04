@@ -73,6 +73,7 @@ public class MyMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.PURE_QUARTZ);
             event.accept(ModItems.IMPURE_END_CRISTAL);
             event.accept(ModItems.END_CRISTAL);
         }
@@ -93,6 +94,12 @@ public class MyMod {
             event.accept(ModItems.COPPER_LEGGINGS);
             event.accept(ModItems.COPPER_BOOTS);
             event.accept(ModItems.COPPER_HORSE_ARMOR);
+
+            event.accept(ModItems.PURE_QUARTZ_HELMET);
+            event.accept(ModItems.PURE_QUARTZ_CHESTPLATE);
+            event.accept(ModItems.PURE_QUARTZ_LEGGINGS);
+            event.accept(ModItems.PURE_QUARTZ_BOOTS);
+            event.accept(ModItems.PURE_QUARTZ_HORSE_ARMOR);
 
             event.accept(ModItems.WOODEN_HALBERD);
             event.accept(ModItems.STONE_HALBERD);

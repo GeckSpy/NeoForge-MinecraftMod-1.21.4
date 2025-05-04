@@ -86,16 +86,38 @@ Name Tag: shapeless
 ### Copper material
 
 Copper tools (sword, pickaxe, axe, hoe, shovel)
-    TODO: enchantability
 
 Copper armor: helmet, chestplate, leggings, boots, horse_armor
     TODO: trim -> not visible in item form yet
 
 
+### Pure Craft material
+
+TODO: Modify GUI to add more protection symbol (aura on chestplate/ other symbols)
+
+Pure craft
+    TODO: Craft: ghast_tear + quartz
+
+Between diamond and netherite, upgrade diamond to pure quartz
+
+Armor: helmet, chestplate, leggings, boots, horse_armor
+    TODO: craft
+    TODO: retexture armor to lighten edges
+    TODO: trim -> not visible in item form yet
+
+TODO: Tools 
+
+    
+
+
+
 ### New weapons
+
+#### halberd
 
 Halberd: better range, slawer attack, high damage
     TODO: enchantment
+    TODO: pure_quartz
 
 
 
@@ -118,8 +140,9 @@ new mobs: ghost (make you fly)
 new armor trim
 block breaker
 new elytra
+glass helmet (breath under water)
 
-new material: royal gem: made with all minerals ?
+new material: royal gem: made with pure quartz, diamond and lapiz
 new armor & tools (before netherite): kings armor ?
 
 new armor: reinforced armor: better basic minecraft armor made with addind this material to get better armor
@@ -135,6 +158,8 @@ baby ender dragon (-> middle_aged ender dragon -> old ender dragon ?)
 
 staff: fire, fire explosing ball, dash, high jump, resize (decrease & increase)
 spawn staff (different skin for mobs): skeletton, slime, blaze, ghast, zombie
+
+new material: ender_cristal based -> upgarde netherite to superior level
 
 new weapon:
     - dark hoe: Faucher/Moira dash

@@ -14,7 +14,7 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MyMod.MOD_ID);
 
 // Better Minecraft
-    // Copper tools
+    // Copper material
     public static final DeferredItem<SwordItem> COPPER_SWORD = ITEMS.registerItem("copper_sword",
             properties -> new SwordItem(ModToolMaterials.COPPER, 3f, -2.4f, properties));
     public static final DeferredItem<AxeItem> COPPER_AXE = ITEMS.registerItem("copper_axe",
@@ -26,7 +26,6 @@ public class ModItems {
     public static final DeferredItem<HoeItem> COPPER_HOE = ITEMS.registerItem("copper_hoe",
             properties -> new HoeItem(ModToolMaterials.COPPER, -1.5f, -1.5f, properties));
 
-    // Copper armor
     public static final DeferredItem<ArmorItem> COPPER_HELMET = ITEMS.registerItem("copper_helmet",
             properties -> new ArmorItem(ModArmorMaterials.COPPER, ArmorType.HELMET, properties));
     public static final DeferredItem<ArmorItem> COPPER_CHESTPLATE = ITEMS.registerItem("copper_chestplate",
@@ -37,6 +36,23 @@ public class ModItems {
             properties -> new ArmorItem(ModArmorMaterials.COPPER, ArmorType.BOOTS, properties));
     public static final DeferredItem<AnimalArmorItem> COPPER_HORSE_ARMOR = ITEMS.registerItem("copper_horse_armor",
             props -> new AnimalArmorItem(ModArmorMaterials.COPPER, AnimalArmorItem.BodyType.EQUESTRIAN, props));
+
+
+    // Pure quartz material
+    public static final DeferredItem<Item> PURE_QUARTZ = ITEMS.registerItem(
+            "pure_quartz", Item::new, new Item.Properties());
+    public static final DeferredItem<ArmorItem> PURE_QUARTZ_HELMET = ITEMS.registerItem("pure_quartz_helmet",
+            properties -> new ArmorItem(ModArmorMaterials.PURE_QUARTZ, ArmorType.HELMET, properties));
+    public static final DeferredItem<ArmorItem> PURE_QUARTZ_CHESTPLATE = ITEMS.registerItem("pure_quartz_chestplate",
+            properties -> new ArmorItem(ModArmorMaterials.PURE_QUARTZ, ArmorType.CHESTPLATE, properties));
+    public static final DeferredItem<ArmorItem> PURE_QUARTZ_LEGGINGS = ITEMS.registerItem("pure_quartz_leggings",
+            properties -> new ArmorItem(ModArmorMaterials.PURE_QUARTZ, ArmorType.LEGGINGS, properties));
+    public static final DeferredItem<ArmorItem> PURE_QUARTZ_BOOTS = ITEMS.registerItem("pure_quartz_boots",
+            properties -> new ArmorItem(ModArmorMaterials.PURE_QUARTZ, ArmorType.BOOTS, properties));
+    public static final DeferredItem<AnimalArmorItem> PURE_QUARTZ_HORSE_ARMOR = ITEMS.registerItem("pure_quartz_horse_armor",
+            props -> new AnimalArmorItem(ModArmorMaterials.PURE_QUARTZ, AnimalArmorItem.BodyType.EQUESTRIAN, props));
+
+
 
     // Weapons
         // halberd

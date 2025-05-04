@@ -1,6 +1,7 @@
 package net.geckspy.geckspymm.item;
 
 import net.geckspy.geckspymm.MyMod;
+import net.geckspy.geckspymm.util.ModTags;
 import net.minecraft.Util;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -38,5 +39,22 @@ public class ModArmorMaterials {
             // The resource key of the EquipmentClientInfo JSON discussed below
             // Points to assets/examplemod/equipment/copper.json
             ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "copper"))
+    );
+
+    public static final ArmorMaterial PURE_QUARTZ = new ArmorMaterial(
+            38,
+            Util.make(new EnumMap<>(ArmorType.class),map -> {
+                map.put(ArmorType.BOOTS, 4);
+                map.put(ArmorType.LEGGINGS, 7);
+                map.put(ArmorType.CHESTPLATE, 9);
+                map.put(ArmorType.HELMET, 4);
+                map.put(ArmorType.BODY, 8);
+            }),
+            30,
+            SoundEvents.ARMOR_EQUIP_GENERIC,
+            2,
+            0,
+            ModTags.Items.PURE_QUARTZ_MATERIALS,
+            ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "pure_quartz"))
     );
 }
