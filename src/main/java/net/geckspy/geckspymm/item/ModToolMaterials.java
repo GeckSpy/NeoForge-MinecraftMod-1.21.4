@@ -9,7 +9,7 @@ public class ModToolMaterials {
             ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL,
             200,
             5f,
-            0f,
+            1.5f,
             18,
             Tags.Items.INGOTS_COPPER
     );

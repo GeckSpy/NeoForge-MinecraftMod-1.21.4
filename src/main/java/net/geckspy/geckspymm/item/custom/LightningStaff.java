@@ -1,9 +1,9 @@
 package net.geckspy.geckspymm.item.custom;
 
-import net.geckspy.geckspymm.MyMod;
 import net.geckspy.geckspymm.item.ModItems;
+import net.geckspy.geckspymm.particle.ModParticles;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -39,15 +39,26 @@ public class LightningStaff extends Item {
     }
 
     @Override
-    public InteractionResult use(Level world, Player player, InteractionHand hand) {
+    public InteractionResult use(Level level, Player player, InteractionHand hand) {
         player.startUsingItem(hand);
+
         return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    public void onUseTick(Level level, LivingEntity livingEntity, ItemStack stack, int remainingUseDuration) {
+        if (level.isClientSide){
+            double x = livingEntity.getX() + 0.25 + Math.random()/2-0.5;
+            double y = livingEntity.getY() + livingEntity.getEyeHeight() + 0.25 + Math.random()/2;
+            double z = livingEntity.getZ() + 0.25 + Math.random()/2-0.5;
+            level.addParticle(ModParticles.LIGHTNING_PARTICLE.get(), x, y, z, 0, 0, 0);
+        }
     }
 
     // Which animation to play while “drawing”
     @Override
     public ItemUseAnimation getUseAnimation(ItemStack stack) {
-        return ItemUseAnimation.BOW;                 // bow-style draw
+        return ItemUseAnimation.SPEAR;                 // bow-style draw
     }
 
     // How long they can hold the draw

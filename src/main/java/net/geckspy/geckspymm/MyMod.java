@@ -1,8 +1,20 @@
 package net.geckspy.geckspymm;
 
+import net.geckspy.geckspymm.attribute.ModAttributes;
 import net.geckspy.geckspymm.block.ModBlocks;
 import net.geckspy.geckspymm.item.ModCreativeModeTabs;
 import net.geckspy.geckspymm.item.ModItems;
+import net.geckspy.geckspymm.item.custom.HalberdItem;
+import net.geckspy.geckspymm.particle.LightningParticle;
+import net.geckspy.geckspymm.particle.ModParticles;
+import net.minecraft.ResourceLocationException;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -42,6 +54,8 @@ public class MyMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModParticles.register(modEventBus);
+        ModAttributes.register(modEventBus);
 
 
         // Register the item to a creative tab
@@ -72,6 +86,19 @@ public class MyMod {
         }
         if(event.getTabKey() == CreativeModeTabs.COMBAT){
             event.accept(ModItems.COPPER_SWORD);
+            event.accept(ModItems.COPPER_HELMET);
+            event.accept(ModItems.COPPER_CHESTPLATE);
+            event.accept(ModItems.COPPER_LEGGINGS);
+            event.accept(ModItems.COPPER_BOOTS);
+            event.accept(ModItems.COPPER_HORSE_ARMOR);
+
+            event.accept(ModItems.WOODEN_HALBERD);
+            event.accept(ModItems.STONE_HALBERD);
+            event.accept(ModItems.COPPER_HALBERD);
+            event.accept(ModItems.IRON_HALBERD);
+            event.accept(ModItems.GOLDEN_HALBERD);
+            event.accept(ModItems.DIAMOND_HALBERD);
+            event.accept(ModItems.NETHERITE_HALBERD);
         }
     }
 
@@ -87,5 +114,17 @@ public class MyMod {
         public static void onClientSetup(FMLClientSetupEvent event) {
 
         }
+
+        @SubscribeEvent
+        public static void registerParticleFactories(RegisterParticleProvidersEvent event){
+            event.registerSpriteSet(ModParticles.LIGHTNING_PARTICLE.get(), LightningParticle.Provider::new);
+        }
+    }
+
+    public boolean HALBERD_IN_HAND = false;
+    @SubscribeEvent
+    public void onGatherModifiers(ItemAttributeModifierEvent event) {
+        // Only modify main‐hand items
+        HalberdItem.onGatherModifier(event);
     }
 }

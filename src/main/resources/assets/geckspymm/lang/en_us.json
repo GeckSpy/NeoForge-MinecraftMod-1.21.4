@@ -1,12 +1,35 @@
 {
+  // Better Minecraft
+    // copper
   "item.geckspymm.copper_sword": "Copper Sword",
   "item.geckspymm.copper_axe": "Copper Axe",
   "item.geckspymm.copper_pickaxe": "Copper Pickaxe",
   "item.geckspymm.copper_shovel": "Copper Shovel",
   "item.geckspymm.copper_hoe": "Copper Hoe",
 
+  "item.geckspymm.copper_helmet": "Copper Helmet",
+  "item.geckspymm.copper_chestplate": "Copper Chestplate",
+  "item.geckspymm.copper_leggings": "Copper Leggings",
+  "item.geckspymm.copper_boots": "Copper Boots",
+  "item.geckspymm.copper_horse_armor": "Copper Horse Armor",
+
+    // Weapons
+      // Halberd
+  "item.geckspymm.wooden_halberd": "Wooden Halberd",
+  "item.geckspymm.stone_halberd": "Stone Halberd",
+  "item.geckspymm.copper_halberd": "Copper Halberd",
+  "item.geckspymm.iron_halberd": "Iron Halberd",
+  "item.geckspymm.golden_halberd": "Golden Halberd",
+  "item.geckspymm.diamond_halberd": "Diamond Halberd",
+  "item.geckspymm.netherite_halberd": "Netherite Halberd",
 
 
+    //attributes
+  "attribute.name.geckspymm.entity_interaction_range": "Mod Entity Interaction Range",
+  "attribute.name.geckspymm.block_interaction_range": "Mod Block Interaction Range",
+
+
+  // Magical Minecraft
   "item.geckspymm.impure_end_cristal": "Impure End Cristal",
   "item.geckspymm.end_cristal": "End Cristal",
   "item.geckspymm.magic_cristal": "Magic Cristal",

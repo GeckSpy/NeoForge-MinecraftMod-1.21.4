@@ -2,15 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "~": "minecraft:string"
+    "M": "minecraft:copper_ingot",
+    "S": "minecraft:stick"
   },
   "pattern": [
-    "~~ ",
-    "~~ ",
-    "  ~"
+    " MM",
+    " SM",
+    "S  "
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:lead"
+    "id": "geckspymm:copper_halberd"
   }
 }

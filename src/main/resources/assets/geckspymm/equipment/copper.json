@@ -1,0 +1,13 @@
+{
+  "layers": {
+    "humanoid": [{ "texture": "geckspymm:copper"}],
+
+    "humanoid_leggings": [{"texture": "geckspymm:copper"}],
+
+    "horse_body": [
+      { "texture": "geckspymm:copper",
+        "use_player_texture": true
+      }]
+
+  }
+}
