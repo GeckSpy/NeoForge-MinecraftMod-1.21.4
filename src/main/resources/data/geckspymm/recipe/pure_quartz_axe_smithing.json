@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#geckspy:pure_quarte_materials",
+  "base": "minecraft:diamond_axe",
+  "result": {
+    "id": "geckspymm:pure_quartz_axe"
+  },
+  "template": "geckspymm:pure_quartz_upgrade_smithing_template"
+}

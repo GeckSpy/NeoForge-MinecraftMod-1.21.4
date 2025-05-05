@@ -93,7 +93,8 @@ Copper armor: helmet, chestplate, leggings, boots, horse_armor
 
 ### Pure Craft material
 
-Modify netherite: craftable form pure_craft armor and health +4 (2 hearts) 
+Modify netherite: craftable form pure_craft armor and health +4 (2 hearts)
+Netherite craftable from pure quartz (not diamond anymore)
 
 Pure craft
     TODO: Craft: ghast_tear + quartz
