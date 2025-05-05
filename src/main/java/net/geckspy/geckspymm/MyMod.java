@@ -6,16 +6,17 @@ import net.geckspy.geckspymm.enchantment.ModEnchantmentEffects;
 import net.geckspy.geckspymm.item.ModCreativeModeTabs;
 import net.geckspy.geckspymm.item.ModItems;
 import net.geckspy.geckspymm.item.custom.HalberdItem;
+import net.geckspy.geckspymm.item.custom.ModArmorItem;
 import net.geckspy.geckspymm.particle.LightningParticle;
 import net.geckspy.geckspymm.particle.ModParticles;
-import net.minecraft.ResourceLocationException;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.EquipmentSlotGroup;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
+import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -33,6 +34,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(MyMod.MOD_ID)
@@ -138,10 +140,21 @@ public class MyMod {
         }
     }
 
-    public boolean HALBERD_IN_HAND = false;
     @SubscribeEvent
     public void onGatherModifiers(ItemAttributeModifierEvent event) {
         // Only modify main‐hand items
+        //System.out.println(Math.random()+"on gather modifier called");
         HalberdItem.onGatherModifier(event);
+
+    }
+
+    @SubscribeEvent
+    public void onEquipmentChange(LivingEquipmentChangeEvent event){
+        ModArmorItem.onEquipmentChange(event);
+    }
+
+    @SubscribeEvent
+    public void onEntityTickEvent(EntityTickEvent.Post event){
+
     }
 }

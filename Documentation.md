@@ -93,7 +93,7 @@ Copper armor: helmet, chestplate, leggings, boots, horse_armor
 
 ### Pure Craft material
 
-TODO: Modify GUI to add more protection symbol (aura on chestplate/ other symbols)
+Modify netherite: craftable form pure_craft armor and health +4 (2 hearts) 
 
 Pure craft
     TODO: Craft: ghast_tear + quartz
@@ -101,11 +101,12 @@ Pure craft
 Between diamond and netherite, upgrade diamond to pure quartz
 
 Armor: helmet, chestplate, leggings, boots, horse_armor
+    Give haste and underwater haste
     TODO: craft
-    TODO: retexture armor to lighten edges
     TODO: trim -> not visible in item form yet
 
-TODO: Tools 
+Tools:
+    TODO: Craft
 
     
 
@@ -167,12 +168,12 @@ new weapon:
     - electicity daggers: Traser dash
 
 new armor:
-    - necromancian
-    - fire
+    - necromancian: Really tought
+    - fire:
     - ice: slowness
-    - water
+    - water: 
     - plant
-    - angel
+    - angel: can fly
 
 ## Mutant
 
