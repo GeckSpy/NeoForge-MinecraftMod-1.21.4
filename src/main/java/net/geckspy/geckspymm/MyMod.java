@@ -78,17 +78,22 @@ public class MyMod {
             event.accept(ModItems.IMPURE_END_CRISTAL);
             event.accept(ModItems.END_CRISTAL);
         }
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+        else if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.IMPURE_END_CRISTAL_BLOCK);
             event.accept(ModBlocks.END_CRISTAL_BLOCK);
         }
-        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
+        else if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
             event.accept(ModItems.COPPER_SHOVEL);
             event.accept(ModItems.COPPER_PICKAXE);
             event.accept(ModItems.COPPER_AXE);
             event.accept(ModItems.COPPER_HOE);
+
+            event.accept(ModItems.PURE_QUARTZ_SHOVEL);
+            event.accept(ModItems.PURE_QUARTZ_PICKAXE);
+            event.accept(ModItems.PURE_QUARTZ_AXE);
+            event.accept(ModItems.PURE_QUARTZ_HOE);
         }
-        if(event.getTabKey() == CreativeModeTabs.COMBAT){
+        else if(event.getTabKey() == CreativeModeTabs.COMBAT){
             event.accept(ModItems.COPPER_SWORD);
             event.accept(ModItems.COPPER_HELMET);
             event.accept(ModItems.COPPER_CHESTPLATE);
@@ -101,6 +106,8 @@ public class MyMod {
             event.accept(ModItems.PURE_QUARTZ_LEGGINGS);
             event.accept(ModItems.PURE_QUARTZ_BOOTS);
             event.accept(ModItems.PURE_QUARTZ_HORSE_ARMOR);
+            event.accept(ModItems.PURE_QUARTZ_SWORD);
+
 
             event.accept(ModItems.WOODEN_HALBERD);
             event.accept(ModItems.STONE_HALBERD);

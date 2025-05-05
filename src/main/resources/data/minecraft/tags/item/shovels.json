@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "geckspymm:copper_shovel"
+    "geckspymm:copper_shovel",
+    "geckspymm:pure_quartz_shovel"
   ]
 }

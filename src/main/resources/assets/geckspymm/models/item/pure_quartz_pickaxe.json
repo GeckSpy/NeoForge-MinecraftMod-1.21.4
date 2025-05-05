@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "geckspymm:item/pure_quartz_pickaxe"
+  }
+}

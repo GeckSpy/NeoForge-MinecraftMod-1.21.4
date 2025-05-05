@@ -53,6 +53,17 @@ public class ModItems {
     public static final DeferredItem<AnimalArmorItem> PURE_QUARTZ_HORSE_ARMOR = ITEMS.registerItem("pure_quartz_horse_armor",
             props -> new AnimalArmorItem(ModArmorMaterials.PURE_QUARTZ, AnimalArmorItem.BodyType.EQUESTRIAN, props));
 
+    public static final DeferredItem<SwordItem> PURE_QUARTZ_SWORD = ITEMS.registerItem("pure_quartz_sword",
+            properties -> new SwordItem(ModToolMaterials.PURE_QUARTZ, 5f, -2.4f, properties));
+    public static final DeferredItem<AxeItem> PURE_QUARTZ_AXE = ITEMS.registerItem("pure_quartz_axe",
+            properties -> new AxeItem(ModToolMaterials.PURE_QUARTZ, 6f, -3.15f, properties));
+    public static final DeferredItem<PickaxeItem> PURE_QUARTZ_PICKAXE = ITEMS.registerItem("pure_quartz_pickaxe",
+            properties -> new PickaxeItem(ModToolMaterials.PURE_QUARTZ, 2f, -2.8f, properties));
+    public static final DeferredItem<ShovelItem> PURE_QUARTZ_SHOVEL = ITEMS.registerItem("pure_quartz_shovel",
+            properties -> new ShovelItem(ModToolMaterials.PURE_QUARTZ, 2.5f, -3f, properties));
+    public static final DeferredItem<HoeItem> PURE_QUARTZ_HOE = ITEMS.registerItem("pure_quartz_hoe",
+            properties -> new HoeItem(ModToolMaterials.PURE_QUARTZ, -2.5f, -1.5f, properties));
+
 
 
     // Weapons

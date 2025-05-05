@@ -27,7 +27,7 @@ public class ModArmorMaterials {
                     map.put(ArmorType.BODY, 4);
             }),
             // Determines the enchantability of the armor; Gold uses 25.
-            10,
+            12,
             // Determines the sound played when equipping this armor.
             SoundEvents.ARMOR_EQUIP_GENERIC,
             // Returns the toughness value of the armor.
@@ -42,7 +42,7 @@ public class ModArmorMaterials {
     );
 
     public static final ArmorMaterial PURE_QUARTZ = new ArmorMaterial(
-            38,
+            35,
             Util.make(new EnumMap<>(ArmorType.class),map -> {
                 map.put(ArmorType.BOOTS, 3);
                 map.put(ArmorType.LEGGINGS, 6);
@@ -50,11 +50,12 @@ public class ModArmorMaterials {
                 map.put(ArmorType.HELMET, 3);
                 map.put(ArmorType.BODY, 7);
             }),
-            30,
+            20,
             SoundEvents.ARMOR_EQUIP_GENERIC,
-            3,
+            2,
             0.1f,
             ModTags.Items.PURE_QUARTZ_MATERIALS,
             ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "pure_quartz"))
     );
+
 }

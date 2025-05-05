@@ -127,6 +127,7 @@ Halberd: better range, slower attack, high damage
 
 ## Better Minecraft
 
+Crown (like helmet but low texture for trim)
 invisible item frame
 armor_stand with arms
 Backpack ?

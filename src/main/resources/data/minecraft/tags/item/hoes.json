@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "geckspymm:copper_hoe"
+    "geckspymm:copper_hoe",
+    "geckspymm:pure_quartz_hoe"
   ]
 }

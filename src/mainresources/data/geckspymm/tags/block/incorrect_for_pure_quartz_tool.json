@@ -1,0 +1,8 @@
+{
+  "values": [
+    "#minecraft:incorrect_for_stone_tool"
+  ],
+  "remove": [
+    "#geckspymm:needs_copper_tool"
+  ]
+}

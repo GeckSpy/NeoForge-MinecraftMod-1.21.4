@@ -10,7 +10,17 @@ public class ModToolMaterials {
             200,
             5f,
             1.5f,
-            18,
+            12,
             Tags.Items.INGOTS_COPPER
     );
+
+    public static final ToolMaterial PURE_QUARTZ = new ToolMaterial(
+            ModTags.Blocks.INCORRECT_FOR_PURE_QUARTZ_TOOL,
+            1751,
+            8.5f,
+            2.5f,
+            20,
+            ModTags.Items.PURE_QUARTZ_MATERIALS
+    );
+
 }

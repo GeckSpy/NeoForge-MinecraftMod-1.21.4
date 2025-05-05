@@ -19,6 +19,11 @@ public class ModTags {
                 BuiltInRegistries.BLOCK.key(),
                 ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID,"incorrect_for_copper_tool"));
 
+        public static final TagKey<Block> INCORRECT_FOR_PURE_QUARTZ_TOOL = TagKey.create(
+                BuiltInRegistries.BLOCK.key(),
+                ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID,"incorrect_for_pure_quartz_tool"));
+
+
         private static TagKey<Block> createTag(String name){
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, name));
         }
