@@ -5,6 +5,7 @@ import net.geckspy.geckspymm.item.custom.HalberdItem;
 import net.geckspy.geckspymm.item.custom.LightningStaff;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;

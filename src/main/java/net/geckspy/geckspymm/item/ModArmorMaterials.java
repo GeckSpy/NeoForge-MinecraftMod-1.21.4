@@ -44,16 +44,16 @@ public class ModArmorMaterials {
     public static final ArmorMaterial PURE_QUARTZ = new ArmorMaterial(
             38,
             Util.make(new EnumMap<>(ArmorType.class),map -> {
-                map.put(ArmorType.BOOTS, 4);
-                map.put(ArmorType.LEGGINGS, 7);
-                map.put(ArmorType.CHESTPLATE, 9);
-                map.put(ArmorType.HELMET, 4);
-                map.put(ArmorType.BODY, 8);
+                map.put(ArmorType.BOOTS, 3);
+                map.put(ArmorType.LEGGINGS, 6);
+                map.put(ArmorType.CHESTPLATE, 8);
+                map.put(ArmorType.HELMET, 3);
+                map.put(ArmorType.BODY, 7);
             }),
             30,
             SoundEvents.ARMOR_EQUIP_GENERIC,
-            2,
-            0,
+            3,
+            0.1f,
             ModTags.Items.PURE_QUARTZ_MATERIALS,
             ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "pure_quartz"))
     );

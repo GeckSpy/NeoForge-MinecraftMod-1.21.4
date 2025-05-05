@@ -60,6 +60,7 @@ public class MyMod {
         ModEnchantmentEffects.register(modEventBus);
 
 
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 

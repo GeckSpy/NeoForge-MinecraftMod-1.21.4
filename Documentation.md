@@ -115,7 +115,7 @@ TODO: Tools
 
 #### halberd
 
-Halberd: better range, slawer attack, high damage
+Halberd: better range, slower attack, high damage
     TODO: enchantment
     TODO: pure_quartz
 
