@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": "geckspymm:pure_quartz",
-  "base": "minecraft:diamond_axe",
+  "base": "minecraft:diamond_leggings",
   "result": {
-    "id": "geckspymm:pure_quartz_axe"
+    "id": "geckspymm:pure_quartz_leggings"
   },
   "template": "geckspymm:pure_quartz_upgrade_smithing_template"
 }
