@@ -145,42 +145,69 @@ TODO general:
 
 ## Better Minecraft
 
-End trees (need at least netherite tools)
+### End
 
-Crown: retexture all helmet to have crown
+end material (armor and tools):
+    end pgrade smithing template : end_cristal,  end smith template, end_stone
 
-invisible item frame
-armor_stand with arms
+End trees (need at least netherite tools) ?
 
-
-more tnt, throwable dynamit
-
-throwable rock
-
-new bow ? new arrow (dynamit arrow)
-
-pipes, entering/closing pipes
-more mobs head
-farmable wood -> plants like bamboo, with 4 makes a wood block for each types of wood?
-    Plant a pousse on terre battue?    
-
-new animals: ants, lion, rhinoceros, elephant, lizard, butterfly, snake, shark, whale, small spider
-new mobs: ghost (make you fly)
-new armor trim
-block breaker
-new elytra
-glass helmet (breath under water)
-
-new material: end_cristal after netherite
-
-new weapon:
-    - spear: sthrowable, mid-long range, slow
-    - knifes/daggers: short range, very fast
-    - roped kunai: trhowable knife, comes back
+End Fruits and seed ?
 
 baby ender dragon: pet (-> middle_aged ender dragon -> old ender dragon ?)
 
-special effect: ressurection (for Maelle)
+
+### visual
+Crown: retexture all helmet to have crown
+invisible item frame
+armor_stand with arms
+more mobs head
+new armor trim
+
+
+### weapons
+- spear: sthrowable, mid-long range, slow
+- knifes/daggers: short range, very fast
+- roped kunai: trhowable knife, comes back
+
+new bow ? new arrow (dynamit arrow)
+
+
+### Mobs
+new animals: ants, lion, rhinoceros, elephant, lizard, butterfly, snake, shark, whale, small spider
+new mobs: ghost (make you fly)
+
+
+### Nature
+
+Carnivor flower:
+    - Rafllesia: attire mobs, make 
+
+mob:
+- Venus flytrap: attack near by mobs
+
+
+### Redstone
+pipes, entering/closing pipes
+block breaker
+Touret (tourelle, shoot mob)
+Electric (magic) touret
+
+
+### Other
+more tnt
+throwable dynamit
+throwable rock
+new elytra
+farmable wood -> plants like bamboo, with 4 makes a wood block for each types of wood?
+    Plant a pousse on terre battue?
+glass helmet (breath under water)
+
+
+### Effect:
+ressurection (for Maelle)
+giantism, miniatirisme
+
 
 
 ## Magical Minecraft
@@ -193,7 +220,6 @@ staff:
     - sand: throw sand block
     - dash
     - very high jump
-    - resize (decrease & increase)
 spawn staff (different skin for mobs): skeletton, slime, blaze, ghast, zombie mob attack specific pointed target?
 
 every staff need a special item that can be found in structures

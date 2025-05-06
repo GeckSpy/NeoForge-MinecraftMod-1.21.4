@@ -31,6 +31,12 @@ public class ModAttributes {
                             Component.translatable("attribute.name.geckspymm.armor_effect").getString(),
                             0.0, 0.0, 100.0));
 
+    public static final DeferredHolder<Attribute, Attribute> GIGANTISM_EFFECT =
+            ATTRIBUTES.register("giantism_effect",
+                    () -> new RangedAttribute(
+                            Component.translatable("attribute.name.geckspymm.armor_effect").getString(),
+                            0.0, 0.0, 100.0));
+
     public static void register(IEventBus eventBus){
         ATTRIBUTES.register(eventBus);
     }

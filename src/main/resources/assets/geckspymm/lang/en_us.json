@@ -47,6 +47,10 @@
   "attribute.name.geckspymm.block_interaction_range": "Mod Block Interaction Range",
 
 
+  // Effects
+  "effect.geckspymm.gigantism" : "Gigantism",
+
+
   // Magical Minecraft
   "item.geckspymm.impure_end_cristal": "Impure End Cristal",
   "item.geckspymm.end_cristal": "End Cristal",

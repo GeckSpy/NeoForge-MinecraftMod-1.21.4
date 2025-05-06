@@ -2,6 +2,7 @@ package net.geckspy.geckspymm;
 
 import net.geckspy.geckspymm.attribute.ModAttributes;
 import net.geckspy.geckspymm.block.ModBlocks;
+import net.geckspy.geckspymm.effect.ModEffects;
 import net.geckspy.geckspymm.enchantment.ModEnchantmentEffects;
 import net.geckspy.geckspymm.item.ModCreativeModeTabs;
 import net.geckspy.geckspymm.item.ModItems;
@@ -9,13 +10,10 @@ import net.geckspy.geckspymm.item.custom.HalberdItem;
 import net.geckspy.geckspymm.item.custom.ModArmorItem;
 import net.geckspy.geckspymm.particle.LightningParticle;
 import net.geckspy.geckspymm.particle.ModParticles;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
+import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import org.slf4j.Logger;
 
@@ -60,6 +58,7 @@ public class MyMod {
         ModParticles.register(modEventBus);
         ModAttributes.register(modEventBus);
         ModEnchantmentEffects.register(modEventBus);
+        ModEffects.register(modEventBus);
 
 
 
@@ -145,7 +144,6 @@ public class MyMod {
     @SubscribeEvent
     public void onGatherModifiers(ItemAttributeModifierEvent event) {
         // Only modify main‐hand items
-        //System.out.println(Math.random()+"on gather modifier called");
         HalberdItem.onGatherModifier(event);
 
     }
@@ -158,5 +156,15 @@ public class MyMod {
     @SubscribeEvent
     public void onEntityTickEvent(EntityTickEvent.Post event){
 
+    }
+
+    @SubscribeEvent
+    public void onEffectRemoved(MobEffectEvent.Remove event){
+        ModEffects.onEffectRemoved(event);
+    }
+
+    @SubscribeEvent
+    public void onEffectExpired(MobEffectEvent.Expired event){
+        ModEffects.onEffectExpired(event);
     }
 }
