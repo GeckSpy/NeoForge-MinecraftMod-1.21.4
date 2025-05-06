@@ -15,6 +15,7 @@
 
     // Pure quartz
   "item.geckspymm.pure_quartz": "Pure Quartz",
+  "item.geckspymm.pure_quartz_upgrade_smithing_template": "Pure Quartz Upgrade",
   "item.geckspymm.pure_quartz_helmet": "Pure QuartzHelmet",
   "item.geckspymm.pure_quartz_chestplate": "Pure Quartz Chestplate",
   "item.geckspymm.pure_quartz_leggings": "Pure Quartz Leggings",

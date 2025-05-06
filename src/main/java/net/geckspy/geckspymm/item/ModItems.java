@@ -40,6 +40,8 @@ public class ModItems {
     // Pure quartz material
     public static final DeferredItem<Item> PURE_QUARTZ = ITEMS.registerItem(
             "pure_quartz", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> PURE_QUARTZ_UPGRADE_SMITHING_TEMPLATE = ITEMS.registerItem(
+            "pure_quartz_upgrade_smithing_template", Item::new, new Item.Properties());
     public static final DeferredItem<ArmorItem> PURE_QUARTZ_HELMET = ITEMS.registerItem("pure_quartz_helmet",
             properties -> new ArmorItem(ModArmorMaterials.PURE_QUARTZ, ArmorType.HELMET, properties));
     public static final DeferredItem<ArmorItem> PURE_QUARTZ_CHESTPLATE = ITEMS.registerItem("pure_quartz_chestplate",

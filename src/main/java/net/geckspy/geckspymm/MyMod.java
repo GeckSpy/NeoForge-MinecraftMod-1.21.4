@@ -77,6 +77,7 @@ public class MyMod {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.PURE_QUARTZ);
+            event.accept(ModItems.PURE_QUARTZ_UPGRADE_SMITHING_TEMPLATE);
             event.accept(ModItems.IMPURE_END_CRISTAL);
             event.accept(ModItems.END_CRISTAL);
         }

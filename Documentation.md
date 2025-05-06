@@ -91,15 +91,27 @@ Copper armor: helmet, chestplate, leggings, boots, horse_armor
     TODO: trim -> not visible in item form yet
 
 
-### Pure Craft material
-
-Modify netherite: craftable form pure_craft armor and health +4 (2 hearts)
-Netherite craftable from pure quartz (not diamond anymore)
-
-Pure craft
-    TODO: Craft: ghast_tear + quartz
+### Pure Quartz material
 
 Between diamond and netherite, upgrade diamond to pure quartz
+
+Modify netherite: craftable form pure_craft armor and health +4 (2 hearts)
+Netherite craftable from pure quartz tools (not diamond anymore)
+Change netherite_upgrade_smithing_template:
+        recipe: replaced netherrack by neetherbrick
+        texture
+
+
+Pure quartz
+    Craft: ghast_tear + quartz
+
+Pure Quartz Upgrade (pure_quartz_upgrade_smithing_template) 
+    Find in nether forteress chest (modify loot_table/chests/nether_bridges)
+    craft(x2): U:pure_quartz_upgrade_smithing_template, N:netherrack, I:iron_igot
+    IUI
+    INI
+    III
+
 
 Armor: helmet, chestplate, leggings, boots, horse_armor
     Give haste and underwater haste
