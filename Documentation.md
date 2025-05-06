@@ -6,11 +6,8 @@
 
 Impure End Cristal Block:
     TODO: spawn in end dimension
-    TODO: fortune drop more
-
 
 Impure End Cristal:
-    TODO: retexture
     drop from Impure End Cristal Block, need at least diamond pickaxe
 
 
@@ -41,17 +38,17 @@ Magic Cristal:
 
 
 Magic Orb:
-    TODO: Craftable with Magical craft table
-        redstone, blaze_powder, choarcoal -> get 2
+    TODO: Craftable with Magical Alombic and end baie
+        redstone, blaze_powder, choarcoal
 
-Invocation Orb:
+Invocation Orb?:
     TODO: Craftable with Magical Craft table
         Magic Orb,...
 
 
 Magic Stick:
     TODO: Craftable with Magical craft table
-        M:Magic Cristal, /:stick
+        M:Magic Cristal, /:end_wood stick
             /
           M
         /
@@ -62,10 +59,7 @@ Lighting staff:
     -> Lightning particle
     TODO: enchantment
     TODO: craftable with magic craft table
-        /: Magic stick, T:Lightning Rod, o:Magic orb
-            o
-          T
-        /
+        /: Magic stick, T:Lightning Rod, o:special item?
 
 
 
@@ -81,6 +75,7 @@ New lead craft only based on strings:
 
 Name Tag: shapeless
     P:paperx2, S:string
+
 
 
 ### Copper material
@@ -115,11 +110,11 @@ Pure Quartz Upgrade (pure_quartz_upgrade_smithing_template)
 
 Armor: helmet, chestplate, leggings, boots, horse_armor
     Give haste and underwater haste
-    TODO: craft
+    craft: smithing table: from diamond, Pure Quartz upgrade, pure Quartz
     TODO: trim -> not visible in item form yet
 
-Tools:
-    TODO: Craft
+Tools: All
+    craft: smithing table: from diamond, Pure Quartz upgrade, pure Quartz
 
     
 
@@ -130,26 +125,45 @@ Tools:
 #### halberd
 
 Halberd: better range, slower attack, high damage
-    TODO: enchantment
-    TODO: pure_quartz
+    TODO: custom entity_range_interaction enchantment?
+    TODO: end material
 
 
 
+
+
+
+
+
+TODO general:
+    - advancement
+    - give craft recipe
+    - tool tips
 
 
 # Idea
 
 ## Better Minecraft
 
-Crown (like helmet but low texture for trim)
+End trees (need at least netherite tools)
+
+Crown: retexture all helmet to have crown
+
 invisible item frame
 armor_stand with arms
-Backpack ?
+
+
 more tnt, throwable dynamit
+
 throwable rock
-new bow ?
+
+new bow ? new arrow (dynamit arrow)
+
 pipes, entering/closing pipes
-farmable wood -> plants that become a wood block?
+more mobs head
+farmable wood -> plants like bamboo, with 4 makes a wood block for each types of wood?
+    Plant a pousse on terre battue?    
+
 new animals: ants, lion, rhinoceros, elephant, lizard, butterfly, snake, shark, whale, small spider
 new mobs: ghost (make you fly)
 new armor trim
@@ -157,36 +171,48 @@ block breaker
 new elytra
 glass helmet (breath under water)
 
-new material: royal gem: made with pure quartz, diamond and lapiz
-new armor & tools (before netherite): kings armor ?
-
-new armor: reinforced armor: better basic minecraft armor made with addind this material to get better armor
+new material: end_cristal after netherite
 
 new weapon:
     - spear: sthrowable, mid-long range, slow
     - knifes/daggers: short range, very fast
     - roped kunai: trhowable knife, comes back
 
-baby ender dragon (-> middle_aged ender dragon -> old ender dragon ?)
+baby ender dragon: pet (-> middle_aged ender dragon -> old ender dragon ?)
+
+special effect: ressurection (for Maelle)
+
 
 ## Magical Minecraft
 
-staff: fire, fire explosing ball, dash, high jump, resize (decrease & increase)
-spawn staff (different skin for mobs): skeletton, slime, blaze, ghast, zombie
+staff: 
+    - fire
+    - fire explosing ball
+    - water: knockbat water
+    - ice: freeze entity, transforme blocks into ice
+    - sand: throw sand block
+    - dash
+    - very high jump
+    - resize (decrease & increase)
+spawn staff (different skin for mobs): skeletton, slime, blaze, ghast, zombie mob attack specific pointed target?
 
-new material: ender_cristal based -> upgarde netherite to superior level
+every staff need a special item that can be found in structures
 
-new weapon:
-    - dark hoe: Faucher/Moira dash
-    - electicity daggers: Traser dash
+new weapon: consume mana orbs
+    - dark hoe: apply wither effect to all living entity, big slash (Right click) Faucher/Moira dash 
+    - fire rope kunai: trhow fire on its way (Right click) burn every living entity near by
+    - electicity daggers: incredible attack speed (Right click) slowdown every entity near by
+    - trident: incredible knockback (Right click) 
 
 new armor:
+    No fallDamage
     - necromancian: Really tought
-    - fire:
-    - ice: slowness
-    - water: 
-    - plant
-    - angel: can fly
+    - fire: can fly, fire resistance
+    - electricity: speed
+    - water: increadible speed in water, can fly when it rains
+
+
+
 
 ## Mutant
 

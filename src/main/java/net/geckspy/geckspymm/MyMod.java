@@ -118,6 +118,7 @@ public class MyMod {
             event.accept(ModItems.IRON_HALBERD);
             event.accept(ModItems.GOLDEN_HALBERD);
             event.accept(ModItems.DIAMOND_HALBERD);
+            event.accept(ModItems.PURE_QUARTZ_HALBERD);
             event.accept(ModItems.NETHERITE_HALBERD);
         }
     }

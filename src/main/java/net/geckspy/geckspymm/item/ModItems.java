@@ -82,9 +82,14 @@ public class ModItems {
             properties -> new HalberdItem(ToolMaterial.DIAMOND, HalberdItem.ATTACK_DAMAGE, HalberdItem.ATTACK_SPEED, properties));
     public static final DeferredItem<SwordItem> NETHERITE_HALBERD = ITEMS.registerItem("netherite_halberd",
             properties -> new HalberdItem(ToolMaterial.NETHERITE, HalberdItem.ATTACK_DAMAGE, HalberdItem.ATTACK_SPEED, properties));
+    public static final DeferredItem<SwordItem> PURE_QUARTZ_HALBERD = ITEMS.registerItem("pure_quartz_halberd",
+            properties -> new HalberdItem(ModToolMaterials.PURE_QUARTZ, HalberdItem.ATTACK_DAMAGE+1, HalberdItem.ATTACK_SPEED, properties));
 
 
-// Magical Minecraft
+
+
+
+    // Magical Minecraft
     public static final DeferredItem<Item> IMPURE_END_CRISTAL = ITEMS.registerItem(
             "impure_end_cristal", Item::new, new Item.Properties());
     public static final DeferredItem<Item> END_CRISTAL = ITEMS.registerItem(

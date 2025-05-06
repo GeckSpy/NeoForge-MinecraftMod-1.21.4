@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": "#minecraft:netherite_tool_materials",
-  "base": "geckspymm:diamond_halberd",
+  "base": "geckspymm:pure_quartz_halberd",
   "result": {
     "id": "geckspymm:netherite_halberd"
   },
