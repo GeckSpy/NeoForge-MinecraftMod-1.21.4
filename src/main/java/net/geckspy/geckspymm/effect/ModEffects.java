@@ -5,10 +5,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -17,7 +14,7 @@ public class ModEffects {
             DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, MyMod.MOD_ID);
 
     public static final Holder<MobEffect> GIGANTISM = MOB_EFFECTS.register("gigantism",
-            ()->new GigantismEffect(MobEffectCategory.BENEFICIAL, 0x36ebab));
+            ()->new GigantismEffect(MobEffectCategory.BENEFICIAL, 0xffb842));
 
 
 

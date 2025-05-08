@@ -49,6 +49,18 @@
 
   // Effects
   "effect.geckspymm.gigantism" : "Gigantism",
+  "item.minecraft.potion.effect.gigantism_potion" : "Potion of Gigantism",
+  "item.minecraft.splash_potion.effect.gigantism_potion" : "Potion of Gigantism",
+  "item.minecraft.lingering_potion.effect.gigantism_potion" : "Potion of Gigantism",
+  "item.minecraft.potion.effect.gigantism_2_potion" : "Potion of Gigantism",
+  "item.minecraft.splash_potion.effect.gigantism_2_potion" : "Potion of Gigantism",
+  "item.minecraft.lingering_potion.effect.gigantism_2_potion" : "Potion of Gigantism",
+  "item.minecraft.potion.effect.gigantism_3_potion" : "Potion of Gigantism",
+  "item.minecraft.splash_potion.effect.gigantism_3_potion" : "Potion of Gigantism",
+  "item.minecraft.lingering_potion.effect.gigantism_3_potion" : "Potion of Gigantism",
+  "item.minecraft.potion.effect.gigantism_4_potion" : "Potion of Gigantism",
+  "item.minecraft.splash_potion.effect.gigantism_4_potion" : "Potion of Gigantism",
+  "item.minecraft.lingering_potion.effect.gigantism_4_potion" : "Potion of Gigantism",
 
 
   // Magical Minecraft

@@ -6,56 +6,68 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 
+import it.unimi.dsi.fastutil.Pair;
 import java.util.List;
+import java.util.Map;
 
 public class GigantismEffect extends MobEffect {
     public GigantismEffect(MobEffectCategory category, int color){
         super(category, color);
     }
 
-    public static double coefficient(int amplifier){
-        if(amplifier==0){return 0.25;}
-        else if(amplifier==1){return 0.5;}
-        else{
-            return Math.pow(2, amplifier-2);
-        }
-    };
+    public static Map<Integer, Double> BASIC_MAP = Map.of(
+            0, 0.25,
+            1, 0.5,
+            2,1.0,
+            3,2.0,
+            4,4.0,
+            5,8.0
+    );
 
-    public static final List< Holder<Attribute>> ATTRIBUTES = List.of(
-            Attributes.SCALE,
-            Attributes.ENTITY_INTERACTION_RANGE,
-            Attributes.BLOCK_INTERACTION_RANGE,
-            Attributes.STEP_HEIGHT,
 
-            Attributes.MOVEMENT_SPEED,
-            Attributes.ATTACK_DAMAGE,
-            Attributes.KNOCKBACK_RESISTANCE,
-            Attributes.GRAVITY,
-            Attributes.BLOCK_BREAK_SPEED
+    public static final List< Pair<Holder<Attribute>, Map<Integer, Double>>> ATTRIBUTES = List.of(
+            Pair.of(Attributes.SCALE, BASIC_MAP),
+            Pair.of(Attributes.ENTITY_INTERACTION_RANGE, BASIC_MAP),
+            Pair.of(Attributes.BLOCK_INTERACTION_RANGE, BASIC_MAP),
+            Pair.of(Attributes.STEP_HEIGHT, BASIC_MAP),
+
+            Pair.of(Attributes.MOVEMENT_SPEED, Map.of(0,0.0,1,0.1,2,0.4,3,0.6,4,0.8,5,1.0)),
+            Pair.of(Attributes.ATTACK_DAMAGE, BASIC_MAP),
+            Pair.of(Attributes.KNOCKBACK_RESISTANCE, BASIC_MAP),
+            Pair.of(Attributes.GRAVITY, BASIC_MAP),
+            Pair.of(Attributes.BLOCK_BREAK_SPEED, BASIC_MAP)
     );
 
     @Override
     public void onEffectStarted(LivingEntity entity, int amplifier) {
-        for(var attribute: ATTRIBUTES){
-            var entityAttribute = entity.getAttribute(attribute).getModifier(ModAttributes.GIGANTISM_EFFECT.getId());
-            if(entityAttribute==null || coefficient(amplifier) > entityAttribute.amount()){
-                entity.getAttribute(attribute).removeModifier(ModAttributes.GIGANTISM_EFFECT.getId());
-                entity.getAttribute(attribute).addTransientModifier(new AttributeModifier(
-                        ModAttributes.GIGANTISM_EFFECT.getId(),
-                        coefficient(amplifier),
-                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE
-                ));
+        for(var pair: ATTRIBUTES){
+            AttributeInstance attribute = entity.getAttribute(pair.first());
+            if(attribute!=null) {
+                double coeff = pair.second().get(amplifier);
+                var entityAttribute = attribute.getModifier(ModAttributes.GIGANTISM_EFFECT.getId());
+                if (entityAttribute == null || coeff > entityAttribute.amount()) {
+                    attribute.removeModifier(ModAttributes.GIGANTISM_EFFECT.getId());
+                    attribute.addTransientModifier(new AttributeModifier(
+                            ModAttributes.GIGANTISM_EFFECT.getId(),
+                            coeff,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                    ));
+                }
             }
         }
     }
 
 
     public static void onEffectEnded(LivingEntity entity){
-        for (var attribute : ATTRIBUTES) {
-            entity.getAttribute(attribute).removeModifier(ModAttributes.GIGANTISM_EFFECT.getId());
+        for (var pair : ATTRIBUTES) {
+            AttributeInstance attrib = entity.getAttribute(pair.first());
+            if(attrib!=null){
+               attrib.removeModifier(ModAttributes.GIGANTISM_EFFECT.getId());
+            }
         }
     }
 

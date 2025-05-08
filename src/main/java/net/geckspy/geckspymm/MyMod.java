@@ -10,8 +10,13 @@ import net.geckspy.geckspymm.item.custom.HalberdItem;
 import net.geckspy.geckspymm.item.custom.ModArmorItem;
 import net.geckspy.geckspymm.particle.LightningParticle;
 import net.geckspy.geckspymm.particle.ModParticles;
+import net.geckspy.geckspymm.potion.ModPotions;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
+import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
@@ -59,6 +64,7 @@ public class MyMod {
         ModAttributes.register(modEventBus);
         ModEnchantmentEffects.register(modEventBus);
         ModEffects.register(modEventBus);
+        ModPotions.register(modEventBus);
 
 
 
@@ -166,5 +172,14 @@ public class MyMod {
     @SubscribeEvent
     public void onEffectExpired(MobEffectEvent.Expired event){
         ModEffects.onEffectExpired(event);
+    }
+
+    @SubscribeEvent
+    public void registerBrewingRecipes(RegisterBrewingRecipesEvent event){
+        PotionBrewing.Builder builder = event.getBuilder();
+        builder.addMix(Potions.AWKWARD, Items.RED_MUSHROOM, ModPotions.GIGANTISM_POTION);
+        builder.addMix(ModPotions.GIGANTISM_POTION, Items.GLOWSTONE_DUST, ModPotions.GIGANTISM_2_POTION);
+        builder.addMix(ModPotions.GIGANTISM_2_POTION, Items.GLOWSTONE_DUST, ModPotions.GIGANTISM_3_POTION);
+        builder.addMix(ModPotions.GIGANTISM_3_POTION, Items.GLOWSTONE_DUST, ModPotions.GIGANTISM_4_POTION);
     }
 }

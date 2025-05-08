@@ -131,6 +131,18 @@ Halberd: better range, slower attack, high damage
 
 
 
+### New effect
+
+Gigantism: makes you taller, faster, stronger
+    Craftable with red mushroom
+    Gigantism II from Gigantism I and glowstone
+    Gigantism III from Gigantism II and glowstone
+    Gigantism IV from Gigantism II and glowstone
+    TODO: Throwable potion craft
+    
+TODO: Miniaturism (check spelling)
+
+TODO: Ressurection
 
 
 
@@ -204,11 +216,6 @@ farmable wood -> plants like bamboo, with 4 makes a wood block for each types of
 glass helmet (breath under water)
 
 
-### Effect:
-ressurection (for Maelle)
-giantism, miniatirisme
-
-
 
 ## Magical Minecraft
 
@@ -220,6 +227,7 @@ staff:
     - sand: throw sand block
     - dash
     - very high jump
+
 spawn staff (different skin for mobs): skeletton, slime, blaze, ghast, zombie mob attack specific pointed target?
 
 every staff need a special item that can be found in structures
