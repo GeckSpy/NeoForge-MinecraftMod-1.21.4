@@ -11,17 +11,32 @@ import net.geckspy.geckspymm.item.custom.ModArmorItem;
 import net.geckspy.geckspymm.particle.LightningParticle;
 import net.geckspy.geckspymm.particle.ModParticles;
 import net.geckspy.geckspymm.potion.ModPotions;
+import net.minecraft.core.Holder;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
+import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import org.apache.commons.lang3.tuple.Triple;
 import org.slf4j.Logger;
 
+import it.unimi.dsi.fastutil.Pair;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.world.item.CreativeModeTabs;
@@ -37,6 +52,9 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+
+import java.util.List;
+import java.util.Random;
 
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -181,5 +199,37 @@ public class MyMod {
         builder.addMix(ModPotions.GIGANTISM_POTION, Items.GLOWSTONE_DUST, ModPotions.GIGANTISM_2_POTION);
         builder.addMix(ModPotions.GIGANTISM_2_POTION, Items.GLOWSTONE_DUST, ModPotions.GIGANTISM_3_POTION);
         builder.addMix(ModPotions.GIGANTISM_3_POTION, Items.GLOWSTONE_DUST, ModPotions.GIGANTISM_4_POTION);
+    }
+
+    @SubscribeEvent
+    public void onMobSpawn(FinalizeSpawnEvent event) {
+        // Store spawn type in entity's persistent data
+        event.getEntity().getPersistentData().putString("spawn_reason", event.getSpawnType().name());
+    }
+
+    public static final List<Triple<Holder<Attribute>, Double, Double>> ATTRIBUTE_MODIFIER_MOB_SPAWNING = List.of(
+            Triple.of(Attributes.SCALE, 0.2, 0.05),
+            Triple.of(Attributes.ATTACK_DAMAGE, 0.1, 0.0),
+            Triple.of(Attributes.MOVEMENT_SPEED, 0.3, 0.0)
+    );
+    @SubscribeEvent
+    public void onEntityJoinWorld(EntityJoinLevelEvent event){
+        if(event.getEntity() instanceof LivingEntity entity && !(entity instanceof Player) && !event.getLevel().isClientSide()) {
+            String spawnType = entity.getPersistentData().getString("spawn_reason");
+            if(!(spawnType.equals("BUCKET") || spawnType.equals("COMMAND")
+                    || spawnType.equals("LOAD") || spawnType.equals("DIMENSION_TRAVEL"))) {
+
+                for (var pair : ATTRIBUTE_MODIFIER_MOB_SPAWNING) {
+                    var attribute = entity.getAttribute(pair.getLeft());
+                    if (attribute != null && attribute.getModifier(ModAttributes.MOB_SPAWNING_MODIFIER.getId())==null) {
+                        attribute.addTransientModifier(new AttributeModifier(
+                                ModAttributes.MOB_SPAWNING_MODIFIER.getId(),
+                                new Random().nextGaussian()*pair.getMiddle() + pair.getRight(),
+                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+                    }
+                }
+            }
+        }
+
     }
 }

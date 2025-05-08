@@ -20,12 +20,12 @@ public class GigantismEffect extends MobEffect {
     }
 
     public static Map<Integer, Double> BASIC_MAP = Map.of(
-            0, 0.25,
-            1, 0.5,
-            2,1.0,
-            3,2.0,
-            4,4.0,
-            5,8.0
+            0, 0.4,
+            1, 1.0,
+            2,2.0,
+            3,4.0,
+            4,8.0,
+            5,16.0
     );
 
 
@@ -36,9 +36,9 @@ public class GigantismEffect extends MobEffect {
             Pair.of(Attributes.STEP_HEIGHT, BASIC_MAP),
 
             Pair.of(Attributes.MOVEMENT_SPEED, Map.of(0,0.0,1,0.1,2,0.4,3,0.6,4,0.8,5,1.0)),
+            Pair.of(Attributes.JUMP_STRENGTH, Map.of(0,0.0,1,0.1,2,0.4,3,0.6,4,0.8,5,1.0)),
             Pair.of(Attributes.ATTACK_DAMAGE, BASIC_MAP),
             Pair.of(Attributes.KNOCKBACK_RESISTANCE, BASIC_MAP),
-            Pair.of(Attributes.GRAVITY, BASIC_MAP),
             Pair.of(Attributes.BLOCK_BREAK_SPEED, BASIC_MAP)
     );
 

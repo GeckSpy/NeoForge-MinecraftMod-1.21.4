@@ -145,6 +145,10 @@ TODO: Miniaturism (check spelling)
 TODO: Ressurection
 
 
+### Other
+Twik mob generation to add randomness (scale, movement_speed, attack_damage)
+
+
 
 
 TODO general:

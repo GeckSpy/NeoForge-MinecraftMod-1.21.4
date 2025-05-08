@@ -37,6 +37,12 @@ public class ModAttributes {
                             Component.translatable("attribute.name.geckspymm.armor_effect").getString(),
                             0.0, 0.0, 100.0));
 
+    public static final DeferredHolder<Attribute, Attribute> MOB_SPAWNING_MODIFIER =
+            ATTRIBUTES.register("mob_spawning_modifier",
+                    () -> new RangedAttribute(
+                            Component.translatable("mob_spawning_modifier").getString(),
+                            0.0, -10.0, 10.0));
+
     public static void register(IEventBus eventBus){
         ATTRIBUTES.register(eventBus);
     }

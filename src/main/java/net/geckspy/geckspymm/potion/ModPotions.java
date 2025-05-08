@@ -23,7 +23,7 @@ public class ModPotions {
             new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.GIGANTISM, 1200, 2)));
 
     public static final Holder<Potion> GIGANTISM_4_POTION = POTIONS.register("gigantism_4_potion", registerName ->
-            new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.GIGANTISM, 600, 2)));
+            new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.GIGANTISM, 600, 3)));
 
 
     public static final void register(IEventBus eventBus){
