@@ -20,9 +20,10 @@ End Cristal Block:
     Craft it from 9 End Cristal
 
 
-TODO: Magical craft table:
+Magical craft table: New Menu and Screen
     -> To craft magical related things
-    Craft:
+    TODO: new recipe type, handle recipe
+    TODO Craft:
         G: soul_torch, L:lapis_block, O:obsidian, C:carpet, S:soulsand
         GCG
         SLS
