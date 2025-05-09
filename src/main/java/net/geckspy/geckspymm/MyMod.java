@@ -11,6 +11,7 @@ import net.geckspy.geckspymm.item.custom.ModArmorItem;
 import net.geckspy.geckspymm.particle.LightningParticle;
 import net.geckspy.geckspymm.particle.ModParticles;
 import net.geckspy.geckspymm.potion.ModPotions;
+import net.geckspy.geckspymm.worldgen.ModPlacedFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
@@ -83,6 +84,7 @@ public class MyMod {
         ModEnchantmentEffects.register(modEventBus);
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
 
 
@@ -145,6 +147,7 @@ public class MyMod {
             event.accept(ModItems.NETHERITE_HALBERD);
         }
     }
+
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent

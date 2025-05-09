@@ -23,9 +23,9 @@ End Cristal Block:
 TODO: Magical craft table:
     -> To craft magical related things
     Craft:
-        G: larmes de ghast, R:redstone_block, O:obsidian, C:carpet, S:Soul sand
+        G: soul_torch, L:lapis_block, O:obsidian, C:carpet, S:soulsand
         GCG
-        SRS
+        SLS
         OOO
 
 

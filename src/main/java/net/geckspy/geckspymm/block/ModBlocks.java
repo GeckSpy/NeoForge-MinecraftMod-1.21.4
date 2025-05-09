@@ -1,6 +1,7 @@
 package net.geckspy.geckspymm.block;
 
 import net.geckspy.geckspymm.MyMod;
+import net.geckspy.geckspymm.block.custom.MagicCraftingTable;
 import net.geckspy.geckspymm.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -36,10 +37,14 @@ public class ModBlocks {
                     .sound(SoundType.METAL))
     );
 
-
-
-
-
+    public static final DeferredBlock<Block> MAGIC_CRAFTING_TABLE = registerBlock(
+            "magic_crafting_table", ()->new MagicCraftingTable(BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:magic_crafting_table")))
+                    .strength(2.0F, 7.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)
+            )
+    );
 
 
 
