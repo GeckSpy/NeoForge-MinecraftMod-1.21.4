@@ -22,7 +22,7 @@ End Cristal Block:
 
 Magical craft table: New Menu and Screen
     -> To craft magical related things
-    TODO: new recipe type, handle recipe
+    TODO: new recipe type, handle recipe HELP
     TODO Craft:
         G: soul_torch, L:lapis_block, O:obsidian, C:carpet, S:soulsand
         GCG
@@ -38,7 +38,7 @@ Magic Cristal:
         LCL
 
 
-Magic Orb:
+Magic Orb: Need orium orb
     TODO: Craftable with Magical Alombic and end baie
         redstone, blaze_powder, choarcoal
 
@@ -146,6 +146,47 @@ TODO: Miniaturism (check spelling)
 TODO: Ressurection
 
 
+### Orium
+
+Orium: between redstone and magic
+
+TODO: new_particle
+
+Orium Orb: Item
+
+TODO Orium torch: torch item 
+    craft: redstone torch + electricity orb on top
+    click to change state (switch off/on)
+    emit light when on
+    TODO: orium_wall_torch 
+
+TODO: Orium generator: produce orium orb
+    use choar_coal ?
+    electricity solar panel to  ?
+    use Orium spirit around
+
+Merger: merge tow item together
+    Requires Orium orb to work
+    craft:
+        /:Orium_torch, F:furnace, C:cobblestone, E:electricity_orb
+        / /
+        RFR
+        CCC
+    New custom Menu and Screen
+    TODO: New custom recipe and serializer
+
+
+
+Merger's Craft:
+    TODO: Craft: +orium orb
+    quartz + ghast tear = pure_quartz
+    rename pure_end_cristal to impure_end_cristal
+    impure_end_cristal_ore_block now drop ipure_end_cristal
+    impure_end_cristal + ? = pure_end_cristal (new texture to do, lighter and without endstone)
+
+
+
+
 ### Other
 Twik mob generation to add randomness (scale, movement_speed, attack_damage)
 
@@ -164,8 +205,8 @@ TODO general:
 
 ### End
 
-end material (armor and tools):
-    end pgrade smithing template : end_cristal,  end smith template, end_stone
+end material (armor and tools) made of pure_end_cristal + ?<rare> in merger ?:
+    end upgrade smithing template : pure_end_cristal,  end smith template, end_stone
 
 End trees (need at least netherite tools) ?
 

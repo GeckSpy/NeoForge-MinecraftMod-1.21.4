@@ -58,7 +58,7 @@ public class MagicCraftingTable extends CraftingTableBlock{
     public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {
         return new SimpleMenuProvider(
                 (containerId, inventory, player) ->
-                        new MagicCraftingTableMenu(containerId, inventory, null),
+                        new MagicCraftingTableMenu(containerId, inventory, ContainerLevelAccess.create(level, pos)),
                 CONTAINER_TITLE
         );
     }

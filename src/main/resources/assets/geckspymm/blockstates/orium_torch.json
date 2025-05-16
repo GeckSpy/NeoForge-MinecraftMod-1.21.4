@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "geckspymm:block/orium_torch_off"
+    },
+    "lit=true": {
+      "model": "geckspymm:block/orium_torch"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "/": "geckspymm:orium_torch",
+    "I": "minecraft:iron_ingot",
+    "F": "minecraft:furnace",
+    "C": "minecraft:cobblestone"
+  },
+  "pattern": [
+    "/ /",
+    "IFI",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "geckspymm:merger_block"
+  }
+}

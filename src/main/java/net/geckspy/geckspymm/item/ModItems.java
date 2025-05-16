@@ -86,8 +86,10 @@ public class ModItems {
             properties -> new HalberdItem(ModToolMaterials.PURE_QUARTZ, HalberdItem.ATTACK_DAMAGE+1, HalberdItem.ATTACK_SPEED, properties));
 
 
-
-
+    // Redstone
+    public static final DeferredItem<Item> ORIUM_ORB = ITEMS.registerItem(
+            "orium_orb", Item::new, new Item.Properties()
+    );
 
     // Magical Minecraft
     public static final DeferredItem<Item> IMPURE_END_CRISTAL = ITEMS.registerItem(
@@ -105,7 +107,7 @@ public class ModItems {
     public static final DeferredItem<Item> MAGIC_STICK = ITEMS.registerItem(
             "magic_stick", Item::new, new Item.Properties());
     public static final DeferredItem<Item> LIGHTNING_STAFF = ITEMS.registerItem(
-            "lightning_staff", LightningStaff::new, new Item.Properties().durability(60));
+            "lightning_staff", LightningStaff::new, new Item.Properties().durability(60).stacksTo(1));
 
 
 

@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,lit=false": {
+      "model": "geckspymm:block/merger_block"
+    },
+    "facing=north,lit=true": {
+      "model": "geckspymm:block/merger_block_lit"
+    },
+    "facing=south,lit=false": {
+      "model": "geckspymm:block/merger_block",
+      "y": 180
+    },
+    "facing=south,lit=true": {
+      "model": "geckspymm:block/merger_block_lit",
+      "y": 180
+    },
+    "facing=east,lit=false": {
+      "model": "geckspymm:block/merger_block",
+      "y": 90
+    },
+    "facing=east,lit=true": {
+      "model": "geckspymm:block/merger_block_lit",
+      "y": 90
+    },
+    "facing=west,lit=false": {
+      "model": "geckspymm:block/merger_block",
+      "y": 270
+    },
+    "facing=west,lit=true": {
+      "model": "geckspymm:block/merger_block_lit",
+      "y": 270
+    }
+  }
+}

@@ -42,9 +42,17 @@
   "item.geckspymm.pure_quartz_halberd": "Pure Quartz Halberd",
 
 
+
+    // Redstone
+  "item.geckspymm.orium_orb": "Orium Orb",
+  "item.geckspymm.orium_torch": "Orium Torch",
+  "item.geckspymm.merger_block": "Merger",
+
+
     //attributes
   "attribute.name.geckspymm.entity_interaction_range": "Mod Entity Interaction Range",
   "attribute.name.geckspymm.block_interaction_range": "Mod Block Interaction Range",
+  "container.geckspymm.merger_block": "Merger",
 
 
   // Effects

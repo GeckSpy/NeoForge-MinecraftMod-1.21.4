@@ -2,6 +2,7 @@ package net.geckspy.geckspymm;
 
 import net.geckspy.geckspymm.attribute.ModAttributes;
 import net.geckspy.geckspymm.block.ModBlocks;
+import net.geckspy.geckspymm.block.entity.ModBlockEntities;
 import net.geckspy.geckspymm.effect.ModEffects;
 import net.geckspy.geckspymm.enchantment.ModEnchantmentEffects;
 import net.geckspy.geckspymm.item.ModCreativeModeTabs;
@@ -10,16 +11,14 @@ import net.geckspy.geckspymm.item.custom.HalberdItem;
 import net.geckspy.geckspymm.item.custom.ModArmorItem;
 import net.geckspy.geckspymm.particle.LightningParticle;
 import net.geckspy.geckspymm.particle.ModParticles;
+import net.geckspy.geckspymm.particle.OriumParticle;
 import net.geckspy.geckspymm.potion.ModPotions;
+import net.geckspy.geckspymm.recipe.ModRecipes;
 import net.geckspy.geckspymm.screen.MagicCraftingTableScreen;
+import net.geckspy.geckspymm.screen.MergerBlockScreen;
 import net.geckspy.geckspymm.screen.ModMenuTypes;
 import net.geckspy.geckspymm.worldgen.ModPlacedFeatures;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.core.Holder;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntitySpawnReason;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -36,12 +35,10 @@ import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
-import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import org.apache.commons.lang3.tuple.Triple;
 import org.slf4j.Logger;
 
-import it.unimi.dsi.fastutil.Pair;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.world.item.CreativeModeTabs;
@@ -83,7 +80,11 @@ public class MyMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
+
         ModParticles.register(modEventBus);
         ModAttributes.register(modEventBus);
         ModEnchantmentEffects.register(modEventBus);
@@ -151,12 +152,18 @@ public class MyMod {
             event.accept(ModItems.PURE_QUARTZ_HALBERD);
             event.accept(ModItems.NETHERITE_HALBERD);
         }
+        else if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS){
+            event.accept(ModItems.ORIUM_ORB);
+            event.accept(ModBlocks.ORIUM_TORCH);
+            event.accept(ModBlocks.MERGER_BLOCK);
+        }
     }
 
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+        ModRecipes.loadRecipe(event);
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
@@ -170,10 +177,12 @@ public class MyMod {
         @SubscribeEvent
         public static void registerParticleFactories(RegisterParticleProvidersEvent event){
             event.registerSpriteSet(ModParticles.LIGHTNING_PARTICLE.get(), LightningParticle.Provider::new);
+            event.registerSpriteSet(ModParticles.ORIUM_PARTICLE.get(), OriumParticle.Provider::new);
         }
 
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event){
+            event.register(ModMenuTypes.MERGER_BLOCK_MENU.get(), MergerBlockScreen::new);
             event.register(ModMenuTypes.MAGIC_CRAFTING_TABLE_MENU.get(), MagicCraftingTableScreen::new);
         }
     }
@@ -197,6 +206,7 @@ public class MyMod {
 
     @SubscribeEvent
     public void onEffectRemoved(MobEffectEvent.Remove event){
+
         ModEffects.onEffectRemoved(event);
     }
 
@@ -243,6 +253,7 @@ public class MyMod {
                 }
             }
         }
-
     }
+
+
 }

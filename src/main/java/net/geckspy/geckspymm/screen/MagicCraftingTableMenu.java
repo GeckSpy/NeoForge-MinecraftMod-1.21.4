@@ -1,117 +1,223 @@
 package net.geckspy.geckspymm.screen;
 
-import net.minecraft.network.FriendlyByteBuf;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Stream;
+import javax.annotation.Nullable;
+
+import net.geckspy.geckspymm.block.ModBlocks;
+import net.geckspy.geckspymm.recipe.ModRecipes;
+import net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.*;
 
-public class MagicCraftingTableMenu extends AbstractContainerMenu {
+public class MagicCraftingTableMenu extends AbstractCraftingMenu {
+    private static final int CRAFTING_GRID_WIDTH = 3;
+    private static final int CRAFTING_GRID_HEIGHT = 3;
+    public static final int RESULT_SLOT = 0;
+    private static final int CRAFT_SLOT_START = 1;
+    private static final int CRAFT_SLOT_COUNT = 9;
+    private static final int CRAFT_SLOT_END = 10;
+    private static final int INV_SLOT_START = 10;
+    private static final int INV_SLOT_END = 37;
+    private static final int USE_ROW_SLOT_START = 37;
+    private static final int USE_ROW_SLOT_END = 46;
+    private final ContainerLevelAccess access;
     private final Player player;
-    private final TransientCraftingContainer craftSlots;
-    private final ResultContainer resultSlots = new ResultContainer();
-
-
-    public MagicCraftingTableMenu(int containerId, Inventory inventory, FriendlyByteBuf extraData){
-        this(containerId, inventory);
-    }
-
-
-    private static final int HOTBAR_SLOT_COUNT = 9;
-    private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
-    private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
-    private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_ROW_COUNT*PLAYER_INVENTORY_COLUMN_COUNT;
-    private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
-    private static final int VANILLA_FIRST_SLOT_INDEX = 0;
-    private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    // Only thing to change:
-    private static final int TE_INVENTORY_SLOT_COUNT = 9;
+    private boolean placingRecipe;
 
     public MagicCraftingTableMenu(int containerId, Inventory playerInventory) {
-        super(ModMenuTypes.MAGIC_CRAFTING_TABLE_MENU.get(), containerId);
-        this.player = playerInventory.player;
-        this.craftSlots = new TransientCraftingContainer(this, 3, 3);
+        this(containerId, playerInventory, ContainerLevelAccess.NULL);
+    }
 
-        // Add player inventory
-        for(int i=0;i<3; i++){for(int j=0;j<9;j++){
-            this.addSlot(new Slot(playerInventory, j+i*9+9, 8+j*18, 84+i*18));
-        }}
-        // Add player Hotbar
-        for(int i=0;i<9;i++){
-            this.addSlot(new Slot(playerInventory, i, 8+i*18, 142));
+    public MagicCraftingTableMenu(int containerId, Inventory playerInventory, ContainerLevelAccess access) {
+        super(MenuType.CRAFTING, containerId, 3, 3);
+        this.access = access;
+        this.player = playerInventory.player;
+        this.addResultSlot(this.player, 124, 35);
+        this.addCraftingGridSlots(30, 17);
+        this.addStandardInventorySlots(playerInventory, 8, 84);
+    }
+
+    protected static void slotChangedCraftingGrid(
+            AbstractContainerMenu menu,
+            ServerLevel level,
+            Player player,
+            CraftingContainer craftSlots,
+            ResultContainer resultSlots,
+            @Nullable RecipeHolder<CraftingRecipe> recipe
+    ) {
+        // Then check magic recipes
+        /*
+        ServerPlayer serverplayer = (ServerPlayer)player;
+        CraftingInput craftinginput = craftSlots.asCraftInput();
+        ItemStack itemstack = ItemStack.EMPTY;
+
+        RecipeType<MagicShapelessRecipe> recipeType = ModRecipes.MAGIC_SHAPELESS_TYPE.get();
+
+        System.out.println("slotChanged");
+        System.out.println(Arrays.stream(craftSlots.getItems().toArray(new ItemStack[0])).toList());
+
+        Optional<RecipeHolder<MagicShapelessRecipe>> optional = level.getServer()
+                .getRecipeManager()
+                .getRecipeFor(recipeType, craftinginput, level);
+
+
+        System.out.println("CraftingInput is empty: "+ craftinginput.isEmpty());
+        RecipeManager recipeManager = level.getServer().getRecipeManager();
+        System.out.println("recipeManager: "+recipeManager);
+
+        Stream<RecipeHolder<MagicShapelessRecipe>> str = RecipeMap.EMPTY.byType(recipeType).stream();
+        Stream<RecipeHolder<MagicShapelessRecipe>> flt = RecipeMap.EMPTY.byType(recipeType).stream().filter(p_380352_ -> p_380352_.value().matches(craftinginput, level));
+        System.out.println(str.toList());
+        System.out.println(flt.toList());
+
+
+
+        System.out.println(optional);
+        if (optional.isPresent()) {
+            RecipeHolder<MagicShapelessRecipe> recipeholder = optional.get();
+            MagicShapelessRecipe magicRecipe = recipeholder.value();
+            if (resultSlots.setRecipeUsed(serverplayer, recipeholder)) {
+                ItemStack itemstack1 = magicRecipe.assemble(craftinginput, level.registryAccess());
+                if (itemstack1.isItemEnabled(level.enabledFeatures())) {
+                    itemstack = itemstack1;
+                }
+            }
         }
 
-        // Add result slot
-        this.addSlot(new ResultSlot(playerInventory.player, craftSlots, resultSlots,
-                TE_INVENTORY_FIRST_SLOT_INDEX+TE_INVENTORY_SLOT_COUNT,
-                124, 35));
+        resultSlots.setItem(0, itemstack);
+        menu.setRemoteSlot(0, itemstack);
+        serverplayer.connection.send(new ClientboundContainerSetSlotPacket(menu.containerId, menu.incrementStateId(), 0, itemstack));
 
-        // Crafting grid (3x3)
-        for(int row = 0; row < 3; ++row) {for(int col = 0; col < 3; ++col) {
-                this.addSlot(new Slot(craftSlots, col + row * 3, 30 + col * 18, 17 + row * 18));
-        }}
+         */
 
     }
 
+    /**
+     * Callback for when the crafting matrix is changed.
+     */
+    @Override
+    public void slotsChanged(Container inventory) {
+        if (!this.placingRecipe) {
+            this.access.execute((p_379187_, p_379188_) -> {
+                if (p_379187_ instanceof ServerLevel serverlevel) {
+                    slotChangedCraftingGrid(this, serverlevel, this.player, this.craftSlots, this.resultSlots, null);
+                }
+            });
+        }
+    }
 
     @Override
-    public ItemStack quickMoveStack(Player player, int index) {
-        // For shift+click
-        Slot sourceSlot = slots.get(index);
-        if(sourceSlot==null || !sourceSlot.hasItem()) return ItemStack.EMPTY;
-        ItemStack sourceStack = sourceSlot.getItem();
-        ItemStack copyOfSourceStack = sourceStack.copy();
-
-        if(index<VANILLA_FIRST_SLOT_INDEX+VANILLA_SLOT_COUNT){
-            if(!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX,
-                    TE_INVENTORY_FIRST_SLOT_INDEX+TE_INVENTORY_SLOT_COUNT,
-                    false)){
-                return ItemStack.EMPTY;
-            }
-        }else if(index<TE_INVENTORY_FIRST_SLOT_INDEX+TE_INVENTORY_SLOT_COUNT){
-            if(!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX,
-                    VANILLA_FIRST_SLOT_INDEX+VANILLA_SLOT_COUNT,
-                    false)){
-                return  ItemStack.EMPTY;
-            }
-        }else{
-            System.out.println("Invalid slotIndex: "+index);
-            return ItemStack.EMPTY;
-        }
-        if(sourceStack.getCount()==0){sourceSlot.set(ItemStack.EMPTY);}
-        else{sourceSlot.setChanged();}
-        sourceSlot.onTake(player, sourceStack);
-        return copyOfSourceStack;
+    public void beginPlacingRecipe() {
+        this.placingRecipe = true;
     }
 
+    @Override
+    public void finishPlacingRecipe(ServerLevel p_380098_, RecipeHolder<CraftingRecipe> p_345915_) {
+        this.placingRecipe = false;
+        slotChangedCraftingGrid(this, p_380098_, this.player, this.craftSlots, this.resultSlots, p_345915_);
+    }
 
+    /**
+     * Called when the container is closed.
+     */
+    @Override
+    public void removed(Player player) {
+        super.removed(player);
+        this.access.execute((p_39371_, p_39372_) -> this.clearContainer(player, this.craftSlots));
+    }
+
+    /**
+     * Determines whether supplied player can use this container
+     */
     @Override
     public boolean stillValid(Player player) {
-        return true;
+        return stillValid(this.access, player, ModBlocks.MAGIC_CRAFTING_TABLE.get());
+    }
+
+    /**
+     * Handle when the stack in slot {@code index} is shift-clicked. Normally this moves the stack between the player inventory and the other inventory(s).
+     */
+    @Override
+    public ItemStack quickMoveStack(Player player, int index) {
+        ItemStack itemstack = ItemStack.EMPTY;
+        Slot slot = this.slots.get(index);
+        if (slot != null && slot.hasItem()) {
+            ItemStack itemstack1 = slot.getItem();
+            itemstack = itemstack1.copy();
+            if (index == 0) {
+                this.access.execute((p_39378_, p_39379_) -> itemstack1.getItem().onCraftedBy(itemstack1, p_39378_, player));
+                if (!this.moveItemStackTo(itemstack1, 10, 46, true)) {
+                    return ItemStack.EMPTY;
+                }
+
+                slot.onQuickCraft(itemstack1, itemstack);
+            } else if (index >= 10 && index < 46) {
+                if (!this.moveItemStackTo(itemstack1, 1, 10, false)) {
+                    if (index < 37) {
+                        if (!this.moveItemStackTo(itemstack1, 37, 46, false)) {
+                            return ItemStack.EMPTY;
+                        }
+                    } else if (!this.moveItemStackTo(itemstack1, 10, 37, false)) {
+                        return ItemStack.EMPTY;
+                    }
+                }
+            } else if (!this.moveItemStackTo(itemstack1, 10, 46, false)) {
+                return ItemStack.EMPTY;
+            }
+
+            if (itemstack1.isEmpty()) {
+                slot.setByPlayer(ItemStack.EMPTY);
+            } else {
+                slot.setChanged();
+            }
+
+            if (itemstack1.getCount() == itemstack.getCount()) {
+                return ItemStack.EMPTY;
+            }
+
+            slot.onTake(player, itemstack1);
+            if (index == 0) {
+                player.drop(itemstack1, false);
+            }
+        }
+
+        return itemstack;
+    }
+
+    /**
+     * Called to determine if the current slot is valid for the stack merging (double-click) code. The stack passed in is null for the initial slot that was double-clicked.
+     */
+    @Override
+    public boolean canTakeItemForPickAll(ItemStack stack, Slot slot) {
+        return slot.container != this.resultSlots && super.canTakeItemForPickAll(stack, slot);
     }
 
     @Override
-    public void slotsChanged(Container container) {
-        // Implement custom recipe checking here
-        
-        this.resultSlots.setItem(TE_INVENTORY_FIRST_SLOT_INDEX+TE_INVENTORY_SLOT_COUNT, ItemStack.EMPTY);
+    public Slot getResultSlot() {
+        return this.slots.get(0);
     }
 
-    private void updateResultSlot() {
-        /*
-        Optional<CustomRecipe> optional = this.player.level()
-                .getRecipeManager()
-                .getRecipeFor(ModRecipeTypes.MAGIC_CRAFTING.get(), this.craftSlots, this.player.level());
-
-        if (optional.isPresent()) {
-            this.resultSlots.setItem(0, optional.get().assemble(this.craftSlots, this.player.level().registryAccess()));
-        } else {
-            this.resultSlots.setItem(0, ItemStack.EMPTY);
-        }
-        */
-
-        this.resultSlots.setItem(0, ItemStack.EMPTY);
+    @Override
+    public List<Slot> getInputGridSlots() {
+        return this.slots.subList(1, 10);
     }
 
+    @Override
+    public RecipeBookType getRecipeBookType() {
+        return null;
+    }
+
+    @Override
+    protected Player owner() {
+        return this.player;
+    }
 }

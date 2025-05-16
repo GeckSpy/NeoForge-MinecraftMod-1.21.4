@@ -16,6 +16,9 @@ public class ModParticles {
     public static final Supplier<SimpleParticleType> LIGHTNING_PARTICLE =
             PARTICLE_TYPES.register("lightning_particle", ()->new SimpleParticleType(true));
 
+    public static final Supplier<SimpleParticleType> ORIUM_PARTICLE =
+            PARTICLE_TYPES.register("orium_particle", ()->new SimpleParticleType(true));
+
     public static void register(IEventBus eventBus){
         PARTICLE_TYPES.register(eventBus);
     }
