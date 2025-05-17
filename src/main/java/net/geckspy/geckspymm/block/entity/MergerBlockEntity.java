@@ -2,6 +2,9 @@ package net.geckspy.geckspymm.block.entity;
 
 import net.geckspy.geckspymm.block.custom.MergerBlock;
 import net.geckspy.geckspymm.item.ModItems;
+import net.geckspy.geckspymm.recipe.MergerBlockRecipe;
+import net.geckspy.geckspymm.recipe.MergerBlockRecipeInput;
+import net.geckspy.geckspymm.recipe.ModRecipes;
 import net.geckspy.geckspymm.screen.MergerBlockMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -19,11 +22,14 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class MergerBlockEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler inventory = new ItemStackHandler(4){
@@ -127,15 +133,22 @@ public class MergerBlockEntity extends BlockEntity implements MenuProvider {
         }
     }
 
+    private Optional<RecipeHolder<MergerBlockRecipe>> getCurrentRecipe(){
+        return this.level.getServer().getRecipeManager().getRecipeFor(
+                ModRecipes.MERGER_TYPE.get(), new MergerBlockRecipeInput(
+                        inventory.getStackInSlot(fuelSlot),
+                        inventory.getStackInSlot(topIngredientSlot),
+                        inventory.getStackInSlot(bottomIngredientSlot)),
+                level
+        );
+    }
+
     private boolean hasValidRecipe(){
-        ItemStack output = new ItemStack(Items.GOLD_INGOT, 2);
+        Optional<RecipeHolder<MergerBlockRecipe>> recipe = getCurrentRecipe();
+        if(recipe.isEmpty()){return false;}
 
-        ItemStack fuelItem =  inventory.getStackInSlot(fuelSlot);
-        ItemStack topItem = inventory.getStackInSlot(topIngredientSlot);
-        ItemStack botItem = inventory.getStackInSlot(bottomIngredientSlot);
-
-        return fuelItem.is(ModItems.ORIUM_ORB.get()) && topItem.is(Items.IRON_INGOT) && botItem.is(Items.COPPER_INGOT) &&
-                canInsertItemIntoOutputSlot(output);
+        ItemStack output = recipe.get().value().output();
+        return canInsertItemIntoOutputSlot(output);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output){
@@ -146,7 +159,9 @@ public class MergerBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private void craftItem(){
-        ItemStack output = new ItemStack(Items.GOLD_INGOT, 2);
+        Optional<RecipeHolder<MergerBlockRecipe>> recipe = getCurrentRecipe();
+        ItemStack output = recipe.get().value().output();
+
         inventory.extractItem(fuelSlot, 1, false);
         inventory.extractItem(topIngredientSlot, 1, false);
         inventory.extractItem(bottomIngredientSlot, 1, false);

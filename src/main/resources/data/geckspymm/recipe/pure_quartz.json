@@ -1,10 +1,8 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "minecraft:quartz",
-    "minecraft:ghast_tear"
-  ],
+  "type": "geckspymm:merger",
+  "fuel": "geckspymm:orium_orb",
+  "top": "minecraft:quartz",
+  "bottom": "minecraft:ghast_tear",
   "result": {
     "count": 1,
     "id": "geckspymm:pure_quartz"

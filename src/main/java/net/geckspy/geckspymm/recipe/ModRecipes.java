@@ -19,20 +19,15 @@ public class ModRecipes {
     public static final DeferredRegister<RecipeType<?>> TYPES =
             DeferredRegister.create(Registries.RECIPE_TYPE, MyMod.MOD_ID);
 
-
-    /*
-    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<MagicShapelessRecipe>> MAGIC_SHAPELESS_SERIALIZER =
-            SERIALIZERS.register("magic_shapeless", MagicShapelessRecipe.Serializer::new);
-    public static final DeferredHolder<RecipeType<?>, RecipeType<MagicShapelessRecipe>> MAGIC_SHAPELESS_TYPE =
-            TYPES.register("magic_shapeless", ()->new RecipeType<MagicShapelessRecipe>() {
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<MergerBlockRecipe>> MERGER_SERIALIZER =
+            SERIALIZERS.register("merger", MergerBlockRecipe.Serializer::new);
+    public static final DeferredHolder<RecipeType<?>, RecipeType<MergerBlockRecipe>> MERGER_TYPE =
+            TYPES.register("merger", ()->new RecipeType<MergerBlockRecipe>() {
                 @Override
                 public String toString() {
-                    return "magic_shapeless";
+                    return "merger";
                 }
             });
-
-
-     */
 
 
     public static void register(IEventBus eventBus){

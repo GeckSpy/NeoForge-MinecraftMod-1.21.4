@@ -1,6 +1,6 @@
 # Documentation
 
-# Partially/Fully implented
+# Partially/Fully implemented
 
 ## Magical Minecraft
 
@@ -12,6 +12,7 @@ Impure End Cristal:
 
 
 End Cristal:
+    craft: merger: orium orb + impure_end_cristal + popped_chorus_fruit
     obtainable by cutting (stone cutter) Impure End Cristal
     Get 9 from End Cristal Block
 
@@ -77,6 +78,7 @@ New lead craft only based on strings:
 Name Tag: shapeless
     P:paperx2, S:string
 
+TODO: craft saddle
 
 
 ### Copper material
@@ -99,7 +101,7 @@ Change netherite_upgrade_smithing_template:
 
 
 Pure quartz
-    Craft: ghast_tear + quartz
+    Craft: in merger: orium_orb + ghast_tear + quartz
 
 Pure Quartz Upgrade (pure_quartz_upgrade_smithing_template) 
     Find in nether forteress chest (modify loot_table/chests/nether_bridges)
@@ -150,11 +152,11 @@ TODO: Ressurection
 
 Orium: between redstone and magic
 
-TODO: new_particle
+Orium particle
 
 Orium Orb: Item
 
-TODO Orium torch: torch item 
+Orium torch: torch item 
     craft: redstone torch + electricity orb on top
     click to change state (switch off/on)
     emit light when on
@@ -172,23 +174,15 @@ Merger: merge tow item together
         / /
         RFR
         CCC
+    Recipe used in merger works if top and bottom are inverted
     New custom Menu and Screen
-    TODO: New custom recipe and serializer
-
-
-
-Merger's Craft:
-    TODO: Craft: +orium orb
-    quartz + ghast tear = pure_quartz
-    rename pure_end_cristal to impure_end_cristal
-    impure_end_cristal_ore_block now drop ipure_end_cristal
-    impure_end_cristal + ? = pure_end_cristal (new texture to do, lighter and without endstone)
+    New custom recipe and serializer
 
 
 
 
 ### Other
-Twik mob generation to add randomness (scale, movement_speed, attack_damage)
+Twiked mob generation to add randomness (scale, movement_speed, attack_damage)
 
 
 
@@ -210,13 +204,12 @@ end material (armor and tools) made of pure_end_cristal + ?<rare> in merger ?:
 
 End trees (need at least netherite tools) ?
 
-End Fruits and seed ?
-
 baby ender dragon: pet (-> middle_aged ender dragon -> old ender dragon ?)
 
 
 ### visual
 Crown: retexture all helmet to have crown
+    Retexture all armor to "light arrmor" for custom trim ?
 invisible item frame
 armor_stand with arms
 more mobs head
@@ -228,7 +221,8 @@ new armor trim
 - knifes/daggers: short range, very fast
 - roped kunai: trhowable knife, comes back
 
-new bow ? new arrow (dynamit arrow)
+new bow ?
+new arrow (dynamit arrow)
 
 
 ### Mobs
@@ -237,9 +231,8 @@ new mobs: ghost (make you fly)
 
 
 ### Nature
-
 Carnivor flower:
-    - Rafllesia: attire mobs, make 
+    - Rafllesia: attire mobs ?
 
 mob:
 - Venus flytrap: attack near by mobs
@@ -247,9 +240,9 @@ mob:
 
 ### Redstone
 pipes, entering/closing pipes
-block breaker
-Touret (tourelle, shoot mob)
-Electric (magic) touret
+block breaker?
+Touret (tourelle, shoot mob) 
+Orium (magic) touret
 
 
 ### Other

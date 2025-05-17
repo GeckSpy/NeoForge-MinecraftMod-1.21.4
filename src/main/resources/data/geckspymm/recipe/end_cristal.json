@@ -1,6 +1,8 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": "geckspymm:impure_end_cristal",
+  "type": "geckspymm:merger",
+  "fuel": "geckspymm:orium_orb",
+  "top": "geckspymm:impure_end_cristal",
+  "bottom": "minecraft:popped_chorus_fruit",
   "result": {
     "count": 1,
     "id": "geckspymm:end_cristal"
