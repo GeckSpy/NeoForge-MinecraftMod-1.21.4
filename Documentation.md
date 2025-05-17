@@ -79,6 +79,10 @@ Name Tag: shapeless
     P:paperx2, S:string
 
 TODO: craft saddle
+    W:#minecraft:wool, L:minecraft:leather, T:minecraft:tripwire_hook
+    "LWL"
+    " L "
+    " T "
 
 
 ### Copper material
@@ -184,8 +188,7 @@ Merger: merge tow item together
 ### Other
 Twiked mob generation to add randomness (scale, movement_speed, attack_damage)
 
-
-
+armor_stand spawn with arms
 
 TODO general:
     - advancement
@@ -211,7 +214,6 @@ baby ender dragon: pet (-> middle_aged ender dragon -> old ender dragon ?)
 Crown: retexture all helmet to have crown
     Retexture all armor to "light arrmor" for custom trim ?
 invisible item frame
-armor_stand with arms
 more mobs head
 new armor trim
 

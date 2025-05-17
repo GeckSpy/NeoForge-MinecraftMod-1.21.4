@@ -19,10 +19,15 @@ import net.geckspy.geckspymm.screen.MergerBlockScreen;
 import net.geckspy.geckspymm.screen.ModMenuTypes;
 import net.geckspy.geckspymm.worldgen.ModPlacedFeatures;
 import net.minecraft.core.Holder;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityEvent;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.monster.Shulker;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
@@ -36,6 +41,7 @@ import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import org.apache.commons.lang3.tuple.Triple;
 import org.slf4j.Logger;
 
@@ -228,6 +234,7 @@ public class MyMod {
     public void onMobSpawn(FinalizeSpawnEvent event) {
         // Store spawn type in entity's persistent data
         event.getEntity().getPersistentData().putString("spawn_reason", event.getSpawnType().name());
+        event.getEntity().getPersistentData().putBoolean("got_spawning_modifier", false);
     }
 
     public static final List<Triple<Holder<Attribute>, Double, Double>> ATTRIBUTE_MODIFIER_MOB_SPAWNING = List.of(
@@ -235,23 +242,34 @@ public class MyMod {
             Triple.of(Attributes.ATTACK_DAMAGE, 0.1, 0.0),
             Triple.of(Attributes.MOVEMENT_SPEED, 0.3, 0.0)
     );
+    public static boolean canHaveSpawnModifiers(Entity entityEvent){
+        if(entityEvent instanceof LivingEntity entity){
+            if(entity instanceof Player || entity instanceof ArmorStand || entity instanceof Shulker){return false;}
+            if(entity.getPersistentData().getBoolean("got_spawning_modifier")){return false;}
+            String spawnType = entity.getPersistentData().getString("spawn_reason");
+            if(spawnType.equals("BUCKET") || spawnType.equals("COMMAND") || spawnType.equals("LOAD") || spawnType.equals("DIMENSION_TRAVEL")){return false;}
+            return true;
+        }else{
+            return false;
+        }
+    };
     @SubscribeEvent
     public void onEntityJoinWorld(EntityJoinLevelEvent event){
-        if(event.getEntity() instanceof LivingEntity entity && !(entity instanceof Player) && !event.getLevel().isClientSide()) {
-            String spawnType = entity.getPersistentData().getString("spawn_reason");
-            if(!(spawnType.equals("BUCKET") || spawnType.equals("COMMAND")
-                    || spawnType.equals("LOAD") || spawnType.equals("DIMENSION_TRAVEL"))) {
+        if(!event.getLevel().isClientSide() && canHaveSpawnModifiers(event.getEntity())) {
+            LivingEntity entity = (LivingEntity)event.getEntity();
 
-                for (var pair : ATTRIBUTE_MODIFIER_MOB_SPAWNING) {
-                    var attribute = entity.getAttribute(pair.getLeft());
-                    if (attribute != null && attribute.getModifier(ModAttributes.MOB_SPAWNING_MODIFIER.getId())==null) {
-                        attribute.addTransientModifier(new AttributeModifier(
-                                ModAttributes.MOB_SPAWNING_MODIFIER.getId(),
-                                new Random().nextGaussian()*pair.getMiddle() + pair.getRight(),
-                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
-                    }
+            for (var pair : ATTRIBUTE_MODIFIER_MOB_SPAWNING) {
+                var attribute = entity.getAttribute(pair.getLeft());
+                if (attribute!=null && attribute.getModifier(ModAttributes.MOB_SPAWNING_MODIFIER.getId())==null) {
+                    attribute.addPermanentModifier(new AttributeModifier(
+                            ModAttributes.MOB_SPAWNING_MODIFIER.getId(),
+                            new Random().nextGaussian() * pair.getMiddle() + pair.getRight(),
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
                 }
             }
+        }
+        if(event.getEntity() instanceof ArmorStand armorStand){
+            armorStand.setShowArms(true);
         }
     }
 

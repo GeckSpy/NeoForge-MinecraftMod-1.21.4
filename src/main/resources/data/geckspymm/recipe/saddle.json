@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "W": "#minecraft:wool",
+    "L": "minecraft:leather",
+    "T": "minecraft:tripwire_hook"
+  },
+  "pattern": [
+    "LWL",
+    " L ",
+    " T "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:saddle"
+  }
+}
