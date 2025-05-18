@@ -3,6 +3,7 @@ package net.geckspy.geckspymm.block.entity;
 import net.geckspy.geckspymm.MyMod;
 import net.geckspy.geckspymm.block.ModBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
@@ -20,7 +21,6 @@ public class ModBlockEntities {
                         MergerBlockEntity::new,
                         ModBlocks.MERGER_BLOCK.get()
                     ));
-
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);

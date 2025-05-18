@@ -44,6 +44,7 @@
 
 
     // Redstone
+  "item.geckspymm.tnt_v2": "TNT V2",
   "item.geckspymm.orium_orb": "Orium Orb",
   "item.geckspymm.orium_torch": "Orium Torch",
   "item.geckspymm.merger_block": "Merger",

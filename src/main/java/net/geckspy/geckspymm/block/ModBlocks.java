@@ -4,16 +4,17 @@ import net.geckspy.geckspymm.MyMod;
 import net.geckspy.geckspymm.block.custom.MagicCraftingTable;
 import net.geckspy.geckspymm.block.custom.MergerBlock;
 import net.geckspy.geckspymm.block.custom.OriumTorchBlock;
+import net.geckspy.geckspymm.block.custom.TntV2Block;
 import net.geckspy.geckspymm.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -24,6 +25,15 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MyMod.MOD_ID);
     // double shift to see files, includes Non-project items, Search for BLOCKS and open Blocks from minecraft\world\level\block
+
+    public static final DeferredBlock<Block> TNT_V2 = registerBlock(
+            "tnt_v2", ()->new TntV2Block(BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:tnt_v2")))
+                    .instabreak().sound(SoundType.GRASS)
+                    .mapColor(MapColor.FIRE).ignitedByLava()
+            )
+    );
+
 
     public static final DeferredBlock<Block> ORIUM_TORCH = registerBlock(
             "orium_torch", ()->new OriumTorchBlock(BlockBehaviour.Properties.of()
@@ -43,6 +53,7 @@ public class ModBlocks {
 
             )
     );
+
 
 
     public static final DeferredBlock<Block> IMPURE_END_CRISTAL_BLOCK = registerBlock(

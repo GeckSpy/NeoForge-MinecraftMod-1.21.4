@@ -151,6 +151,12 @@ TODO: Miniaturism (check spelling)
 
 TODO: Ressurection
 
+### Redstone
+TntV2:
+    Craft: T:tnt, 
+
+TODO: tntV3, v4, v5, fireTnt
+
 
 ### Orium
 
@@ -245,6 +251,12 @@ pipes, entering/closing pipes
 block breaker?
 Touret (tourelle, shoot mob) 
 Orium (magic) touret
+
+
+### Food
+Fried eggs
+rice
+cooker machine -> makes hambugers, pastas, salades (high sasieté)
 
 
 ### Other

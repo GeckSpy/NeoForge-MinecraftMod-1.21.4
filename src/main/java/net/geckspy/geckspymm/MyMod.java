@@ -5,6 +5,8 @@ import net.geckspy.geckspymm.block.ModBlocks;
 import net.geckspy.geckspymm.block.entity.ModBlockEntities;
 import net.geckspy.geckspymm.effect.ModEffects;
 import net.geckspy.geckspymm.enchantment.ModEnchantmentEffects;
+import net.geckspy.geckspymm.entity.ModEntities;
+import net.geckspy.geckspymm.entity.renderer.PrimedTntV2Renderer;
 import net.geckspy.geckspymm.item.ModCreativeModeTabs;
 import net.geckspy.geckspymm.item.ModItems;
 import net.geckspy.geckspymm.item.custom.HalberdItem;
@@ -20,8 +22,6 @@ import net.geckspy.geckspymm.screen.ModMenuTypes;
 import net.geckspy.geckspymm.worldgen.ModPlacedFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityEvent;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -32,6 +32,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
@@ -41,7 +42,6 @@ import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
-import net.neoforged.neoforge.registries.DeferredRegister;
 import org.apache.commons.lang3.tuple.Triple;
 import org.slf4j.Logger;
 
@@ -90,6 +90,8 @@ public class MyMod {
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+
+        ModEntities.register(modEventBus);
 
         ModParticles.register(modEventBus);
         ModAttributes.register(modEventBus);
@@ -159,6 +161,7 @@ public class MyMod {
             event.accept(ModItems.NETHERITE_HALBERD);
         }
         else if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS){
+            event.accept(ModBlocks.TNT_V2);
             event.accept(ModItems.ORIUM_ORB);
             event.accept(ModBlocks.ORIUM_TORCH);
             event.accept(ModBlocks.MERGER_BLOCK);
@@ -190,6 +193,11 @@ public class MyMod {
         public static void registerScreens(RegisterMenuScreensEvent event){
             event.register(ModMenuTypes.MERGER_BLOCK_MENU.get(), MergerBlockScreen::new);
             event.register(ModMenuTypes.MAGIC_CRAFTING_TABLE_MENU.get(), MagicCraftingTableScreen::new);
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event){
+            event.registerEntityRenderer(ModEntities.TNT_V2.get(), PrimedTntV2Renderer::new);
         }
     }
 
