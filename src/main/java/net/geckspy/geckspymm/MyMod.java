@@ -7,6 +7,7 @@ import net.geckspy.geckspymm.effect.ModEffects;
 import net.geckspy.geckspymm.enchantment.ModEnchantmentEffects;
 import net.geckspy.geckspymm.entity.ModEntities;
 import net.geckspy.geckspymm.entity.renderer.PrimedTntV2Renderer;
+import net.geckspy.geckspymm.entity.renderer.PrimedTntV3Renderer;
 import net.geckspy.geckspymm.item.ModCreativeModeTabs;
 import net.geckspy.geckspymm.item.ModItems;
 import net.geckspy.geckspymm.item.custom.HalberdItem;
@@ -162,6 +163,7 @@ public class MyMod {
         }
         else if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS){
             event.accept(ModBlocks.TNT_V2);
+            event.accept(ModBlocks.TNT_V3);
             event.accept(ModItems.ORIUM_ORB);
             event.accept(ModBlocks.ORIUM_TORCH);
             event.accept(ModBlocks.MERGER_BLOCK);
@@ -198,6 +200,7 @@ public class MyMod {
         @SubscribeEvent
         public static void registerBER(EntityRenderersEvent.RegisterRenderers event){
             event.registerEntityRenderer(ModEntities.TNT_V2.get(), PrimedTntV2Renderer::new);
+            event.registerEntityRenderer(ModEntities.TNT_V3.get(), PrimedTntV3Renderer::new);
         }
     }
 

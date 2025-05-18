@@ -152,9 +152,20 @@ TODO: Ressurection
 
 ### Redstone
 TntV2:
-    Craft: T:tnt, 
+    Craft: T:tnt, O:orum_orb, G:Gun_powder
+        GOG
+        OTO
+        GOG
 
-TODO: tntV3, v4, v5, fireTnt
+tntV3:
+    craft: T:tnt_v2, O:orum_orb, G:Gun_powder
+        GOG
+        OTO
+        GOG
+
+
+TODO: v4?, v5?, fireTnt, ultra powerfull
+
 
 
 ### Orium
@@ -201,6 +212,7 @@ TODO general:
     - advancement
     - give craft recipe
     - tool tips
+
 
 
 # Idea

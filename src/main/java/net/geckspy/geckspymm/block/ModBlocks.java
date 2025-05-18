@@ -1,10 +1,7 @@
 package net.geckspy.geckspymm.block;
 
 import net.geckspy.geckspymm.MyMod;
-import net.geckspy.geckspymm.block.custom.MagicCraftingTable;
-import net.geckspy.geckspymm.block.custom.MergerBlock;
-import net.geckspy.geckspymm.block.custom.OriumTorchBlock;
-import net.geckspy.geckspymm.block.custom.TntV2Block;
+import net.geckspy.geckspymm.block.custom.*;
 import net.geckspy.geckspymm.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -29,6 +26,13 @@ public class ModBlocks {
     public static final DeferredBlock<Block> TNT_V2 = registerBlock(
             "tnt_v2", ()->new TntV2Block(BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:tnt_v2")))
+                    .instabreak().sound(SoundType.GRASS)
+                    .mapColor(MapColor.FIRE).ignitedByLava()
+            )
+    );
+    public static final DeferredBlock<Block> TNT_V3 = registerBlock(
+            "tnt_v3", ()->new TntV3Block(BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:tnt_v3")))
                     .instabreak().sound(SoundType.GRASS)
                     .mapColor(MapColor.FIRE).ignitedByLava()
             )

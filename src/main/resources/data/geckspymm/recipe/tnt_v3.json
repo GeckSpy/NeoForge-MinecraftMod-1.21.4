@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "T": "geckspymm:tnt_v2",
+    "G": "minecraft:gunpowder",
+    "O": "geckspymm:orium_orb"
+  },
+  "pattern": [
+    "GOG",
+    "OTO",
+    "GOG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "geckspymm:tnt_v3"
+  }
+}
