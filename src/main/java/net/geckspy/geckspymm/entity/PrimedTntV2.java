@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level;
 import javax.annotation.Nullable;
 
 public class PrimedTntV2 extends PrimedTnt {
-    private float EXPLOSION_POWER = 8.0F;
+    private float EXPLOSION_POWER = 10.0F;
     private int FUSE_TIME = 120;
 
     public PrimedTntV2(EntityType<? extends PrimedTnt> type, Level level) {

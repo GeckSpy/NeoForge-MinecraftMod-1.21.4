@@ -13,9 +13,7 @@ Impure End Cristal:
 
 End Cristal:
     craft: merger: orium orb + impure_end_cristal + popped_chorus_fruit
-    obtainable by cutting (stone cutter) Impure End Cristal
     Get 9 from End Cristal Block
-
 
 End Cristal Block:
     Craft it from 9 End Cristal
@@ -39,8 +37,8 @@ Magic Cristal:
         LCL
 
 
-Magic Orb: Need orium orb
-    TODO: Craftable with Magical Alombic and end baie
+Magic Orb: Need orium orb? 
+    TODO: Craft
         redstone, blaze_powder, choarcoal
 
 Invocation Orb?:
@@ -151,6 +149,7 @@ TODO: Miniaturism (check spelling)
 
 TODO: Ressurection
 
+
 ### Redstone
 TntV2:
     Craft: T:tnt, 
@@ -189,10 +188,12 @@ Merger: merge tow item together
     New custom recipe and serializer
 
 
+TODO: superior orium orb (purple) for harder craft
 
 
 ### Other
 Twiked mob generation to add randomness (scale, movement_speed, attack_damage)
+TODO: mob spawning by command get affected (FinalizeSpawnEvent us not called)
 
 armor_stand spawn with arms
 

@@ -242,6 +242,7 @@ public class MyMod {
     public void onMobSpawn(FinalizeSpawnEvent event) {
         // Store spawn type in entity's persistent data
         event.getEntity().getPersistentData().putString("spawn_reason", event.getSpawnType().name());
+        System.out.println(event.getSpawnType().name());
         event.getEntity().getPersistentData().putBoolean("got_spawning_modifier", false);
     }
 
