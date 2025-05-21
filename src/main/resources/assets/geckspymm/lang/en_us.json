@@ -59,6 +59,7 @@
 
   // Effects
   "effect.geckspymm.gigantism" : "Gigantism",
+  "attribute.geckspymm.gigantism_effect": "gigantism_effect",
   "item.minecraft.potion.effect.gigantism_potion" : "Potion of Gigantism",
   "item.minecraft.splash_potion.effect.gigantism_potion" : "Potion of Gigantism",
   "item.minecraft.lingering_potion.effect.gigantism_potion" : "Potion of Gigantism",
@@ -71,6 +72,21 @@
   "item.minecraft.potion.effect.gigantism_4_potion" : "Potion of Gigantism",
   "item.minecraft.splash_potion.effect.gigantism_4_potion" : "Potion of Gigantism",
   "item.minecraft.lingering_potion.effect.gigantism_4_potion" : "Potion of Gigantism",
+
+  "effect.geckspymm.miniaturism": "Miniaturism",
+  "attribute.geckspymm.miniaturism_effect": "miniaturism_effect",
+  "item.minecraft.potion.effect.miniaturism_potion" : "Potion of Miniaturism",
+  "item.minecraft.splash_potion.effect.miniaturism_potion" : "Potion of Miniaturism",
+  "item.minecraft.lingering_potion.effect.miniaturism_potion" : "Potion of Miniaturism",
+  "item.minecraft.potion.effect.miniaturism_2_potion" : "Potion of Miniaturism",
+  "item.minecraft.splash_potion.effect.miniaturism_2_potion" : "Potion of Miniaturism",
+  "item.minecraft.lingering_potion.effect.miniaturism_2_potion" : "Potion of Miniaturism",
+  "item.minecraft.potion.effect.miniaturism_3_potion" : "Potion of Miniaturism",
+  "item.minecraft.splash_potion.effect.miniaturism_3_potion" : "Potion of Miniaturism",
+  "item.minecraft.lingering_potion.effect.miniaturism_3_potion" : "Potion of Miniaturism",
+  "item.minecraft.potion.effect.miniaturism_4_potion" : "Potion of Miniaturism",
+  "item.minecraft.splash_potion.effect.miniaturism_4_potion" : "Potion of Miniaturism",
+  "item.minecraft.lingering_potion.effect.miniaturism_4_potion" : "Potion of Miniaturism",
 
 
   // Magical Minecraft
@@ -96,5 +112,5 @@
 
 // Tabs
   "creativetab.geckspymm.magic": "Magic",
-  "creativetab.geckspymm.mutant": "Mutant"
+  "creativetab.geckspymm.mutant": "W.I.P."
 }

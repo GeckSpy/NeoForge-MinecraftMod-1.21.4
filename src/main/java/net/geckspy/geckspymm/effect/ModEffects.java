@@ -14,20 +14,26 @@ public class ModEffects {
             DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, MyMod.MOD_ID);
 
     public static final Holder<MobEffect> GIGANTISM = MOB_EFFECTS.register("gigantism",
-            ()->new GigantismEffect(MobEffectCategory.BENEFICIAL, 0xffb842));
+            ()->new GigantismEffect(MobEffectCategory.BENEFICIAL, 0xe21212));
 
+    public static final Holder<MobEffect> MINIATURISM = MOB_EFFECTS.register("miniaturism",
+            ()->new MiniaturismEffect(MobEffectCategory.NEUTRAL, 0xcc9978));
 
 
 
     public static void onEffectRemoved(MobEffectEvent.Remove event){
         if(event.getEffectInstance().is(ModEffects.GIGANTISM)) {
             GigantismEffect.onEffectEnded(event.getEntity());
+        }else if(event.getEffectInstance().is(ModEffects.MINIATURISM)){
+            MiniaturismEffect.onEffectEnded(event.getEntity());
         }
     }
 
     public static void onEffectExpired(MobEffectEvent.Expired event){
         if(event.getEffectInstance().is(ModEffects.GIGANTISM)){
             GigantismEffect.onEffectEnded(event.getEntity());
+        }else if(event.getEffectInstance().is(ModEffects.MINIATURISM)){
+            MiniaturismEffect.onEffectEnded(event.getEntity());
         }
     }
 

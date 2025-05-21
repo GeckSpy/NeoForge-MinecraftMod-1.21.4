@@ -15,16 +15,22 @@ public class ModPotions {
 
     public static final Holder<Potion> GIGANTISM_POTION = POTIONS.register("gigantism_potion", registerName ->
             new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.GIGANTISM, 3600, 0)));
-
     public static final Holder<Potion> GIGANTISM_2_POTION = POTIONS.register("gigantism_2_potion", registerName ->
             new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.GIGANTISM, 1800, 1)));
-
     public static final Holder<Potion> GIGANTISM_3_POTION = POTIONS.register("gigantism_3_potion", registerName ->
             new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.GIGANTISM, 1200, 2)));
-
     public static final Holder<Potion> GIGANTISM_4_POTION = POTIONS.register("gigantism_4_potion", registerName ->
             new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.GIGANTISM, 600, 3)));
 
+
+    public static final Holder<Potion> MINIATURISM_POTION = POTIONS.register("miniaturism_potion", registerName ->
+            new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.MINIATURISM, 3600, 0)));
+    public static final Holder<Potion> MINIATURISM_2_POTION = POTIONS.register("miniaturism_2_potion", registerName ->
+            new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.MINIATURISM, 1800, 1)));
+    public static final Holder<Potion> MINIATURISM_3_POTION = POTIONS.register("miniaturism_3_potion", registerName ->
+            new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.MINIATURISM, 1200, 2)));
+    public static final Holder<Potion> MINIATURISM_4_POTION = POTIONS.register("miniaturism_4_potion", registerName ->
+            new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.MINIATURISM, 600, 3)));
 
     public static final void register(IEventBus eventBus){
         POTIONS.register(eventBus);

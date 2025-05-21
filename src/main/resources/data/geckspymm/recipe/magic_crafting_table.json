@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "minecraft:soul_torch",
+    "L": "minecraft:lapis_block",
+    "O": "minecraft:obsidian",
+    "S": "minecraft:soul_sand",
+    "D": "minecraft:diamond"
+
+  },
+  "pattern": [
+    "GDG",
+    "SLS",
+    "OOO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "geckspymm:magic_crafting_table"
+  }
+}

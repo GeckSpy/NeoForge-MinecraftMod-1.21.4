@@ -34,7 +34,13 @@ public class ModAttributes {
     public static final DeferredHolder<Attribute, Attribute> GIGANTISM_EFFECT =
             ATTRIBUTES.register("giantism_effect",
                     () -> new RangedAttribute(
-                            Component.translatable("attribute.name.geckspymm.armor_effect").getString(),
+                            Component.translatable("attribute.geckspymm.gigantism_effect").getString(),
+                            0.0, 0.0, 100.0));
+
+    public static final DeferredHolder<Attribute, Attribute> MINIATURISM_EFFECT =
+            ATTRIBUTES.register("miniaturism_effect",
+                    () -> new RangedAttribute(
+                            Component.translatable("attribute.geckspymm.miniaturism_effect").getString(),
                             0.0, 0.0, 100.0));
 
     public static final DeferredHolder<Attribute, Attribute> MOB_SPAWNING_MODIFIER =

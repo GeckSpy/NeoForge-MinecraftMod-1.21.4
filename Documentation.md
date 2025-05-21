@@ -24,9 +24,9 @@ Magical craft table: New Menu and Screen
     new recipes, serializer and input type:
         magic_shapeless
         magic_shaped (does not work for symetric recipe)
-    TODO Craft:
-        G: soul_torch, L:lapis_block, O:obsidian, C:carpet, S:soulsand
-        GCG
+    Craft:
+        G: soul_torch, L:lapis_block, O:obsidian, S:soulsand, D:diamond
+        GDG
         SLS
         OOO
 
@@ -49,7 +49,7 @@ Invocation Orb?:
 
 
 Magic Stick:
-    TODO: Craftable with Magical craft table
+    Craftable with Magical craft table
         M:Magic Cristal, /:end_wood stick
             /
           M
@@ -133,7 +133,7 @@ Tools: All
 
 Halberd: better range, slower attack, high damage
     TODO: custom entity_range_interaction enchantment?
-    TODO: end material
+    TODO: superior end
 
 
 
@@ -147,7 +147,12 @@ Gigantism: makes you taller, faster, stronger
     Gigantism IV from Gigantism II and glowstone
     TODO: Throwable potion craft
     
-TODO: Miniaturism (check spelling)
+Miniaturism: makes you smaller, faster, 
+    Craftable with brown mushroom
+    Miniaturism II from Miniaturism I and glowstone
+    Miniaturism III from Miniaturism II and glowstone
+    Miniaturism IV from Miniaturism III and glowstone 
+
 
 TODO: Ressurection
 
@@ -168,7 +173,7 @@ tntV3:
 
 TODO: v4?, v5?, fireTnt, ultra powerfull
 
-TODO: end_tnt:
+TODO: superior_tnt:
     TODO: Craft: merger: superior orium orb + tnt v3? + fire_charge
 
 
@@ -191,7 +196,7 @@ Orium torch: torch item
     TODO: orium_wall_torch 
 
 TODO: Orium generator: produce orium orb
-    TODO: use Orium spirit around
+    TODO: use Orium spirit around OR craftable with orium spirit (collectable with special item)
 
 Merger: merge tow item together
     Requires Orium orb to work

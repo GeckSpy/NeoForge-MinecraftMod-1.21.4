@@ -239,6 +239,11 @@ public class MyMod {
         builder.addMix(ModPotions.GIGANTISM_POTION, Items.GLOWSTONE_DUST, ModPotions.GIGANTISM_2_POTION);
         builder.addMix(ModPotions.GIGANTISM_2_POTION, Items.GLOWSTONE_DUST, ModPotions.GIGANTISM_3_POTION);
         builder.addMix(ModPotions.GIGANTISM_3_POTION, Items.GLOWSTONE_DUST, ModPotions.GIGANTISM_4_POTION);
+
+        builder.addMix(Potions.AWKWARD, Items.BROWN_MUSHROOM, ModPotions.MINIATURISM_POTION);
+        builder.addMix(ModPotions.MINIATURISM_POTION, Items.GLOWSTONE_DUST, ModPotions.MINIATURISM_2_POTION);
+        builder.addMix(ModPotions.MINIATURISM_2_POTION, Items.GLOWSTONE_DUST, ModPotions.MINIATURISM_3_POTION);
+        builder.addMix(ModPotions.MINIATURISM_3_POTION, Items.GLOWSTONE_DUST, ModPotions.MINIATURISM_4_POTION);
     }
 
     @SubscribeEvent
