@@ -1,16 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "D": "minecraft:diamond",
-    "E": "minecraft:emerald",
-    "L": "minecraft:lapis_lazuli",
-    "C": "geckspymm:end_cristal"
-  },
-  "pattern": [
-    "DCD",
-    "CEC",
-    "LCL"
+  "type": "geckspymm:magic_shapeless",
+  "ingredients": [
+    "geckspymm:end_cristal",
+    "geckspymm:end_cristal",
+    "geckspymm:end_cristal",
+    "geckspymm:end_cristal",
+    "minecraft:diamond",
+    "minecraft:diamond",
+    "minecraft:lapis_lazuli",
+    "minecraft:lapis_lazuli",
+    "minecraft:emerald"
   ],
   "result": {
     "count": 1,

@@ -15,9 +15,9 @@ import java.util.Map;
 public class ModRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
             DeferredRegister.create(Registries.RECIPE_SERIALIZER, MyMod.MOD_ID);
-
     public static final DeferredRegister<RecipeType<?>> TYPES =
             DeferredRegister.create(Registries.RECIPE_TYPE, MyMod.MOD_ID);
+
 
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<MergerBlockRecipe>> MERGER_SERIALIZER =
             SERIALIZERS.register("merger", MergerBlockRecipe.Serializer::new);
@@ -28,6 +28,18 @@ public class ModRecipes {
                     return "merger";
                 }
             });
+
+
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<MagicCraftingTableShapelessRecipe>> MAGIC_SHAPELESS_SERIALIZER =
+            SERIALIZERS.register("magic_shapeless", MagicCraftingTableShapelessRecipe.Serializer::new);
+    public static final DeferredHolder<RecipeType<?>, RecipeType<MagicCraftingTableShapelessRecipe>> MAGIC_SHAPELESS_TYPE =
+            TYPES.register("magic_shapeless", ()->new RecipeType<MagicCraftingTableShapelessRecipe>() {
+                @Override
+                public String toString() {
+                    return "magic_shapeless";
+                }
+            });
+
 
 
     public static void register(IEventBus eventBus){

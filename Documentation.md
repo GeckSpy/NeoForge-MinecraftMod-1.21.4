@@ -9,7 +9,7 @@ Impure End Cristal Block:
 
 Impure End Cristal:
     drop from Impure End Cristal Block, need at least diamond pickaxe
-
+    More drops with fortune
 
 End Cristal:
     craft: merger: orium orb + impure_end_cristal + popped_chorus_fruit
@@ -21,7 +21,9 @@ End Cristal Block:
 
 Magical craft table: New Menu and Screen
     -> To craft magical related things
-    TODO: new recipe type, handle recipe HELP
+    new recipes, serializer and input type:
+        magic_shapeless
+        TODO: magic_shaped
     TODO Craft:
         G: soul_torch, L:lapis_block, O:obsidian, C:carpet, S:soulsand
         GCG
@@ -30,16 +32,16 @@ Magical craft table: New Menu and Screen
 
 
 Magic Cristal:
-    TODO: Craftable with Magical craft table and normal craftable
+    Craftable with Magical crafting table and normal craftable
         D:diamond, C:end cristal, E:emerald, L:Lapis
         DCD
         CEC
         LCL
+    actually shapeless
 
 
-Magic Orb: Need orium orb? 
-    TODO: Craft
-        redstone, blaze_powder, choarcoal
+Magic Orb: 
+    TODO: Craft: merger: orium_orb + choarcoal + blaze_powder
 
 Invocation Orb?:
     TODO: Craftable with Magical Craft table
@@ -166,6 +168,8 @@ tntV3:
 
 TODO: v4?, v5?, fireTnt, ultra powerfull
 
+TODO: end_tnt:
+    TODO: Craft: merger: superior orium orb + tnt v3? + fire_charge
 
 
 ### Orium
@@ -176,6 +180,10 @@ Orium particle
 
 Orium Orb: Item
 
+TODO: Orium spirit: (looks like allays in yellow)
+    TODO: Can pick up in with leap
+
+
 Orium torch: torch item 
     craft: redstone torch + electricity orb on top
     click to change state (switch off/on)
@@ -183,9 +191,7 @@ Orium torch: torch item
     TODO: orium_wall_torch 
 
 TODO: Orium generator: produce orium orb
-    use choar_coal ?
-    electricity solar panel to  ?
-    use Orium spirit around
+    TODO: use Orium spirit around
 
 Merger: merge tow item together
     Requires Orium orb to work
@@ -197,9 +203,12 @@ Merger: merge tow item together
     Recipe used in merger works if top and bottom are inverted
     New custom Menu and Screen
     New custom recipe and serializer
+    TODO: custom state when using superior orium orb (purple)
 
 
 TODO: superior orium orb (purple) for harder craft
+    TODO: craft: merger: orium orb + end_core + redstone
+
 
 
 ### Other
@@ -230,8 +239,7 @@ baby ender dragon: pet (-> middle_aged ender dragon -> old ender dragon ?)
 
 
 ### visual
-Crown: retexture all helmet to have crown
-    Retexture all armor to "light arrmor" for custom trim ?
+New armor skin: 4 different can be crafted via new table
 invisible item frame
 more mobs head
 new armor trim
@@ -242,13 +250,14 @@ new armor trim
 - knifes/daggers: short range, very fast
 - roped kunai: trhowable knife, comes back
 
+sarbacane, darts
 new bow ?
 new arrow (dynamit arrow)
 
 
 ### Mobs
 new animals: ants, lion, rhinoceros, elephant, lizard, butterfly, snake, shark, whale, small spider
-new mobs: ghost (make you fly)
+new mobs: ghost (make you fly), superior end defender (drop end_core, really toff, explosion/lazers?)
 
 
 ### Nature
@@ -268,8 +277,17 @@ Orium (magic) touret
 
 ### Food
 Fried eggs
-rice
-cooker machine -> makes hambugers, pastas, salades (high sasieté)
+new plant & food: rice, corn, leek, pepper, avocado
+cooker machine -> make lunch: really high sasieté
+    craft: S:smoker, C:cobblestone, R:redstone_block, I:iron_igot, _:iron_pressure_plate
+         _ 
+        ISR
+        CCC
+    crafts:
+        hambuger: bread, beef, tomato, milk
+        sushi/maki: rice, salmon, avocado, kelp
+        tacos: corn, pepper, avocado, chicken
+     noodles: egg, wheat, pork, leak
 
 
 ### Other
@@ -277,9 +295,22 @@ more tnt
 throwable dynamit
 throwable rock
 new elytra
-farmable wood -> plants like bamboo, with 4 makes a wood block for each types of wood?
-    Plant a pousse on terre battue?
-glass helmet (breath under water)
+farmable wood -> greenhouse: put a tree pousse + bones_meal to get wood block in some time (tree pousse not consume)
+    Craft: D:dirt, G:glass_block, W:water_bucket, O:observer, C:composter
+        GGG
+        GWG
+        DOC
+
+glass helmet (breath under water):
+    Craft: G:glass_panel
+        GGG
+        G G
+        GGG
+scaphandre helmet: breath under water even more:
+    Craft: G:glass_helmet, C:copper_ingot
+        CCC
+        CGC
+        CCC
 
 
 

@@ -46,9 +46,9 @@ public class MagicCraftingTable extends CraftingTableBlock{
 
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState p_56428_, Level p_56429_, BlockPos p_56430_, Player p_56431_, BlockHitResult p_56433_) {
-        if (!p_56429_.isClientSide) {
-            p_56431_.openMenu(p_56428_.getMenuProvider(p_56429_, p_56430_));
+    protected InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult result) {
+        if (!level.isClientSide) {
+            player.openMenu(blockState.getMenuProvider(level, blockPos));
         }
         return InteractionResult.SUCCESS;
     }
