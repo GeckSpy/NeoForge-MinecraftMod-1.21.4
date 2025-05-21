@@ -41,6 +41,17 @@ public class ModRecipes {
             });
 
 
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<MagicCraftingTableShapedRecipe>> MAGIC_SHAPED_SERIALIZER =
+            SERIALIZERS.register("magic_shaped", MagicCraftingTableShapedRecipe.Serializer::new);
+    public static final DeferredHolder<RecipeType<?>, RecipeType<MagicCraftingTableShapedRecipe>> MAGIC_SHAPED_TYPE =
+            TYPES.register("magic_shaped", ()->new RecipeType<MagicCraftingTableShapedRecipe>() {
+                @Override
+                public String toString() {
+                    return "magic_shaped";
+                }
+            });
+
+
 
     public static void register(IEventBus eventBus){
         SERIALIZERS.register(eventBus);

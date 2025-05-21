@@ -2,15 +2,12 @@ package net.geckspy.geckspymm.screen;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 import net.geckspy.geckspymm.block.ModBlocks;
-import net.geckspy.geckspymm.recipe.MagicCraftingTableShapelessRecipe;
-import net.geckspy.geckspymm.recipe.MagicCraftingTableShapelessRecipeinput;
-import net.geckspy.geckspymm.recipe.ModRecipes;
-import net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket;
+import net.geckspy.geckspymm.recipe.*;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
@@ -19,7 +16,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
-import net.neoforged.neoforge.common.crafting.ICustomIngredient;
 
 public class MagicCraftingTableMenu extends AbstractCraftingMenu {
     private static final int CRAFTING_GRID_WIDTH = 3;
@@ -55,7 +51,6 @@ public class MagicCraftingTableMenu extends AbstractCraftingMenu {
             @Override
             public void onTake(Player player1, ItemStack itemStack) {
                 for(int i=0; i<9; i++){
-                    System.out.println(craftSlots.getItem(i));
                     if(!craftSlots.getItem(i).isEmpty()){
                         craftSlots.removeItem(i, 1);
                     }
@@ -76,19 +71,36 @@ public class MagicCraftingTableMenu extends AbstractCraftingMenu {
         ServerPlayer serverplayer = (ServerPlayer)player;
         ItemStack itemstack = ItemStack.EMPTY;
 
-
-        // Handle magic_shapeless rcipes
-        RecipeType<MagicCraftingTableShapelessRecipe> recipeType = ModRecipes.MAGIC_SHAPELESS_TYPE.get();
-        List<ItemStack> inputItemStacks = Arrays.stream(craftSlots.getItems().toArray(new ItemStack[0]))
+        List<ItemStack> nonEmptyInputItemStacks = Arrays.stream(craftSlots.getItems().toArray(new ItemStack[0]))
                 .filter(itemStack->!itemStack.isEmpty()).toList();
-        if(inputItemStacks.isEmpty()){return;}
-        MagicCraftingTableShapelessRecipeinput magicShapelessInput = new MagicCraftingTableShapelessRecipeinput(inputItemStacks);
-        System.out.println("slotChanged");
-        System.out.println(magicShapelessInput.itemStacks());
+        if(nonEmptyInputItemStacks.isEmpty()){return;}
+
+
+        // Handle magic_shaped recipes
+        List<ItemStack> inputItemStacks = Arrays.stream(craftSlots.getItems().toArray(new ItemStack[0])).toList();
+        MagicCraftingTableShapelessRecipeinput magicShapedInput = new MagicCraftingTableShapelessRecipeinput(inputItemStacks);
+        Optional<RecipeHolder<MagicCraftingTableShapedRecipe>> shaped_match = level.getServer().getRecipeManager().getRecipeFor(
+                ModRecipes.MAGIC_SHAPED_TYPE.get(), magicShapedInput, level);
+
+        if(shaped_match.isPresent()){
+            RecipeHolder<MagicCraftingTableShapedRecipe> recipeHolder = shaped_match.get();
+            MagicCraftingTableShapedRecipe magicRecipe = recipeHolder.value();
+            ItemStack result = magicRecipe.assemble(magicShapedInput, level.registryAccess());
+            if(result.isItemEnabled(level.enabledFeatures())) {
+                itemstack = result;
+                resultSlots.setItem(0, itemstack);
+                return;
+            }
+        }
+
+
+
+
+        // Handle magic_shapeless recipes
+        MagicCraftingTableShapelessRecipeinput magicShapelessInput = new MagicCraftingTableShapelessRecipeinput(
+                nonEmptyInputItemStacks);
         Optional<RecipeHolder<MagicCraftingTableShapelessRecipe>> match = level.getServer().getRecipeManager().getRecipeFor(
-                recipeType, magicShapelessInput, level
-        );
-        System.out.println("match: "  + match);
+                ModRecipes.MAGIC_SHAPELESS_TYPE.get(), magicShapelessInput, level);
 
         if(match.isPresent()){
             RecipeHolder<MagicCraftingTableShapelessRecipe> recipeHolder = match.get();
@@ -102,26 +114,6 @@ public class MagicCraftingTableMenu extends AbstractCraftingMenu {
         resultSlots.setItem(0, itemstack);
         //menu.setRemoteSlot(0, itemstack);
         //serverplayer.connection.send(new ClientboundContainerSetSlotPacket(menu.containerId, menu.incrementStateId(), 0, itemstack));
-        System.out.println("End of slotChangedCraftingGrid method");
-
-
-        /*
-        if (optional.isPresent()) {
-            RecipeHolder<MagicShapelessRecipe> recipeholder = optional.get();
-            MagicShapelessRecipe magicRecipe = recipeholder.value();
-            if (resultSlots.setRecipeUsed(serverplayer, recipeholder)) {
-                ItemStack itemstack1 = magicRecipe.assemble(craftinginput, level.registryAccess());
-                if (itemstack1.isItemEnabled(level.enabledFeatures())) {
-                    itemstack = itemstack1;
-                }
-            }
-        }
-        resultSlots.setItem(0, itemstack);
-        menu.setRemoteSlot(0, itemstack);
-        serverplayer.connection.send(new ClientboundContainerSetSlotPacket(menu.containerId, menu.incrementStateId(), 0, itemstack));
-
-         */
-
     }
 
 

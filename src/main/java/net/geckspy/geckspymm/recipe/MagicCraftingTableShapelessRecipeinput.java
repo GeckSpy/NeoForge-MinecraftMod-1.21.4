@@ -1,7 +1,6 @@
 package net.geckspy.geckspymm.recipe;
 
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeInput;
 
 import java.util.List;

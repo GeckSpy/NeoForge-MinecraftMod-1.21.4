@@ -16,6 +16,8 @@ import java.util.List;
 
 public record MagicCraftingTableShapelessRecipe(List<Ingredient> ingredients, ItemStack output)
         implements Recipe<MagicCraftingTableShapelessRecipeinput> {
+    // Ingredients: read from JSON
+    // Input: block's inventory
 
     @Override
     public boolean matches(MagicCraftingTableShapelessRecipeinput input, Level level) {

@@ -1,0 +1,16 @@
+{
+  "type": "geckspymm:magic_shaped",
+  "key": {
+    "/": "minecraft:stick",
+    "O": "geckspymm:magic_cristal"
+  },
+  "pattern": [
+    "  /",
+    " O ",
+    "/  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "geckspymm:magic_stick"
+  }
+}

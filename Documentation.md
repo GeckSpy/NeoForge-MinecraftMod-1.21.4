@@ -23,7 +23,7 @@ Magical craft table: New Menu and Screen
     -> To craft magical related things
     new recipes, serializer and input type:
         magic_shapeless
-        TODO: magic_shaped
+        magic_shaped (does not work for symetric recipe)
     TODO Craft:
         G: soul_torch, L:lapis_block, O:obsidian, C:carpet, S:soulsand
         GCG
