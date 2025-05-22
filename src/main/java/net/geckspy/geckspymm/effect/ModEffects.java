@@ -19,6 +19,10 @@ public class ModEffects {
     public static final Holder<MobEffect> MINIATURISM = MOB_EFFECTS.register("miniaturism",
             ()->new MiniaturismEffect(MobEffectCategory.NEUTRAL, 0xcc9978));
 
+    public static final Holder<MobEffect> UNDYING = MOB_EFFECTS.register("undying_effect",
+            ()->new UndyingEffect(MobEffectCategory.BENEFICIAL, 0x41e67f));
+
+
 
 
     public static void onEffectRemoved(MobEffectEvent.Remove event){

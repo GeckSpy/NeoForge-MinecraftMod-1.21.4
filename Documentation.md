@@ -154,7 +154,10 @@ Miniaturism: makes you smaller, faster,
     Miniaturism IV from Miniaturism III and glowstone 
 
 
-TODO: Ressurection
+Undying effect: protect you from the deaths
+    When you are supposed to die, you don't, give you two heart of absorption and knockback surrounding living entity
+
+TODO: add translation for arrow with this effect
 
 
 ### Redstone

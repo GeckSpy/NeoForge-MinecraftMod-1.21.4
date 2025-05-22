@@ -4,6 +4,7 @@ import net.geckspy.geckspymm.attribute.ModAttributes;
 import net.geckspy.geckspymm.block.ModBlocks;
 import net.geckspy.geckspymm.block.entity.ModBlockEntities;
 import net.geckspy.geckspymm.effect.ModEffects;
+import net.geckspy.geckspymm.effect.UndyingEffect;
 import net.geckspy.geckspymm.enchantment.ModEnchantmentEffects;
 import net.geckspy.geckspymm.entity.ModEntities;
 import net.geckspy.geckspymm.entity.renderer.PrimedTntV2Renderer;
@@ -40,6 +41,7 @@ import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
@@ -100,7 +102,6 @@ public class MyMod {
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
-
 
 
         // Register the item to a creative tab
@@ -202,13 +203,13 @@ public class MyMod {
             event.registerEntityRenderer(ModEntities.TNT_V2.get(), PrimedTntV2Renderer::new);
             event.registerEntityRenderer(ModEntities.TNT_V3.get(), PrimedTntV3Renderer::new);
         }
+
     }
 
     @SubscribeEvent
     public void onGatherModifiers(ItemAttributeModifierEvent event) {
         // Only modify main‐hand items
         HalberdItem.onGatherModifier(event);
-
     }
 
     @SubscribeEvent
@@ -222,8 +223,15 @@ public class MyMod {
     }
 
     @SubscribeEvent
-    public void onEffectRemoved(MobEffectEvent.Remove event){
+    public void onLivingEntityDeath(LivingDeathEvent event){
+        if(event.getEntity().hasEffect(ModEffects.UNDYING)){
+            event.setCanceled(true);
+            UndyingEffect.onEntityDeath(event.getEntity());
+        }
+    }
 
+    @SubscribeEvent
+    public void onEffectRemoved(MobEffectEvent.Remove event){
         ModEffects.onEffectRemoved(event);
     }
 
@@ -231,6 +239,7 @@ public class MyMod {
     public void onEffectExpired(MobEffectEvent.Expired event){
         ModEffects.onEffectExpired(event);
     }
+
 
     @SubscribeEvent
     public void registerBrewingRecipes(RegisterBrewingRecipesEvent event){
@@ -255,9 +264,9 @@ public class MyMod {
     }
 
     public static final List<Triple<Holder<Attribute>, Double, Double>> ATTRIBUTE_MODIFIER_MOB_SPAWNING = List.of(
-            Triple.of(Attributes.SCALE, 0.2, 0.05),
+            Triple.of(Attributes.SCALE, 0.15, 0.05),
             Triple.of(Attributes.ATTACK_DAMAGE, 0.1, 0.0),
-            Triple.of(Attributes.MOVEMENT_SPEED, 0.3, 0.0)
+            Triple.of(Attributes.MOVEMENT_SPEED, 0.15, 0.0)
     );
     public static boolean canHaveSpawnModifiers(Entity entityEvent){
         if(entityEvent instanceof LivingEntity entity){

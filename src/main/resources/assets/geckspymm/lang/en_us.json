@@ -88,6 +88,12 @@
   "item.minecraft.splash_potion.effect.miniaturism_4_potion" : "Potion of Miniaturism",
   "item.minecraft.lingering_potion.effect.miniaturism_4_potion" : "Potion of Miniaturism",
 
+  "effect.geckspymm.undying_effect": "Undying",
+  "item.minecraft.potion.effect.undying_potion" : "Potion of Undying",
+  "item.minecraft.splash_potion.effect.undying_potion" : "Potion of Undying",
+  "item.minecraft.lingering_potion.effect.undying_potion" : "Potion of Undying",
+
+
 
   // Magical Minecraft
   "item.geckspymm.impure_end_cristal": "Impure End Cristal",
