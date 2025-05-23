@@ -21,8 +21,10 @@ import net.geckspy.geckspymm.recipe.ModRecipes;
 import net.geckspy.geckspymm.screen.MagicCraftingTableScreen;
 import net.geckspy.geckspymm.screen.MergerBlockScreen;
 import net.geckspy.geckspymm.screen.ModMenuTypes;
+import net.geckspy.geckspymm.trim.ModTrimPatterns;
 import net.geckspy.geckspymm.worldgen.ModPlacedFeatures;
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -45,6 +47,7 @@ import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.neoforged.neoforge.registries.DataPackRegistryEvent;
 import org.apache.commons.lang3.tuple.Triple;
 import org.slf4j.Logger;
 
@@ -107,6 +110,7 @@ public class MyMod {
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
+
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -118,9 +122,10 @@ public class MyMod {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.PURE_QUARTZ);
-            event.accept(ModItems.PURE_QUARTZ_UPGRADE_SMITHING_TEMPLATE);
             event.accept(ModItems.IMPURE_END_CRISTAL);
             event.accept(ModItems.END_CRISTAL);
+            event.accept(ModItems.PURE_QUARTZ_UPGRADE_SMITHING_TEMPLATE);
+            event.accept(ModItems.THIEF_SMITHING_TEMPLATE);
         }
         else if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.IMPURE_END_CRISTAL_BLOCK);

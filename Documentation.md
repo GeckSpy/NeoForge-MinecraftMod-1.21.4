@@ -218,12 +218,20 @@ TODO: superior orium orb (purple) for harder craft
     TODO: craft: merger: orium orb + end_core + redstone
 
 
+### Visual
+armor_stand spawn with arms
+
+new armor texture
+
+New armor trim:
+    Thief: TODO: texture
+    TODO: other
+
 
 ### Other
 Twiked mob generation to add randomness (scale, movement_speed, attack_damage)
 TODO: mob spawning by command get affected (FinalizeSpawnEvent us not called)
 
-armor_stand spawn with arms
 
 TODO general:
     - advancement
@@ -247,10 +255,8 @@ baby ender dragon: pet (-> middle_aged ender dragon -> old ender dragon ?)
 
 
 ### visual
-New armor skin: 4 different can be crafted via new table
 invisible item frame
 more mobs head
-new armor trim
 
 
 ### weapons

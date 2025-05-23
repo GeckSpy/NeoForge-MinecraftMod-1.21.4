@@ -1,0 +1,8 @@
+{
+  "asset_id": "geckspymm:thief",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.geckspymm.thief"
+  },
+  "template_item": "geckspymm:thief_armor_trim_smithing_template"
+}

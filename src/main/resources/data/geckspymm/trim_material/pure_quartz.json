@@ -1,0 +1,8 @@
+{
+  "asset_name": "pure_quartz",
+  "description": {
+    "color": "#ddd4c6",
+    "translate": "trim_material.geckspymm.pure_quartz"
+  },
+  "ingredient": "geckspymm:pure_quartz"
+}

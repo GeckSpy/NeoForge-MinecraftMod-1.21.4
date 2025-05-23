@@ -3,6 +3,7 @@ package net.geckspy.geckspymm.item;
 import net.geckspy.geckspymm.MyMod;
 import net.geckspy.geckspymm.item.custom.HalberdItem;
 import net.geckspy.geckspymm.item.custom.LightningStaff;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
@@ -86,10 +87,13 @@ public class ModItems {
             properties -> new HalberdItem(ModToolMaterials.PURE_QUARTZ, HalberdItem.ATTACK_DAMAGE+1, HalberdItem.ATTACK_SPEED, properties));
 
 
+    // Armor Trim
+    public static final DeferredItem<Item> THIEF_SMITHING_TEMPLATE = ITEMS.registerItem("thief_armor_trim_smithing_template",
+            SmithingTemplateItem::createArmorTrimTemplate);
+
+
     // Orium
-    public static final DeferredItem<Item> ORIUM_ORB = ITEMS.registerItem(
-            "orium_orb", Item::new, new Item.Properties()
-    );
+    public static final DeferredItem<Item> ORIUM_ORB = ITEMS.registerItem("orium_orb", Item::new, new Item.Properties());
 
 
 

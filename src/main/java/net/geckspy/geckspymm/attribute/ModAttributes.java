@@ -49,6 +49,8 @@ public class ModAttributes {
                             Component.translatable("mob_spawning_modifier").getString(),
                             0.0, -10.0, 10.0));
 
+
+
     public static void register(IEventBus eventBus){
         ATTRIBUTES.register(eventBus);
     }

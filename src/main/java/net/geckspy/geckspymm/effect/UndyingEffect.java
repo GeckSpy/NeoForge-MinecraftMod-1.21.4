@@ -5,6 +5,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -21,7 +22,8 @@ public class UndyingEffect extends MobEffect {
 
     public static void onEntityDeath(LivingEntity dyingEntity){
         dyingEntity.setHealth(1.0F);
-        dyingEntity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 10*20, 0));
+        dyingEntity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 80, 0));
+        dyingEntity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 80, 0));
         dyingEntity.level().broadcastEntityEvent(dyingEntity, (byte)35);
 
         Level level = dyingEntity.level();

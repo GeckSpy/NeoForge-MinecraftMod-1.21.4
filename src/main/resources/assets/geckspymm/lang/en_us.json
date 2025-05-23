@@ -42,6 +42,13 @@
   "item.geckspymm.pure_quartz_halberd": "Pure Quartz Halberd",
 
 
+  // Armor trim
+  "item.geckspymm.thief_armor_trim_smithing_template": "Thief Trim Template",
+  "trim_pattern.geckspymm.thief": "Thief Armor Trim",
+
+  "trim_material.geckspymm.pure_quartz": "Pure Quartz Material",
+
+
 
     // Redstone
   "item.geckspymm.tnt_v2": "TNT V2",
