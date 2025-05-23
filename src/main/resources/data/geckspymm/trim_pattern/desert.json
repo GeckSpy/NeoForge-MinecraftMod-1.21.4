@@ -1,0 +1,8 @@
+{
+  "asset_id": "geckspymm:desert",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.geckspymm.desert"
+  },
+  "template_item": "geckspymm:desert_armor_trim_smithing_template"
+}

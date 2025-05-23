@@ -5,6 +5,7 @@
       "palette_key": "minecraft:trims/color_palettes/trim_palette",
       "permutations": {
         "pure_quartz": "geckspymm:trims/color_palettes/pure_quartz",
+        "coal": "geckspymm:trims/color_palettes/coal",
         "amethyst": "minecraft:trims/color_palettes/amethyst",
         "copper": "minecraft:trims/color_palettes/copper",
         "diamond": "minecraft:trims/color_palettes/diamond",
@@ -28,6 +29,15 @@
         "geckspymm:trims/entity/humanoid_leggings/gladiator",
         "geckspymm:trims/entity/humanoid/knight",
         "geckspymm:trims/entity/humanoid_leggings/knight",
+        "geckspymm:trims/entity/humanoid/vanilla",
+        "geckspymm:trims/entity/humanoid_leggings/vanilla",
+        "geckspymm:trims/entity/humanoid/warrior",
+        "geckspymm:trims/entity/humanoid_leggings/warrior",
+        "geckspymm:trims/entity/humanoid/robot",
+        "geckspymm:trims/entity/humanoid_leggings/robot",
+        "geckspymm:trims/entity/humanoid/desert",
+        "geckspymm:trims/entity/humanoid_leggings/desert",
+
         "minecraft:trims/entity/humanoid/sentry",
         "minecraft:trims/entity/humanoid_leggings/sentry",
         "minecraft:trims/entity/humanoid/dune",

@@ -23,6 +23,15 @@ public class ModTrimPatterns {
             Registries.TRIM_PATTERN, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "gladiator"));
     public static final ResourceKey<TrimPattern> KNIGHT = ResourceKey.create(
             Registries.TRIM_PATTERN, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "knight"));
+    public static final ResourceKey<TrimPattern> VANILLA = ResourceKey.create(
+            Registries.TRIM_PATTERN, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "vanilla"));
+    public static final ResourceKey<TrimPattern> WARRIOR = ResourceKey.create(
+            Registries.TRIM_PATTERN, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "warrior"));
+    public static final ResourceKey<TrimPattern> ROBOT = ResourceKey.create(
+            Registries.TRIM_PATTERN, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "robot"));
+    public static final ResourceKey<TrimPattern> DESERT = ResourceKey.create(
+            Registries.TRIM_PATTERN, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "desert"));
+
 
 
 

@@ -49,8 +49,17 @@
   "trim_pattern.geckspymm.gladiator": "Gladiator Armor Trim",
   "item.geckspymm.knight_armor_trim_smithing_template": "Knight Trim Template",
   "trim_pattern.geckspymm.knight": "Knight Armor Trim",
+  "item.geckspymm.vanilla_armor_trim_smithing_template": "Vanilla Trim Template",
+  "trim_pattern.geckspymm.vanilla": "Vanilla Armor Trim",
+  "item.geckspymm.warrior_armor_trim_smithing_template": "Warrior Trim Template",
+  "trim_pattern.geckspymm.warrior": "Warrior Armor Trim",
+  "item.geckspymm.robot_armor_trim_smithing_template": "Robot Trim Template",
+  "trim_pattern.geckspymm.robot": "Robot Armor Trim",
+  "item.geckspymm.desert_armor_trim_smithing_template": "Desert Trim Template",
+  "trim_pattern.geckspymm.desert": "Desert Armor Trim",
 
   "trim_material.geckspymm.pure_quartz": "Pure Quartz Material",
+  "trim_material.geckspymm.coal": "Coal Material",
 
 
 

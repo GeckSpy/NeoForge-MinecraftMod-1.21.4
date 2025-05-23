@@ -230,10 +230,16 @@ New armor trim:
         TODO Craft:
     Knight: knight armor trim:
         TODO: Craft
-    TODO:
-    Vanilla
-    Warrior
-    spadasin ?
+    Vanilla: Vanilla armor trim:
+        TODO: Craft
+    Warrior: Warrior armor trim:
+        TODO: Craft
+    Desert: Desert armor trim:
+        TODO: Craft
+    Robot: Robot armor trim:
+        TODO: Craft
+
+New trim material: pure_quartz, coal
 
 
 ### Other

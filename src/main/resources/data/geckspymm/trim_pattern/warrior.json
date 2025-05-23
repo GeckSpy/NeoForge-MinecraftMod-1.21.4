@@ -1,0 +1,8 @@
+{
+  "asset_id": "geckspymm:warrior",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.geckspymm.warrior"
+  },
+  "template_item": "geckspymm:warrior_armor_trim_smithing_template"
+}

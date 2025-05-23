@@ -11,6 +11,7 @@ import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 
 import java.util.Map;
@@ -20,10 +21,14 @@ public class ModTrimMaterials {
     public static final ResourceKey<TrimMaterial> PURE_QUARTZ = ResourceKey.create(
             Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "pure_quartz"));
 
+    public static final ResourceKey<TrimMaterial> COAL = ResourceKey.create(
+            Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "coal"));
 
 
     public static void bootstrap(BootstrapContext<TrimMaterial> context){
         register(context, PURE_QUARTZ, ModItems.PURE_QUARTZ.get(), Style.EMPTY.withColor(TextColor.parseColor("#ddd4c6").getOrThrow()));
+        register(context, COAL, Items.COAL, Style.EMPTY.withColor(TextColor.parseColor("#1f1e1e").getOrThrow()));
+
     }
 
     private static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> trimkey, Item item,

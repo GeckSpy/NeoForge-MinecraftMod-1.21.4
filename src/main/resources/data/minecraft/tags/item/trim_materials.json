@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "geckspymm:pure_quartz"
+    "geckspymm:pure_quartz",
+    "minecraft:coal"
   ]
 }

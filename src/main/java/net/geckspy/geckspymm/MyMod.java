@@ -125,9 +125,14 @@ public class MyMod {
             event.accept(ModItems.IMPURE_END_CRISTAL);
             event.accept(ModItems.END_CRISTAL);
             event.accept(ModItems.PURE_QUARTZ_UPGRADE_SMITHING_TEMPLATE);
+
+            event.accept(ModItems.VANILLA_SMITHING_TEMPLATE);
             event.accept(ModItems.THIEF_SMITHING_TEMPLATE);
+            event.accept(ModItems.WARRIOR_SMITHING_TEMPLATE);
             event.accept(ModItems.GLADIATOR_SMITHING_TEMPLATE);
+            event.accept(ModItems.DESERT_SMITHING_TEMPLATE);
             event.accept(ModItems.KNIGHT_SMITHING_TEMPLATE);
+            event.accept(ModItems.ROBOT_SMITHING_TEMPLATE);
         }
         else if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.IMPURE_END_CRISTAL_BLOCK);

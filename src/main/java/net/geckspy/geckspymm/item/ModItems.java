@@ -94,6 +94,14 @@ public class ModItems {
             SmithingTemplateItem::createArmorTrimTemplate);
     public static final DeferredItem<Item> KNIGHT_SMITHING_TEMPLATE = ITEMS.registerItem("knight_armor_trim_smithing_template",
             SmithingTemplateItem::createArmorTrimTemplate);
+    public static final DeferredItem<Item> VANILLA_SMITHING_TEMPLATE = ITEMS.registerItem("vanilla_armor_trim_smithing_template",
+            SmithingTemplateItem::createArmorTrimTemplate);
+    public static final DeferredItem<Item> WARRIOR_SMITHING_TEMPLATE = ITEMS.registerItem("warrior_armor_trim_smithing_template",
+            SmithingTemplateItem::createArmorTrimTemplate);
+    public static final DeferredItem<Item> ROBOT_SMITHING_TEMPLATE = ITEMS.registerItem("robot_armor_trim_smithing_template",
+            SmithingTemplateItem::createArmorTrimTemplate);
+    public static final DeferredItem<Item> DESERT_SMITHING_TEMPLATE = ITEMS.registerItem("desert_armor_trim_smithing_template",
+            SmithingTemplateItem::createArmorTrimTemplate);
 
 
 

@@ -1,0 +1,8 @@
+{
+  "asset_id": "geckspymm:robot",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.geckspymm.robot"
+  },
+  "template_item": "geckspymm:robot_armor_trim_smithing_template"
+}

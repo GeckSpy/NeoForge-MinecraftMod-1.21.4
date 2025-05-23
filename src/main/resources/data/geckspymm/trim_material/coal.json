@@ -1,0 +1,8 @@
+{
+  "asset_name": "coal",
+  "description": {
+    "color": "#1f1e1e",
+    "translate": "trim_material.geckspymm.coal"
+  },
+  "ingredient": "minecraft:coal"
+}
