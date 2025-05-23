@@ -21,11 +21,12 @@ import net.geckspy.geckspymm.recipe.ModRecipes;
 import net.geckspy.geckspymm.screen.MagicCraftingTableScreen;
 import net.geckspy.geckspymm.screen.MergerBlockScreen;
 import net.geckspy.geckspymm.screen.ModMenuTypes;
-import net.geckspy.geckspymm.trim.ModTrimPatterns;
 import net.geckspy.geckspymm.worldgen.ModPlacedFeatures;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.core.Holder;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -47,7 +48,6 @@ import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
-import net.neoforged.neoforge.registries.DataPackRegistryEvent;
 import org.apache.commons.lang3.tuple.Triple;
 import org.slf4j.Logger;
 
@@ -226,6 +226,7 @@ public class MyMod {
     public void onEntityTickEvent(EntityTickEvent.Post event){
 
     }
+
 
     @SubscribeEvent
     public void onLivingEntityDeath(LivingDeathEvent event){

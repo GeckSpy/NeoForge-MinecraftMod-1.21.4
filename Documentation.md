@@ -224,7 +224,8 @@ armor_stand spawn with arms
 new armor texture
 
 New armor trim:
-    Thief: TODO: texture
+    Thief: thief armor trim craftable:
+        TODO
     TODO: other
 
 
