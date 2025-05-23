@@ -1,0 +1,8 @@
+{
+  "asset_id": "geckspymm:gladiator",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.geckspymm.gladiator"
+  },
+  "template_item": "geckspymm:gladiator_armor_trim_smithing_template"
+}

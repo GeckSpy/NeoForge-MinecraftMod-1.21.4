@@ -24,6 +24,10 @@
       "textures": [
         "geckspymm:trims/entity/humanoid/thief",
         "geckspymm:trims/entity/humanoid_leggings/thief",
+        "geckspymm:trims/entity/humanoid/gladiator",
+        "geckspymm:trims/entity/humanoid_leggings/gladiator",
+        "geckspymm:trims/entity/humanoid/knight",
+        "geckspymm:trims/entity/humanoid_leggings/knight",
         "minecraft:trims/entity/humanoid/sentry",
         "minecraft:trims/entity/humanoid_leggings/sentry",
         "minecraft:trims/entity/humanoid/dune",

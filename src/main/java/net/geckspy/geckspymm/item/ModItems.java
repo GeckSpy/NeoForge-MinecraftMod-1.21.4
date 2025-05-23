@@ -90,6 +90,11 @@ public class ModItems {
     // Armor Trim
     public static final DeferredItem<Item> THIEF_SMITHING_TEMPLATE = ITEMS.registerItem("thief_armor_trim_smithing_template",
             SmithingTemplateItem::createArmorTrimTemplate);
+    public static final DeferredItem<Item> GLADIATOR_SMITHING_TEMPLATE = ITEMS.registerItem("gladiator_armor_trim_smithing_template",
+            SmithingTemplateItem::createArmorTrimTemplate);
+    public static final DeferredItem<Item> KNIGHT_SMITHING_TEMPLATE = ITEMS.registerItem("knight_armor_trim_smithing_template",
+            SmithingTemplateItem::createArmorTrimTemplate);
+
 
 
     // Orium

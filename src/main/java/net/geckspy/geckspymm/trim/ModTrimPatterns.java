@@ -19,6 +19,10 @@ import net.neoforged.neoforge.registries.DeferredItem;
 public class ModTrimPatterns {
     public static final ResourceKey<TrimPattern> THIEF = ResourceKey.create(
             Registries.TRIM_PATTERN, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "thief"));
+    public static final ResourceKey<TrimPattern> GLADIATOR = ResourceKey.create(
+            Registries.TRIM_PATTERN, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "gladiator"));
+    public static final ResourceKey<TrimPattern> KNIGHT = ResourceKey.create(
+            Registries.TRIM_PATTERN, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "knight"));
 
 
 

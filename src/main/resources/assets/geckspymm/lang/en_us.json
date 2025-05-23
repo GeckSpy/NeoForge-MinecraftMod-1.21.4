@@ -45,6 +45,10 @@
   // Armor trim
   "item.geckspymm.thief_armor_trim_smithing_template": "Thief Trim Template",
   "trim_pattern.geckspymm.thief": "Thief Armor Trim",
+  "item.geckspymm.gladiator_armor_trim_smithing_template": "Gladiator Trim Template",
+  "trim_pattern.geckspymm.gladiator": "Gladiator Armor Trim",
+  "item.geckspymm.knight_armor_trim_smithing_template": "Knight Trim Template",
+  "trim_pattern.geckspymm.knight": "Knight Armor Trim",
 
   "trim_material.geckspymm.pure_quartz": "Pure Quartz Material",
 

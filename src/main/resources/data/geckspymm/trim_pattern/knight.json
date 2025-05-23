@@ -1,0 +1,8 @@
+{
+  "asset_id": "geckspymm:knight",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.geckspymm.knight"
+  },
+  "template_item": "geckspymm:knight_armor_trim_smithing_template"
+}

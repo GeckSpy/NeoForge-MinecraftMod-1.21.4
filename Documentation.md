@@ -224,9 +224,16 @@ armor_stand spawn with arms
 new armor texture
 
 New armor trim:
-    Thief: thief armor trim craftable:
-        TODO
-    TODO: other
+    Thief: thief armor trim:
+        TODO Craft:
+    Gladiator: gladiator armor trim:
+        TODO Craft:
+    Knight: knight armor trim:
+        TODO: Craft
+    TODO:
+    Vanilla
+    Warrior
+    spadasin ?
 
 
 ### Other
