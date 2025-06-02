@@ -7,8 +7,11 @@ import net.geckspy.geckspymm.effect.ModEffects;
 import net.geckspy.geckspymm.effect.UndyingEffect;
 import net.geckspy.geckspymm.enchantment.ModEnchantmentEffects;
 import net.geckspy.geckspymm.entity.ModEntities;
+import net.geckspy.geckspymm.entity.elephant.ElephantRenderer;
+import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritRenderer;
 import net.geckspy.geckspymm.entity.renderer.PrimedTntV2Renderer;
 import net.geckspy.geckspymm.entity.renderer.PrimedTntV3Renderer;
+import net.geckspy.geckspymm.entity.rhinoceros.RhinocerosRenderer;
 import net.geckspy.geckspymm.item.ModCreativeModeTabs;
 import net.geckspy.geckspymm.item.ModItems;
 import net.geckspy.geckspymm.item.custom.HalberdItem;
@@ -23,6 +26,7 @@ import net.geckspy.geckspymm.screen.MergerBlockScreen;
 import net.geckspy.geckspymm.screen.ModMenuTypes;
 import net.geckspy.geckspymm.worldgen.ModPlacedFeatures;
 import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.Entity;
@@ -181,6 +185,11 @@ public class MyMod {
             event.accept(ModBlocks.ORIUM_TORCH);
             event.accept(ModBlocks.MERGER_BLOCK);
         }
+        else if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
+            event.accept(ModItems.RHINOCEROS_SPAWN_EGG);
+            event.accept(ModItems.ELEPHANT_SPAWN_EGG);
+            event.accept(ModItems.ORIUM_SPIRIT_SPAWN_EGG);
+        }
     }
 
 
@@ -195,7 +204,9 @@ public class MyMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(ModEntities.ORIUM_SPIRIT.get(), OriumSpiritRenderer::new);
+            EntityRenderers.register(ModEntities.ELEPHANT.get(), ElephantRenderer::new);
+            EntityRenderers.register(ModEntities.RHINOCEROS.get(), RhinocerosRenderer::new);
         }
 
         @SubscribeEvent
@@ -272,7 +283,7 @@ public class MyMod {
     public void onMobSpawn(FinalizeSpawnEvent event) {
         // Store spawn type in entity's persistent data
         event.getEntity().getPersistentData().putString("spawn_reason", event.getSpawnType().name());
-        System.out.println(event.getSpawnType().name());
+        //System.out.println(event.getSpawnType().name());
         event.getEntity().getPersistentData().putBoolean("got_spawning_modifier", false);
     }
 
@@ -299,7 +310,7 @@ public class MyMod {
 
             for (var pair : ATTRIBUTE_MODIFIER_MOB_SPAWNING) {
                 var attribute = entity.getAttribute(pair.getLeft());
-                if (attribute!=null && attribute.getModifier(ModAttributes.MOB_SPAWNING_MODIFIER.getId())==null) {
+                if (attribute!=null && attribute.getModifier(ModAttributes.MOB_SPAWNING_MODIFIER.getId())==null && false) {
                     attribute.addPermanentModifier(new AttributeModifier(
                             ModAttributes.MOB_SPAWNING_MODIFIER.getId(),
                             new Random().nextGaussian() * pair.getMiddle() + pair.getRight(),

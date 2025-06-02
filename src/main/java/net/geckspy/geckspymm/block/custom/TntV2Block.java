@@ -1,6 +1,6 @@
 package net.geckspy.geckspymm.block.custom;
 
-import net.geckspy.geckspymm.entity.PrimedTntV2;
+import net.geckspy.geckspymm.entity.custom.PrimedTntV2;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

@@ -1,6 +1,6 @@
-package net.geckspy.geckspymm.entity;
+package net.geckspy.geckspymm.entity.custom;
 
-import net.minecraft.MethodsReturnNonnullByDefault;
+import net.geckspy.geckspymm.entity.ModEntities;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.PrimedTnt;

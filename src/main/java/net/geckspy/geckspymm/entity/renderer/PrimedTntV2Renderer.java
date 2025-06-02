@@ -1,23 +1,15 @@
 package net.geckspy.geckspymm.entity.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Axis;
-import net.geckspy.geckspymm.MyMod;
 import net.geckspy.geckspymm.block.ModBlocks;
-import net.geckspy.geckspymm.entity.PrimedTntV2;
+import net.geckspy.geckspymm.entity.custom.PrimedTntV2;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.BlockRenderDispatcher;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.TntMinecartRenderer;
-import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.client.renderer.entity.state.TntRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.level.block.Blocks;
 
 public class PrimedTntV2Renderer extends EntityRenderer<PrimedTntV2, TntRenderState> {
     private final BlockRenderDispatcher blockRenderer;

@@ -1,9 +1,11 @@
 package net.geckspy.geckspymm.item;
 
 import net.geckspy.geckspymm.MyMod;
+import net.geckspy.geckspymm.entity.ModEntities;
 import net.geckspy.geckspymm.item.custom.HalberdItem;
 import net.geckspy.geckspymm.item.custom.LightningStaff;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
@@ -107,6 +109,16 @@ public class ModItems {
 
     // Orium
     public static final DeferredItem<Item> ORIUM_ORB = ITEMS.registerItem("orium_orb", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> ORIUM_SPIRIT_SPAWN_EGG = ITEMS.registerItem("orium_spirit_spawn_egg",
+            properties -> new SpawnEggItem(ModEntities.ORIUM_SPIRIT.get(), properties));
+
+
+
+    // Animals
+    public static final DeferredItem<Item> ELEPHANT_SPAWN_EGG = ITEMS.registerItem("elephant_spawn_egg",
+            properties -> new SpawnEggItem(ModEntities.ELEPHANT.get(), properties));
+    public static final DeferredItem<Item> RHINOCEROS_SPAWN_EGG = ITEMS.registerItem("rhinoceros_spawn_egg",
+            properties -> new SpawnEggItem(ModEntities.RHINOCEROS.get(), properties));
 
 
 

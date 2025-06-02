@@ -63,12 +63,22 @@
 
 
 
-    // Redstone
   "item.geckspymm.tnt_v2": "TNT V2",
   "item.geckspymm.tnt_v3": "TNT V3",
+
+    // Orium
   "item.geckspymm.orium_orb": "Orium Orb",
   "item.geckspymm.orium_torch": "Orium Torch",
   "item.geckspymm.merger_block": "Merger",
+  "item.geckspymm.orium_spirit_spawn_egg": "Orium Spirit Spawn Egg",
+  "entity.geckspymm.orium_spirit": "Orium Spirit",
+
+
+  // Animals
+  "item.geckspymm.elephant_spawn_egg": "Elephant Spawn Egg",
+  "entity.geckspymm.elephant": "Elephant",
+  "item.geckspymm.rhinoceros_spawn_egg": "Rhinoceros Spawn Egg",
+  "entity.geckspymm.rhinoceros": "Rhinoceros",
 
 
     //attributes

@@ -2,8 +2,7 @@ package net.geckspy.geckspymm.entity.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.geckspy.geckspymm.block.ModBlocks;
-import net.geckspy.geckspymm.entity.PrimedTntV2;
-import net.geckspy.geckspymm.entity.PrimedTntV3;
+import net.geckspy.geckspymm.entity.custom.PrimedTntV3;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.BlockRenderDispatcher;
 import net.minecraft.client.renderer.entity.EntityRenderer;

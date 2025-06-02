@@ -78,7 +78,7 @@ New lead craft only based on strings:
 Name Tag: shapeless
     P:paperx2, S:string
 
-TODO: craft saddle
+Saddle
     W:#minecraft:wool, L:minecraft:leather, T:minecraft:tripwire_hook
     "LWL"
     " L "
@@ -141,13 +141,14 @@ Halberd: better range, slower attack, high damage
 ### New effect
 
 Gigantism: makes you taller, faster, stronger
+    TODO: add slower attack speed and higher damage
     Craftable with red mushroom
     Gigantism II from Gigantism I and glowstone
     Gigantism III from Gigantism II and glowstone
     Gigantism IV from Gigantism II and glowstone
-    TODO: Throwable potion craft
     
 Miniaturism: makes you smaller, faster, 
+    TODO: reduce damage
     Craftable with brown mushroom
     Miniaturism II from Miniaturism I and glowstone
     Miniaturism III from Miniaturism II and glowstone
@@ -157,7 +158,7 @@ Miniaturism: makes you smaller, faster,
 Undying effect: protect you from the deaths
     When you are supposed to die, you don't, give you two heart of absorption and knockback surrounding living entity
 
-TODO: add translation for arrow with this effect
+TODO: add translation for arrow with mod effect
 
 
 ### Redstone
@@ -188,18 +189,26 @@ Orium particle
 
 Orium Orb: Item
 
-TODO: Orium spirit: (looks like allays in yellow)
-    TODO: Can pick up in with leap
+Orium spirit: (looks like allays in yellow)
+    TODO: Can fly
+    TODO: modify hitbox
+    Follow player holding orium orb
+    TODO: When attacked, get angry, summon lightning, die, drops some orium orb
+    TODO: When lightning convertor at less than X blocks, don't go further
+        -> randomly summon lightning on it
+
+TODO: ligthning convertor:
+    When it by lightning, create an high amount of orium orb
 
 
 Orium torch: torch item 
     craft: redstone torch + electricity orb on top
-    click to change state (switch off/on)
+    remove click to change state (switch off/on)
     emit light when on
     TODO: orium_wall_torch 
 
-TODO: Orium generator: produce orium orb
-    TODO: use Orium spirit around OR craftable with orium spirit (collectable with special item)
+
+
 
 Merger: merge tow item together
     Requires Orium orb to work
@@ -216,6 +225,31 @@ Merger: merge tow item together
 
 TODO: superior orium orb (purple) for harder craft
     TODO: craft: merger: orium orb + end_core + redstone
+
+
+
+
+### Animals
+
+TODO:
+    Elephant:
+    Manchot
+    Moineau(martin pecheur, corbeau, canary)
+    Crab
+    Lizard
+    Ants
+    butterfly
+    shark
+    Orca
+    Whale?
+    Lion(tigre, jaguar, yenn)
+    Rhinoceros
+    Giraffe
+    Gorille
+    Snake?
+    Bear?
+    Small spider?
+
 
 
 ### Visual
@@ -243,7 +277,7 @@ New trim material: pure_quartz, coal
 
 
 ### Other
-Twiked mob generation to add randomness (scale, movement_speed, attack_damage)
+TODO: comment 'false' in MyMod for Twiked mob generation to add randomness (scale, movement_speed, attack_damage)
 TODO: mob spawning by command get affected (FinalizeSpawnEvent us not called)
 
 
@@ -284,7 +318,6 @@ new arrow (dynamit arrow)
 
 
 ### Mobs
-new animals: ants, lion, rhinoceros, elephant, lizard, butterfly, snake, shark, whale, small spider
 new mobs: ghost (make you fly), superior end defender (drop end_core, really toff, explosion/lazers?)
 
 
