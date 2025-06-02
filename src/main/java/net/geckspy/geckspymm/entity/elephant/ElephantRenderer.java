@@ -13,7 +13,7 @@ public class ElephantRenderer extends LivingEntityRenderer<ElephantEntity, Eleph
 
 
     public ElephantRenderer(EntityRendererProvider.Context context) {
-        super(context, new ElephantModel(context.bakeLayer(ElephantModel.LAYER_LOCATION)), 2.3f);
+        super(context, new ElephantModel(context.bakeLayer(ElephantModel.LAYER_LOCATION)), 1.4f);
     }
 
     @Override

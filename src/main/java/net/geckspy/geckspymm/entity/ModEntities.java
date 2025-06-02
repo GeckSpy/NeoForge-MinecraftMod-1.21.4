@@ -60,7 +60,7 @@ public class ModEntities {
             Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "rhinoceros"));
     public static final Supplier<EntityType<RhinocerosEntity>> RHINOCEROS = ENTITY_TYPES.register("rhinoceros",
             ()->EntityType.Builder.of(RhinocerosEntity::new, MobCategory.CREATURE)
-                    .sized(2.2f, 3.f).build(RHINOCEROS_KEY));
+                    .sized(2.6f, 2.3f).build(RHINOCEROS_KEY));
 
 
 

@@ -9,7 +9,7 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 
 public class RhinocerosModel extends EntityModel<RhinocerosRenderState>  {
-   public static final ModelLayerLocation LAYER_LOCATION =
+    public static final ModelLayerLocation LAYER_LOCATION =
             new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "rhinoceros"), "main");
 
     private final ModelPart Body;
@@ -52,18 +52,19 @@ public class RhinocerosModel extends EntityModel<RhinocerosRenderState>  {
         PartDefinition Head = partdefinition.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(66, 8).addBox(-5.0F, -7.0F, -13.0F, 10.0F, 8.0F, 14.0F, new CubeDeformation(0.0F))
                 .texOffs(0, -11).addBox(0.0F, -14.0F, -16.0F, 0.0F, 9.0F, 11.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 7.0F, -14.0F, 0.5236F, 0.0F, 0.0F));
 
-        PartDefinition LeftEar = Head.addOrReplaceChild("LeftEar", CubeListBuilder.create(), PartPose.offset(7.0F, 5.0F, -4.0F));
+        PartDefinition LeftEar = Head.addOrReplaceChild("LeftEar", CubeListBuilder.create(), PartPose.offset(4.0F, -6.0F, -1.0F));
 
-        PartDefinition leftear_r1 = LeftEar.addOrReplaceChild("leftear_r1", CubeListBuilder.create().texOffs(0, 9).addBox(0.0F, -7.0F, 0.0F, 5.0F, 7.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-4.0F, -10.0F, 0.0F, 0.3121F, -1.1554F, -0.1052F));
+        PartDefinition leftear_r1 = LeftEar.addOrReplaceChild("leftear_r1", CubeListBuilder.create().texOffs(0, 9).addBox(0.0F, -7.0F, 0.0F, 5.0F, 7.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, 1.0F, -3.0F, 0.3121F, -1.1554F, -0.1052F));
 
-        PartDefinition RightEar = Head.addOrReplaceChild("RightEar", CubeListBuilder.create(), PartPose.offset(-7.0F, 5.0F, -4.0F));
+        PartDefinition RightEar = Head.addOrReplaceChild("RightEar", CubeListBuilder.create(), PartPose.offset(-4.0F, -6.0F, -1.0F));
 
-        PartDefinition rightear_r1 = RightEar.addOrReplaceChild("rightear_r1", CubeListBuilder.create().texOffs(10, 9).addBox(-5.0F, -7.0F, 0.0F, 5.0F, 7.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(4.0F, -10.0F, 0.0F, 0.3121F, 1.1554F, 0.1052F));
+        PartDefinition rightear_r1 = RightEar.addOrReplaceChild("rightear_r1", CubeListBuilder.create().texOffs(10, 9).addBox(-5.0F, -7.0F, 0.0F, 5.0F, 7.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.0F, 1.0F, -3.0F, 0.3121F, 1.1554F, 0.1052F));
 
         PartDefinition Tail = partdefinition.addOrReplaceChild("Tail", CubeListBuilder.create().texOffs(22, 0).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F, new CubeDeformation(0.0F))
                 .texOffs(22, 14).addBox(-2.0F, 10.0F, 0.0F, 4.0F, 5.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 4.0F, 16.0F));
 
-        return LayerDefinition.create(meshdefinition, 114, 58);
+        return LayerDefinition.create(meshdefinition, 114, 58)
+                .apply(MeshTransformer.scaling(1.7f));
     }
 
 
@@ -71,7 +72,7 @@ public class RhinocerosModel extends EntityModel<RhinocerosRenderState>  {
     public void setupAnim(RhinocerosRenderState state) {
         //super.setupAnim(state);
         this.root().getAllParts().forEach(ModelPart::resetPose);
-        this.Head.xRot = state.xRot * (float) (Math.PI / 180.0);
+        this.Head.xRot = state.xRot * (float) (Math.PI / 180.0) + (float)(Math.PI * 30 / 180);
         this.Head.yRot = state.yRot * (float) (Math.PI / 180.0);
 
         animateWalk(RhinocerosAnimations.WALK, state.walkAnimationPos, state.walkAnimationSpeed, 2f, 2.5f);

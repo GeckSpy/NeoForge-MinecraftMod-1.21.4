@@ -37,7 +37,7 @@ public class RhinocerosEntity extends Animal implements NeutralMob {
 
     private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(80, 140);
     private int remainingPersistentAngerTime;
-    public static float attackRangeSquared = 4.0f;
+    public static float attackRangeSquared = 12.0f;
 
     @javax.annotation.Nullable
     private UUID persistentAngerTarget;
@@ -202,7 +202,7 @@ public class RhinocerosEntity extends Animal implements NeutralMob {
 
     class RhinocerosMeleeAttackGoal extends MeleeAttackGoal {
         public int ticksUntilNextAttack = 0;
-        public int attackCooldown = 30;
+        public int attackCooldown = 15;
         public RhinocerosMeleeAttackGoal() {
             super(RhinocerosEntity.this, 2, true);
         }

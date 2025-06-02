@@ -88,12 +88,6 @@ public class ElephantModel extends EntityModel<ElephantRenderState>  {
         this.Head.xRot = state.xRot * (float) (Math.PI / 180.0);
         this.Head.yRot = state.yRot * (float) (Math.PI / 180.0);
 
-        System.out.println("setupAnim Model: "
-                + state.idleAnimationState.isStarted()
-                + " " +state.attackAnimationState.isStarted()
-                + " " +state.eatAnimationState.isStarted()
-        );
-
         animateWalk(ElephantAnimations.WALK, state.walkAnimationPos, state.walkAnimationSpeed, 2f, 2.5f);
         this.animate(state.idleAnimationState, ElephantAnimations.IDLE, state.ageInTicks, 1f );
         this.animate(state.attackAnimationState, ElephantAnimations.ATTACK, state.ageInTicks, 1f );

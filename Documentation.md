@@ -231,8 +231,14 @@ TODO: superior orium orb (purple) for harder craft
 
 ### Animals
 
+Elephant:
+    TODO: trhow rocks
+    TODO: spawn
+
+Rhinoceros:
+    TODO: spawn
+
 TODO:
-    Elephant:
     Manchot
     Moineau(martin pecheur, corbeau, canary)
     Crab
@@ -243,7 +249,6 @@ TODO:
     Orca
     Whale?
     Lion(tigre, jaguar, yenn)
-    Rhinoceros
     Giraffe
     Gorille
     Snake?
