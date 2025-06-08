@@ -11,6 +11,7 @@ import net.geckspy.geckspymm.entity.elephant.ElephantRenderer;
 import net.geckspy.geckspymm.entity.giraffe.GiraffeRenderer;
 import net.geckspy.geckspymm.entity.lion.LionRenderer;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritRenderer;
+import net.geckspy.geckspymm.entity.penguin.PenguinRenderer;
 import net.geckspy.geckspymm.entity.renderer.PrimedTntV2Renderer;
 import net.geckspy.geckspymm.entity.renderer.PrimedTntV3Renderer;
 import net.geckspy.geckspymm.entity.rhinoceros.RhinocerosRenderer;
@@ -196,6 +197,7 @@ public class MyMod {
             event.accept(ModItems.LION_SPAWN_EGG);
             event.accept(ModItems.TIGER_SPAWN_EGG);
             event.accept(ModItems.SNOW_PANTHER_SPAWN_EGG);
+            event.accept(ModItems.PENGUIN_SPAWN_EGG);
             event.accept(ModItems.ORIUM_SPIRIT_SPAWN_EGG);
         }
     }
@@ -219,6 +221,7 @@ public class MyMod {
             EntityRenderers.register(ModEntities.LION.get(), LionRenderer::new);
             EntityRenderers.register(ModEntities.TIGER.get(), TigerRenderer::new);
             EntityRenderers.register(ModEntities.SNOW_PANTHER.get(), SnowPantherRenderer::new);
+            EntityRenderers.register(ModEntities.PENGUIN.get(), PenguinRenderer::new);
         }
 
         @SubscribeEvent

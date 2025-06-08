@@ -127,6 +127,8 @@ public class ModItems {
             properties -> new SpawnEggItem(ModEntities.LION.get(), properties));
     public static final DeferredItem<Item> SNOW_PANTHER_SPAWN_EGG = ITEMS.registerItem("snow_panther_spawn_egg",
             properties -> new SpawnEggItem(ModEntities.SNOW_PANTHER.get(), properties));
+    public static final DeferredItem<Item> PENGUIN_SPAWN_EGG = ITEMS.registerItem("penguin_spawn_egg",
+            properties -> new SpawnEggItem(ModEntities.PENGUIN.get(), properties));
 
 
     // Magical Minecraft

@@ -7,6 +7,7 @@ import net.geckspy.geckspymm.entity.lion.LionEntity;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritEntity;
 import net.geckspy.geckspymm.entity.custom.PrimedTntV2;
 import net.geckspy.geckspymm.entity.custom.PrimedTntV3;
+import net.geckspy.geckspymm.entity.penguin.PenguinEntity;
 import net.geckspy.geckspymm.entity.rhinoceros.RhinocerosEntity;
 import net.geckspy.geckspymm.entity.snow_panther.SnowPantherEntity;
 import net.geckspy.geckspymm.entity.tiger.TigerEntity;
@@ -84,12 +85,18 @@ public class ModEntities {
             ()->EntityType.Builder.of(LionEntity::new, MobCategory.CREATURE)
                     .sized(1.8f, 1.5f).build(LION_KEY));
 
-
     public static final ResourceKey<EntityType<?>> SNOW_PANTHER_KEY = ResourceKey.create(
             Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "snow_panther"));
     public static final Supplier<EntityType<SnowPantherEntity>> SNOW_PANTHER = ENTITY_TYPES.register("snow_panther",
             ()->EntityType.Builder.of(SnowPantherEntity::new, MobCategory.CREATURE)
                     .sized(1.9f, 1.6f).build(SNOW_PANTHER_KEY));
+
+    public static final ResourceKey<EntityType<?>> PENGUIN_KEY = ResourceKey.create(
+            Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "penguin"));
+    public static final Supplier<EntityType<PenguinEntity>> PENGUIN = ENTITY_TYPES.register("penguin",
+            ()->EntityType.Builder.of(PenguinEntity::new, MobCategory.CREATURE)
+                    .sized(.7f, 1.2f).build(PENGUIN_KEY));
+
 
 
 

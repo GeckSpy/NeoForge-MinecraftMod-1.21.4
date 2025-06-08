@@ -10,6 +10,8 @@ import net.geckspy.geckspymm.entity.lion.LionEntity;
 import net.geckspy.geckspymm.entity.lion.LionModel;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritEntity;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritModel;
+import net.geckspy.geckspymm.entity.penguin.PenguinEntity;
+import net.geckspy.geckspymm.entity.penguin.PenguinModel;
 import net.geckspy.geckspymm.entity.rhinoceros.RhinocerosEntity;
 import net.geckspy.geckspymm.entity.rhinoceros.RhinocerosModel;
 import net.geckspy.geckspymm.entity.snow_panther.SnowPantherModel;
@@ -36,6 +38,7 @@ public class ModEventBusEvents {
         event.registerLayerDefinition(TigerModel.LAYER_LOCATION, TigerModel::createBodyLayer);
         event.registerLayerDefinition(LionModel.LAYER_LOCATION, LionModel::createBodyLayer);
         event.registerLayerDefinition(SnowPantherModel.LAYER_LOCATION, SnowPantherModel::createBodyLayer);
+        event.registerLayerDefinition(PenguinModel.LAYER_LOCATION, PenguinModel::createBodyLayer);
     }
 
     @SubscribeEvent
@@ -47,6 +50,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.TIGER.get(), TigerEntity.createAttributes().build());
         event.put(ModEntities.LION.get(), LionEntity.createAttributes().build());
         event.put(ModEntities.SNOW_PANTHER.get(), LionEntity.createAttributes().build());
+        event.put(ModEntities.PENGUIN.get(), PenguinEntity.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -62,6 +66,8 @@ public class ModEventBusEvents {
         event.register(ModEntities.LION.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(ModEntities.SNOW_PANTHER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(ModEntities.PENGUIN.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 }

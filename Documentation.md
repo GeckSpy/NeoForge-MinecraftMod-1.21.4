@@ -248,6 +248,8 @@ Lion:
 
 SnowPanther:
 
+Penguin:
+
 TODO:
     Manchot
     Moineau(martin pecheur, corbeau, canary)
@@ -258,10 +260,9 @@ TODO:
     shark
     Orca
     Whale?
-    Yenn
+    Yenn?
     Gorille
     Crocodile
-    Snake?
     Bear?
     Small spider?
 
@@ -292,7 +293,7 @@ New trim material: pure_quartz, coal
 
 
 ### Other
-TODO: comment 'false' in MyMod for Twiked mob generation to add randomness (scale, movement_speed, attack_damage)
+TODO: uncomment 'false' in MyMod for Twiked mob generation to add randomness (scale, movement_speed, attack_damage)
 TODO: mob spawning by command get affected (FinalizeSpawnEvent us not called)
 
 
