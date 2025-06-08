@@ -79,6 +79,14 @@
   "entity.geckspymm.elephant": "Elephant",
   "item.geckspymm.rhinoceros_spawn_egg": "Rhinoceros Spawn Egg",
   "entity.geckspymm.rhinoceros": "Rhinoceros",
+  "item.geckspymm.giraffe_spawn_egg": "Giraffe Spawn Egg",
+  "entity.geckspymm.giraffe": "Giraffe",
+  "item.geckspymm.tiger_spawn_egg": "Tiger Spawn Egg",
+  "entity.geckspymm.tiger": "Tiger",
+  "item.geckspymm.lion_spawn_egg": "Lion Spawn Egg",
+  "entity.geckspymm.lion": "Lion",
+  "item.geckspymm.snow_panther_spawn_egg": "Snow Panther Spawn Egg",
+  "entity.geckspymm.snow_panther": "Snow Panther",
 
 
     //attributes

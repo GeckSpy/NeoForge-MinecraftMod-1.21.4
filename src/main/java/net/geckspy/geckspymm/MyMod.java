@@ -8,10 +8,14 @@ import net.geckspy.geckspymm.effect.UndyingEffect;
 import net.geckspy.geckspymm.enchantment.ModEnchantmentEffects;
 import net.geckspy.geckspymm.entity.ModEntities;
 import net.geckspy.geckspymm.entity.elephant.ElephantRenderer;
+import net.geckspy.geckspymm.entity.giraffe.GiraffeRenderer;
+import net.geckspy.geckspymm.entity.lion.LionRenderer;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritRenderer;
 import net.geckspy.geckspymm.entity.renderer.PrimedTntV2Renderer;
 import net.geckspy.geckspymm.entity.renderer.PrimedTntV3Renderer;
 import net.geckspy.geckspymm.entity.rhinoceros.RhinocerosRenderer;
+import net.geckspy.geckspymm.entity.snow_panther.SnowPantherRenderer;
+import net.geckspy.geckspymm.entity.tiger.TigerRenderer;
 import net.geckspy.geckspymm.item.ModCreativeModeTabs;
 import net.geckspy.geckspymm.item.ModItems;
 import net.geckspy.geckspymm.item.custom.HalberdItem;
@@ -188,6 +192,10 @@ public class MyMod {
         else if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
             event.accept(ModItems.RHINOCEROS_SPAWN_EGG);
             event.accept(ModItems.ELEPHANT_SPAWN_EGG);
+            event.accept(ModItems.GIRAFFE_SPAWN_EGG);
+            event.accept(ModItems.LION_SPAWN_EGG);
+            event.accept(ModItems.TIGER_SPAWN_EGG);
+            event.accept(ModItems.SNOW_PANTHER_SPAWN_EGG);
             event.accept(ModItems.ORIUM_SPIRIT_SPAWN_EGG);
         }
     }
@@ -207,6 +215,10 @@ public class MyMod {
             EntityRenderers.register(ModEntities.ORIUM_SPIRIT.get(), OriumSpiritRenderer::new);
             EntityRenderers.register(ModEntities.ELEPHANT.get(), ElephantRenderer::new);
             EntityRenderers.register(ModEntities.RHINOCEROS.get(), RhinocerosRenderer::new);
+            EntityRenderers.register(ModEntities.GIRAFFE.get(), GiraffeRenderer::new);
+            EntityRenderers.register(ModEntities.LION.get(), LionRenderer::new);
+            EntityRenderers.register(ModEntities.TIGER.get(), TigerRenderer::new);
+            EntityRenderers.register(ModEntities.SNOW_PANTHER.get(), SnowPantherRenderer::new);
         }
 
         @SubscribeEvent

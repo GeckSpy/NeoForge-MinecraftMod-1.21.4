@@ -232,11 +232,21 @@ TODO: superior orium orb (purple) for harder craft
 ### Animals
 
 Elephant:
-    TODO: trhow rocks
+    TODO: twick power
+    TODO: throw rocks
     TODO: spawn
 
 Rhinoceros:
-    TODO: spawn
+    TODO: twick spawn?
+
+Giraffe:
+
+Tiger:
+
+Lion:
+    TODO: Twick variants for being able to summon it
+
+SnowPanther:
 
 TODO:
     Manchot
@@ -248,9 +258,9 @@ TODO:
     shark
     Orca
     Whale?
-    Lion(tigre, jaguar, yenn)
-    Giraffe
+    Yenn
     Gorille
+    Crocodile
     Snake?
     Bear?
     Small spider?

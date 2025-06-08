@@ -119,7 +119,14 @@ public class ModItems {
             properties -> new SpawnEggItem(ModEntities.ELEPHANT.get(), properties));
     public static final DeferredItem<Item> RHINOCEROS_SPAWN_EGG = ITEMS.registerItem("rhinoceros_spawn_egg",
             properties -> new SpawnEggItem(ModEntities.RHINOCEROS.get(), properties));
-
+    public static final DeferredItem<Item> GIRAFFE_SPAWN_EGG = ITEMS.registerItem("giraffe_spawn_egg",
+            properties -> new SpawnEggItem(ModEntities.GIRAFFE.get(), properties));
+    public static final DeferredItem<Item> TIGER_SPAWN_EGG = ITEMS.registerItem("tiger_spawn_egg",
+            properties -> new SpawnEggItem(ModEntities.TIGER.get(), properties));
+    public static final DeferredItem<Item> LION_SPAWN_EGG = ITEMS.registerItem("lion_spawn_egg",
+            properties -> new SpawnEggItem(ModEntities.LION.get(), properties));
+    public static final DeferredItem<Item> SNOW_PANTHER_SPAWN_EGG = ITEMS.registerItem("snow_panther_spawn_egg",
+            properties -> new SpawnEggItem(ModEntities.SNOW_PANTHER.get(), properties));
 
 
     // Magical Minecraft

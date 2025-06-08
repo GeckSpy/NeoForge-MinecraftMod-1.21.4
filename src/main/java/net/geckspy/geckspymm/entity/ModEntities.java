@@ -2,10 +2,14 @@ package net.geckspy.geckspymm.entity;
 
 import net.geckspy.geckspymm.MyMod;
 import net.geckspy.geckspymm.entity.elephant.ElephantEntity;
+import net.geckspy.geckspymm.entity.giraffe.GiraffeEntity;
+import net.geckspy.geckspymm.entity.lion.LionEntity;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritEntity;
 import net.geckspy.geckspymm.entity.custom.PrimedTntV2;
 import net.geckspy.geckspymm.entity.custom.PrimedTntV3;
 import net.geckspy.geckspymm.entity.rhinoceros.RhinocerosEntity;
+import net.geckspy.geckspymm.entity.snow_panther.SnowPantherEntity;
+import net.geckspy.geckspymm.entity.tiger.TigerEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -61,6 +65,31 @@ public class ModEntities {
     public static final Supplier<EntityType<RhinocerosEntity>> RHINOCEROS = ENTITY_TYPES.register("rhinoceros",
             ()->EntityType.Builder.of(RhinocerosEntity::new, MobCategory.CREATURE)
                     .sized(2.6f, 2.3f).build(RHINOCEROS_KEY));
+
+    public static final ResourceKey<EntityType<?>> GIRAFFE_KEY = ResourceKey.create(
+            Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "giraffe"));
+    public static final Supplier<EntityType<GiraffeEntity>> GIRAFFE = ENTITY_TYPES.register("giraffe",
+            ()->EntityType.Builder.of(GiraffeEntity::new, MobCategory.CREATURE)
+                    .sized(2.6f, 3.5f).build(GIRAFFE_KEY));
+
+    public static final ResourceKey<EntityType<?>> TIGER_KEY = ResourceKey.create(
+            Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "tiger"));
+    public static final Supplier<EntityType<TigerEntity>> TIGER = ENTITY_TYPES.register("tiger",
+            ()->EntityType.Builder.of(TigerEntity::new, MobCategory.CREATURE)
+                    .sized(1.8f, 1.5f).build(TIGER_KEY));
+
+    public static final ResourceKey<EntityType<?>> LION_KEY = ResourceKey.create(
+            Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "lion"));
+    public static final Supplier<EntityType<LionEntity>> LION = ENTITY_TYPES.register("lion",
+            ()->EntityType.Builder.of(LionEntity::new, MobCategory.CREATURE)
+                    .sized(1.8f, 1.5f).build(LION_KEY));
+
+
+    public static final ResourceKey<EntityType<?>> SNOW_PANTHER_KEY = ResourceKey.create(
+            Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "snow_panther"));
+    public static final Supplier<EntityType<SnowPantherEntity>> SNOW_PANTHER = ENTITY_TYPES.register("snow_panther",
+            ()->EntityType.Builder.of(SnowPantherEntity::new, MobCategory.CREATURE)
+                    .sized(1.9f, 1.6f).build(SNOW_PANTHER_KEY));
 
 
 
