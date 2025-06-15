@@ -47,23 +47,26 @@ public class PenguinEntity extends Animal {
         // Behavior of entity
         // priority 0: highest
         this.goalSelector.addGoal(0, new BreathAirGoal(this));
-        this.goalSelector.addGoal(1, new PenguinPanicGoal(this, 0.35));
-        this.goalSelector.addGoal(3, new FollowParentGoal(this, 0.38));
-        this.goalSelector.addGoal(4, new BreedGoal(this, 0.2));
-        this.goalSelector.addGoal(5, new TemptGoal(this, 0.2, (stack) -> stack.is(Items.COD), false));
+        this.goalSelector.addGoal(1, new PenguinPanicGoal(this, 1.2));
+        this.goalSelector.addGoal(3, new FollowParentGoal(this, 1.3));
 
-        this.goalSelector.addGoal(7, new PenguinSwimWithPlayerGoal(this, 0.2));
+        this.goalSelector.addGoal(4, new BreedGoal(this, 1));
+        this.goalSelector.addGoal(5, new TemptGoal(this, 1.1, (stack) -> stack.is(Items.COD), false));
+
+        this.goalSelector.addGoal(7, new PenguinSwimWithPlayerGoal(this, 1));
         this.goalSelector.addGoal(8, new PenguinSwinGoal(this));
+        this.goalSelector.addGoal(8, new PenguinRandomStrollGoal(this, 1));
 
-        this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 6.0F));
+
+        this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 4.0F));
         this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(11, new ModGroupGoal(this, 0.1, 8, 40, 15));
+        this.goalSelector.addGoal(11, new ModGroupGoal(this, 0.8, 8, 40, 15));
     }
 
     public static AttributeSupplier.Builder createAttributes(){
         return Animal.createLivingAttributes()
                 .add(Attributes.MAX_HEALTH, 12)
-                .add(Attributes.MOVEMENT_SPEED, 1)
+                .add(Attributes.MOVEMENT_SPEED, 0.12)
                 .add(Attributes.FOLLOW_RANGE, 15)
                 .add(Attributes.TEMPT_RANGE, 15)
                 .add(Attributes.WATER_MOVEMENT_EFFICIENCY, 1);
@@ -263,4 +266,14 @@ public class PenguinEntity extends Animal {
         }
     }
 
+    static class PenguinRandomStrollGoal extends RandomStrollGoal{
+        PenguinRandomStrollGoal(PenguinEntity penguin, int speedModifier){
+            super(penguin, speedModifier);
+        }
+
+        @Override
+        public boolean canUse() {
+            return !this.mob.isInWater() && super.canUse();
+        }
+    }
 }

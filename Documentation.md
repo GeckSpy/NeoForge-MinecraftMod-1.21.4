@@ -231,33 +231,32 @@ TODO: superior orium orb (purple) for harder craft
 
 ### Animals
 
-Penguin:
-    Group together, follow cod, drop cod
-
-
-TODO: twick comportement and attributes (especially finallize spawn and speed, use ModGoals, loot)
-
-Elephant:
-    TODO: twick power
-    TODO: throw rocks
-    TODO: spawn
-
-Rhinoceros:
-    TODO: twick spawn?
+Penguin: Group together, follow cod, drop cod
 
 Giraffe:
 
-Tiger:
+Tiger: Attack when baby around
+    TODO: drop fourrure
 
-Lion:
+Lion: Attack when baby around, Male/Female variant
     TODO: Twick variants for being able to summon it
+    TODO: drop fourrure
 
 SnowPanther:
+    TODO: drop fourrure
 
-Penguin:
+
+Elephant: Drop elephant tusk
+    TODO: throw rocks (need to add throwable rocks before)
+    TODO: spawn
+    TODO: twick comportement and attributes (especially finallize spawn and speed, use ModGoals, loot)
+
+Rhinoceros: Drop rhinoceros horn
+    TODO: twick spawn?
+    TODO: twick comportement and attributes (especially finallize spawn and speed, use ModGoals, loot)
+
 
 TODO:
-    Manchot
     Moineau(martin pecheur, corbeau, canary)
     Crab
     Lizard

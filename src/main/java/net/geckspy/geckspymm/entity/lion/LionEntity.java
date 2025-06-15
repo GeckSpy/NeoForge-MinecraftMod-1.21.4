@@ -1,6 +1,9 @@
 package net.geckspy.geckspymm.entity.lion;
 
 import net.geckspy.geckspymm.entity.ModEntities;
+import net.geckspy.geckspymm.entity.goals.ModAttackPlayersGoal;
+import net.geckspy.geckspymm.entity.goals.ModHurtByTargetGoal;
+import net.geckspy.geckspymm.entity.goals.ModMeleeAttackGoal;
 import net.geckspy.geckspymm.entity.tiger.TigerAnimations;
 import net.minecraft.Util;
 import net.minecraft.client.animation.AnimationDefinition;
@@ -91,9 +94,9 @@ public class LionEntity extends Animal implements NeutralMob {
     protected void registerGoals() {
         // Behavior of entity
         this.goalSelector.addGoal(0, new FloatGoal(this)); // So that mob don't sink down
-        this.targetSelector.addGoal(2, new LionMeleeAttackGoal());
-        this.targetSelector.addGoal(3, new LionHurtByTargetGoal());
-        this.targetSelector.addGoal(4, new LionAttackPlayersGoal());
+        this.targetSelector.addGoal(2, new ModMeleeAttackGoal(this, 1.2, 0, false));
+        this.targetSelector.addGoal(3, new ModHurtByTargetGoal(this));
+        this.targetSelector.addGoal(4, new ModAttackPlayersGoal(this, 20, 8, true, true));
 
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isAngryAt));
         this.targetSelector.addGoal(5, new ResetUniversalAngerTargetGoal<>(this, false));
@@ -101,8 +104,8 @@ public class LionEntity extends Animal implements NeutralMob {
         this.goalSelector.addGoal(1, new PanicGoal(this, (double)2.0F, (mob) -> mob.isBaby() ? DamageTypeTags.PANIC_CAUSES : DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
         this.goalSelector.addGoal(3, new FollowParentGoal(this, 1.25));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.0));
-        this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 0.3));
-        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1,0.2f));
+        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
 
     }
@@ -110,7 +113,7 @@ public class LionEntity extends Animal implements NeutralMob {
     public static AttributeSupplier.Builder createAttributes(){
         return Animal.createLivingAttributes()
                 .add(Attributes.MAX_HEALTH, 45)
-                .add(Attributes.MOVEMENT_SPEED, 0.3)
+                .add(Attributes.MOVEMENT_SPEED, 0.35)
                 .add(Attributes.FOLLOW_RANGE, 30)
                 .add(Attributes.ATTACK_DAMAGE, 6.0)
                 .add(Attributes.WATER_MOVEMENT_EFFICIENCY, 1);
@@ -218,75 +221,5 @@ public class LionEntity extends Animal implements NeutralMob {
             this.setBaby(true);
         }
         return groupData;
-    }
-
-
-    class LionAttackPlayersGoal extends NearestAttackableTargetGoal<Player> {
-        public LionAttackPlayersGoal() {
-            super(LionEntity.this, Player.class, 20, true, true, (TargetingConditions.Selector) null);
-        }
-
-        public boolean canUse() {
-            if (LionEntity.this.isBaby()) {
-                return false;
-            } else {
-                if (super.canUse()) {
-                    for (LionEntity tiger : LionEntity.this.level().getEntitiesOfClass(LionEntity.class, LionEntity.this.getBoundingBox().inflate((double) 8.0F, (double) 4.0F, (double) 8.0F))) {
-                        if (tiger.isBaby()) {
-                            return true;
-                        }
-                    }
-                }
-                return false;
-            }
-        }
-    }
-
-    class LionHurtByTargetGoal extends HurtByTargetGoal {
-        public LionHurtByTargetGoal() {
-            super(LionEntity.this);
-        }
-
-        @Override
-        public void start() {
-            super.start();
-            if (LionEntity.this.isBaby()) {
-                this.alertOthers();
-                this.stop();
-            }
-        }
-        @Override
-        protected void alertOther(Mob mob, LivingEntity target) {
-            if (mob instanceof LionEntity && !mob.isBaby()) {
-                super.alertOther(mob, target);
-            }
-        }
-    }
-
-    class LionMeleeAttackGoal extends MeleeAttackGoal {
-        public int ticksUntilNextAttack = 0;
-        public int attackCooldown = 0;
-        public LionMeleeAttackGoal() {
-            super(LionEntity.this, 2, true);
-        }
-
-        @Override
-        public void tick() {
-            super.tick();
-            if(this.ticksUntilNextAttack>0){
-                this.ticksUntilNextAttack--;
-            }
-        }
-
-        @Override
-        protected boolean canPerformAttack(LivingEntity entity) {
-            return this.ticksUntilNextAttack<=0 && super.canPerformAttack(entity);
-        }
-
-        @Override
-        protected void resetAttackCooldown() {
-            super.resetAttackCooldown();
-            this.ticksUntilNextAttack = (int)((double)this.attackCooldown * 1/getAttackDamage());
-        }
     }
 }

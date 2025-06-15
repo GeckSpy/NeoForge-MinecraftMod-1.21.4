@@ -135,6 +135,9 @@ public class MyMod {
             event.accept(ModItems.END_CRISTAL);
             event.accept(ModItems.PURE_QUARTZ_UPGRADE_SMITHING_TEMPLATE);
 
+            event.accept(ModItems.RHINOCEROS_HORN);
+            event.accept(ModItems.ELEPHANT_TUSK);
+
             event.accept(ModItems.VANILLA_SMITHING_TEMPLATE);
             event.accept(ModItems.THIEF_SMITHING_TEMPLATE);
             event.accept(ModItems.WARRIOR_SMITHING_TEMPLATE);

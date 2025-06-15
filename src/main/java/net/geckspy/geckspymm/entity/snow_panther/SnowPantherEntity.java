@@ -1,6 +1,9 @@
 package net.geckspy.geckspymm.entity.snow_panther;
 
 import net.geckspy.geckspymm.entity.ModEntities;
+import net.geckspy.geckspymm.entity.goals.ModHurtByTargetGoal;
+import net.geckspy.geckspymm.entity.goals.ModMeleeAttackGoal;
+import net.geckspy.geckspymm.entity.penguin.PenguinEntity;
 import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -57,16 +60,16 @@ public class SnowPantherEntity extends Animal implements NeutralMob {
     protected void registerGoals() {
         // Behavior of entity
         this.goalSelector.addGoal(0, new FloatGoal(this)); // So that mob don't sink down
-        this.targetSelector.addGoal(2, new TigerMeleeAttackGoal());
-        this.targetSelector.addGoal(3, new SnowPantherHurtByTargetGoal());
+        this.targetSelector.addGoal(2, new ModMeleeAttackGoal(this, 1.3, 0, true));
+        this.targetSelector.addGoal(3, new ModHurtByTargetGoal(this));
 
         this.targetSelector.addGoal(5, new ResetUniversalAngerTargetGoal<>(this, false));
 
-        this.goalSelector.addGoal(1, new PanicGoal(this, (double)2.0F, (mob) -> mob.isBaby() ? DamageTypeTags.PANIC_CAUSES : DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
+        this.goalSelector.addGoal(1, new PanicGoal(this, 1.5, (mob) -> mob.isBaby() ? DamageTypeTags.PANIC_CAUSES : DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
         this.goalSelector.addGoal(3, new FollowParentGoal(this, 1.25));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.0));
-        this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 0.3));
-        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1,0.5f));
+        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 20.0F));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
 
     }
@@ -76,7 +79,8 @@ public class SnowPantherEntity extends Animal implements NeutralMob {
                 .add(Attributes.MAX_HEALTH, 90)
                 .add(Attributes.MOVEMENT_SPEED, 0.35)
                 .add(Attributes.FOLLOW_RANGE, 30)
-                .add(Attributes.ATTACK_DAMAGE, 6.0);
+                .add(Attributes.ATTACK_DAMAGE, 6.0)
+                .add(Attributes.STEP_HEIGHT, 1.5);
     }
 
     private float getAttackDamage() {
@@ -160,71 +164,17 @@ public class SnowPantherEntity extends Animal implements NeutralMob {
     }
 
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_, EntitySpawnReason p_363316_, @Nullable SpawnGroupData p_146749_) {
-        SpawnGroupData groupData = super.finalizeSpawn(p_146746_, p_146747_, p_363316_, p_146749_);
-        if(SnowPantherEntity.this.getSpawnType() != EntitySpawnReason.NATURAL){
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, EntitySpawnReason p_363316_, @Nullable SpawnGroupData p_146749_) {
+        SpawnGroupData groupData = super.finalizeSpawn(level, difficulty, p_363316_, p_146749_);
+        if(SnowPantherEntity.this.getSpawnType() != EntitySpawnReason.NATURAL || this.getRandom().nextFloat()>=0.3f){
             return groupData;
         }
-        boolean isAdultAround = false;
-        for (SnowPantherEntity tiger : SnowPantherEntity.this.level().getEntitiesOfClass(SnowPantherEntity.class, SnowPantherEntity.this.getBoundingBox().inflate((double) 3.0F, (double) 2.0F, (double) 3.0F))) {
-            if (tiger.isBaby()) {
-                isAdultAround = true;
+        for (SnowPantherEntity panther : SnowPantherEntity.this.level().getEntitiesOfClass(SnowPantherEntity.class, SnowPantherEntity.this.getBoundingBox().inflate((double) 3.0F, (double) 2.0F, (double) 3.0F))) {
+            if (panther.isBaby()) {
+                this.setBaby(true);
                 break;
             }
         }
-        if(isAdultAround && this.getRandom().nextFloat()<0.2f){
-            this.setBaby(true);
-        }
         return groupData;
-    }
-
-    
-
-    class SnowPantherHurtByTargetGoal extends HurtByTargetGoal {
-        public SnowPantherHurtByTargetGoal() {
-            super(SnowPantherEntity.this);
-        }
-
-        @Override
-        public void start() {
-            super.start();
-            if (SnowPantherEntity.this.isBaby()) {
-                this.alertOthers();
-                this.stop();
-            }
-        }
-        @Override
-        protected void alertOther(Mob mob, LivingEntity target) {
-            if (mob instanceof SnowPantherEntity && !mob.isBaby()) {
-                super.alertOther(mob, target);
-            }
-        }
-    }
-
-    class TigerMeleeAttackGoal extends MeleeAttackGoal {
-        public int ticksUntilNextAttack = 0;
-        public int attackCooldown = 0;
-        public TigerMeleeAttackGoal() {
-            super(SnowPantherEntity.this, 2, true);
-        }
-
-        @Override
-        public void tick() {
-            super.tick();
-            if(this.ticksUntilNextAttack>0){
-                this.ticksUntilNextAttack--;
-            }
-        }
-
-        @Override
-        protected boolean canPerformAttack(LivingEntity entity) {
-            return this.ticksUntilNextAttack<=0 && super.canPerformAttack(entity);
-        }
-
-        @Override
-        protected void resetAttackCooldown() {
-            super.resetAttackCooldown();
-            this.ticksUntilNextAttack = (int)((double)this.attackCooldown * 1/getAttackDamage());
-        }
     }
 }

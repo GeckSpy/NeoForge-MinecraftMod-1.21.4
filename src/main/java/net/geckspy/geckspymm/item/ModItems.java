@@ -117,8 +117,13 @@ public class ModItems {
     // Animals
     public static final DeferredItem<Item> ELEPHANT_SPAWN_EGG = ITEMS.registerItem("elephant_spawn_egg",
             properties -> new SpawnEggItem(ModEntities.ELEPHANT.get(), properties));
+    public static final DeferredItem<Item> ELEPHANT_TUSK = ITEMS.registerItem("elephant_tusk", Item::new, new Item.Properties().stacksTo(16));
+
     public static final DeferredItem<Item> RHINOCEROS_SPAWN_EGG = ITEMS.registerItem("rhinoceros_spawn_egg",
             properties -> new SpawnEggItem(ModEntities.RHINOCEROS.get(), properties));
+    public static final DeferredItem<Item> RHINOCEROS_HORN = ITEMS.registerItem("rhinoceros_horn", Item::new, new Item.Properties().stacksTo(16));
+
+
     public static final DeferredItem<Item> GIRAFFE_SPAWN_EGG = ITEMS.registerItem("giraffe_spawn_egg",
             properties -> new SpawnEggItem(ModEntities.GIRAFFE.get(), properties));
     public static final DeferredItem<Item> TIGER_SPAWN_EGG = ITEMS.registerItem("tiger_spawn_egg",

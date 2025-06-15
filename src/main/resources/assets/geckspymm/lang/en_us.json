@@ -77,8 +77,10 @@
   // Animals
   "item.geckspymm.elephant_spawn_egg": "Elephant Spawn Egg",
   "entity.geckspymm.elephant": "Elephant",
+  "item.geckspymm.elephant_tusk": "Elephant Tusk",
   "item.geckspymm.rhinoceros_spawn_egg": "Rhinoceros Spawn Egg",
   "entity.geckspymm.rhinoceros": "Rhinoceros",
+  "item.geckspymm.rhinoceros_horn": "Rhinoceros Horn",
   "item.geckspymm.giraffe_spawn_egg": "Giraffe Spawn Egg",
   "entity.geckspymm.giraffe": "Giraffe",
   "item.geckspymm.tiger_spawn_egg": "Tiger Spawn Egg",
