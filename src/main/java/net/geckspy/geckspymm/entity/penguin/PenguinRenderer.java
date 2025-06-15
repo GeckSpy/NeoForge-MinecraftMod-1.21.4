@@ -13,7 +13,7 @@ public class PenguinRenderer extends LivingEntityRenderer<PenguinEntity, Penguin
 
 
     public PenguinRenderer(EntityRendererProvider.Context context) {
-        super(context, new PenguinModel(context.bakeLayer(PenguinModel.LAYER_LOCATION)), 0.55f);
+        super(context, new PenguinModel(context.bakeLayer(PenguinModel.LAYER_LOCATION)), 0.45f);
     }
 
     @Override

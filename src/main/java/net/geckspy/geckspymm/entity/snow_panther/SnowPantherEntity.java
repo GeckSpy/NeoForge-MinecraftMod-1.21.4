@@ -165,7 +165,7 @@ public class SnowPantherEntity extends Animal implements NeutralMob {
         if(SnowPantherEntity.this.getSpawnType() != EntitySpawnReason.NATURAL){
             return groupData;
         }
-        boolean isAdultAround = true;
+        boolean isAdultAround = false;
         for (SnowPantherEntity tiger : SnowPantherEntity.this.level().getEntitiesOfClass(SnowPantherEntity.class, SnowPantherEntity.this.getBoundingBox().inflate((double) 3.0F, (double) 2.0F, (double) 3.0F))) {
             if (tiger.isBaby()) {
                 isAdultAround = true;

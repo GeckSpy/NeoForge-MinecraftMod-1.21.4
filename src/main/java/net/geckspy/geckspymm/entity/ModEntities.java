@@ -95,7 +95,7 @@ public class ModEntities {
             Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "penguin"));
     public static final Supplier<EntityType<PenguinEntity>> PENGUIN = ENTITY_TYPES.register("penguin",
             ()->EntityType.Builder.of(PenguinEntity::new, MobCategory.CREATURE)
-                    .sized(.7f, 1.2f).build(PENGUIN_KEY));
+                    .sized(.5f, 1f).build(PENGUIN_KEY));
 
 
 

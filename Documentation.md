@@ -231,6 +231,12 @@ TODO: superior orium orb (purple) for harder craft
 
 ### Animals
 
+Penguin:
+    Group together, follow cod, drop cod
+
+
+TODO: twick comportement and attributes (especially finallize spawn and speed, use ModGoals, loot)
+
 Elephant:
     TODO: twick power
     TODO: throw rocks
