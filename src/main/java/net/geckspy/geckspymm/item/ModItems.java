@@ -4,8 +4,7 @@ import net.geckspy.geckspymm.MyMod;
 import net.geckspy.geckspymm.entity.ModEntities;
 import net.geckspy.geckspymm.item.custom.HalberdItem;
 import net.geckspy.geckspymm.item.custom.LightningStaff;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EntityType;
+import net.geckspy.geckspymm.item.custom.SpearItem;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
@@ -71,23 +70,26 @@ public class ModItems {
 
     // Weapons
         // halberd
-    public static final DeferredItem<SwordItem> WOODEN_HALBERD = ITEMS.registerItem("wooden_halberd",
+    public static final DeferredItem<HalberdItem> WOODEN_HALBERD = ITEMS.registerItem("wooden_halberd",
             properties -> new HalberdItem(ToolMaterial.WOOD, HalberdItem.ATTACK_DAMAGE, HalberdItem.ATTACK_SPEED, properties));
-    public static final DeferredItem<SwordItem> STONE_HALBERD = ITEMS.registerItem("stone_halberd",
+    public static final DeferredItem<HalberdItem> STONE_HALBERD = ITEMS.registerItem("stone_halberd",
             properties -> new HalberdItem(ToolMaterial.STONE, HalberdItem.ATTACK_DAMAGE, HalberdItem.ATTACK_SPEED, properties));
-    public static final DeferredItem<SwordItem> COPPER_HALBERD = ITEMS.registerItem("copper_halberd",
+    public static final DeferredItem<HalberdItem> COPPER_HALBERD = ITEMS.registerItem("copper_halberd",
             properties -> new HalberdItem(ModToolMaterials.COPPER, HalberdItem.ATTACK_DAMAGE, HalberdItem.ATTACK_SPEED, properties));
-    public static final DeferredItem<SwordItem> IRON_HALBERD = ITEMS.registerItem("iron_halberd",
+    public static final DeferredItem<HalberdItem> IRON_HALBERD = ITEMS.registerItem("iron_halberd",
             properties -> new HalberdItem(ToolMaterial.IRON, HalberdItem.ATTACK_DAMAGE, HalberdItem.ATTACK_SPEED, properties));
-    public static final DeferredItem<SwordItem> GOLDEN_HALBERD = ITEMS.registerItem("golden_halberd",
+    public static final DeferredItem<HalberdItem> GOLDEN_HALBERD = ITEMS.registerItem("golden_halberd",
             properties -> new HalberdItem(ToolMaterial.GOLD, HalberdItem.ATTACK_DAMAGE, HalberdItem.ATTACK_SPEED, properties));
-    public static final DeferredItem<SwordItem> DIAMOND_HALBERD = ITEMS.registerItem("diamond_halberd",
+    public static final DeferredItem<HalberdItem> DIAMOND_HALBERD = ITEMS.registerItem("diamond_halberd",
             properties -> new HalberdItem(ToolMaterial.DIAMOND, HalberdItem.ATTACK_DAMAGE, HalberdItem.ATTACK_SPEED, properties));
-    public static final DeferredItem<SwordItem> NETHERITE_HALBERD = ITEMS.registerItem("netherite_halberd",
+    public static final DeferredItem<HalberdItem> NETHERITE_HALBERD = ITEMS.registerItem("netherite_halberd",
             properties -> new HalberdItem(ToolMaterial.NETHERITE, HalberdItem.ATTACK_DAMAGE, HalberdItem.ATTACK_SPEED, properties));
-    public static final DeferredItem<SwordItem> PURE_QUARTZ_HALBERD = ITEMS.registerItem("pure_quartz_halberd",
+    public static final DeferredItem<HalberdItem> PURE_QUARTZ_HALBERD = ITEMS.registerItem("pure_quartz_halberd",
             properties -> new HalberdItem(ModToolMaterials.PURE_QUARTZ, HalberdItem.ATTACK_DAMAGE+1, HalberdItem.ATTACK_SPEED, properties));
 
+        // Spear
+    public static final DeferredItem<SpearItem> IRON_SPEAR = ITEMS.registerItem("iron_spear",
+            properties -> new SpearItem(ToolMaterial.IRON, SpearItem.ATTACK_DAMAGE, SpearItem.ATTACK_SPEED, properties));
 
     // Armor Trim
     public static final DeferredItem<Item> THIEF_SMITHING_TEMPLATE = ITEMS.registerItem("thief_armor_trim_smithing_template",

@@ -2,21 +2,21 @@ package net.geckspy.geckspymm.event;
 
 import net.geckspy.geckspymm.MyMod;
 import net.geckspy.geckspymm.entity.ModEntities;
-import net.geckspy.geckspymm.entity.elephant.ElephantEntity;
-import net.geckspy.geckspymm.entity.elephant.ElephantModel;
-import net.geckspy.geckspymm.entity.giraffe.GiraffeEntity;
-import net.geckspy.geckspymm.entity.giraffe.GiraffeModel;
-import net.geckspy.geckspymm.entity.lion.LionEntity;
-import net.geckspy.geckspymm.entity.lion.LionModel;
+import net.geckspy.geckspymm.entity.animals.elephant.ElephantEntity;
+import net.geckspy.geckspymm.entity.animals.elephant.ElephantModel;
+import net.geckspy.geckspymm.entity.animals.giraffe.GiraffeEntity;
+import net.geckspy.geckspymm.entity.animals.giraffe.GiraffeModel;
+import net.geckspy.geckspymm.entity.animals.lion.LionEntity;
+import net.geckspy.geckspymm.entity.animals.lion.LionModel;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritEntity;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritModel;
-import net.geckspy.geckspymm.entity.penguin.PenguinEntity;
-import net.geckspy.geckspymm.entity.penguin.PenguinModel;
-import net.geckspy.geckspymm.entity.rhinoceros.RhinocerosEntity;
-import net.geckspy.geckspymm.entity.rhinoceros.RhinocerosModel;
-import net.geckspy.geckspymm.entity.snow_panther.SnowPantherModel;
-import net.geckspy.geckspymm.entity.tiger.TigerEntity;
-import net.geckspy.geckspymm.entity.tiger.TigerModel;
+import net.geckspy.geckspymm.entity.animals.penguin.PenguinEntity;
+import net.geckspy.geckspymm.entity.animals.penguin.PenguinModel;
+import net.geckspy.geckspymm.entity.animals.rhinoceros.RhinocerosEntity;
+import net.geckspy.geckspymm.entity.animals.rhinoceros.RhinocerosModel;
+import net.geckspy.geckspymm.entity.animals.snow_panther.SnowPantherModel;
+import net.geckspy.geckspymm.entity.animals.tiger.TigerEntity;
+import net.geckspy.geckspymm.entity.animals.tiger.TigerModel;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -39,6 +39,7 @@ public class ModEventBusEvents {
         event.registerLayerDefinition(LionModel.LAYER_LOCATION, LionModel::createBodyLayer);
         event.registerLayerDefinition(SnowPantherModel.LAYER_LOCATION, SnowPantherModel::createBodyLayer);
         event.registerLayerDefinition(PenguinModel.LAYER_LOCATION, PenguinModel::createBodyLayer);
+
     }
 
     @SubscribeEvent

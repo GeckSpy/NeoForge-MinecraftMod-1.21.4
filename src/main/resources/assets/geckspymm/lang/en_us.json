@@ -41,6 +41,10 @@
   "item.geckspymm.netherite_halberd": "Netherite Halberd",
   "item.geckspymm.pure_quartz_halberd": "Pure Quartz Halberd",
 
+    // Spear
+  "entity.geckspymm.spear": "Spear",
+  "item.geckspymm.iron_spear": "Iron Spear",
+
 
   // Armor trim
   "item.geckspymm.thief_armor_trim_smithing_template": "Thief Trim Template",

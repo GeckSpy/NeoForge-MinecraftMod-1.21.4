@@ -7,16 +7,17 @@ import net.geckspy.geckspymm.effect.ModEffects;
 import net.geckspy.geckspymm.effect.UndyingEffect;
 import net.geckspy.geckspymm.enchantment.ModEnchantmentEffects;
 import net.geckspy.geckspymm.entity.ModEntities;
-import net.geckspy.geckspymm.entity.elephant.ElephantRenderer;
-import net.geckspy.geckspymm.entity.giraffe.GiraffeRenderer;
-import net.geckspy.geckspymm.entity.lion.LionRenderer;
+import net.geckspy.geckspymm.entity.animals.elephant.ElephantRenderer;
+import net.geckspy.geckspymm.entity.animals.giraffe.GiraffeRenderer;
+import net.geckspy.geckspymm.entity.animals.lion.LionRenderer;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritRenderer;
-import net.geckspy.geckspymm.entity.penguin.PenguinRenderer;
+import net.geckspy.geckspymm.entity.animals.penguin.PenguinRenderer;
 import net.geckspy.geckspymm.entity.renderer.PrimedTntV2Renderer;
 import net.geckspy.geckspymm.entity.renderer.PrimedTntV3Renderer;
-import net.geckspy.geckspymm.entity.rhinoceros.RhinocerosRenderer;
-import net.geckspy.geckspymm.entity.snow_panther.SnowPantherRenderer;
-import net.geckspy.geckspymm.entity.tiger.TigerRenderer;
+import net.geckspy.geckspymm.entity.animals.rhinoceros.RhinocerosRenderer;
+import net.geckspy.geckspymm.entity.animals.snow_panther.SnowPantherRenderer;
+import net.geckspy.geckspymm.entity.animals.tiger.TigerRenderer;
+import net.geckspy.geckspymm.entity.spear.ThrownSpearRenderer;
 import net.geckspy.geckspymm.item.ModCreativeModeTabs;
 import net.geckspy.geckspymm.item.ModItems;
 import net.geckspy.geckspymm.item.custom.HalberdItem;
@@ -30,12 +31,9 @@ import net.geckspy.geckspymm.screen.MagicCraftingTableScreen;
 import net.geckspy.geckspymm.screen.MergerBlockScreen;
 import net.geckspy.geckspymm.screen.ModMenuTypes;
 import net.geckspy.geckspymm.worldgen.ModPlacedFeatures;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -185,6 +183,8 @@ public class MyMod {
             event.accept(ModItems.DIAMOND_HALBERD);
             event.accept(ModItems.PURE_QUARTZ_HALBERD);
             event.accept(ModItems.NETHERITE_HALBERD);
+
+            event.accept(ModItems.IRON_SPEAR);
         }
         else if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS){
             event.accept(ModBlocks.TNT_V2);
@@ -225,6 +225,7 @@ public class MyMod {
             EntityRenderers.register(ModEntities.TIGER.get(), TigerRenderer::new);
             EntityRenderers.register(ModEntities.SNOW_PANTHER.get(), SnowPantherRenderer::new);
             EntityRenderers.register(ModEntities.PENGUIN.get(), PenguinRenderer::new);
+            EntityRenderers.register(ModEntities.SPEAR_ENTITY.get(), ThrownSpearRenderer::new);
         }
 
         @SubscribeEvent

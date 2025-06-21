@@ -1,6 +1,5 @@
 package net.geckspy.geckspymm.entity.goals;
 
-import net.geckspy.geckspymm.entity.tiger.TigerEntity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.PathfinderMob;

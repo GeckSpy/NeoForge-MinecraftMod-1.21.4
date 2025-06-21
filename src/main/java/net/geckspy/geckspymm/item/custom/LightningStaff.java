@@ -148,8 +148,8 @@ public class LightningStaff extends Item {
 
         // Take of durability
         if(shooter instanceof Player player && !player.isCreative()) {
-            int newDamage = stack.getDamageValue() + 1; // getDamageValue() → current damage :contentReference[oaicite:0]{index=0}
-            if (newDamage >= stack.getMaxDamage()) {    // getMaxDamage() → durability cap :contentReference[oaicite:1]{index=1}
+            int newDamage = stack.getDamageValue() + 1; // getDamageValue() → current damage
+            if (newDamage >= stack.getMaxDamage()) {    // getMaxDamage() → durability cap
                 stack.shrink(1);
                 shooter.swing(shooter.getUsedItemHand());         // play break animation
             } else {

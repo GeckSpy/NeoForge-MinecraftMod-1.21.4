@@ -1,6 +1,5 @@
 package net.geckspy.geckspymm.entity.goals;
 
-import net.geckspy.geckspymm.entity.tiger.TigerEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;

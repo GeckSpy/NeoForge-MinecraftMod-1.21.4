@@ -1,16 +1,17 @@
 package net.geckspy.geckspymm.entity;
 
 import net.geckspy.geckspymm.MyMod;
-import net.geckspy.geckspymm.entity.elephant.ElephantEntity;
-import net.geckspy.geckspymm.entity.giraffe.GiraffeEntity;
-import net.geckspy.geckspymm.entity.lion.LionEntity;
+import net.geckspy.geckspymm.entity.animals.elephant.ElephantEntity;
+import net.geckspy.geckspymm.entity.animals.giraffe.GiraffeEntity;
+import net.geckspy.geckspymm.entity.animals.lion.LionEntity;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritEntity;
 import net.geckspy.geckspymm.entity.custom.PrimedTntV2;
 import net.geckspy.geckspymm.entity.custom.PrimedTntV3;
-import net.geckspy.geckspymm.entity.penguin.PenguinEntity;
-import net.geckspy.geckspymm.entity.rhinoceros.RhinocerosEntity;
-import net.geckspy.geckspymm.entity.snow_panther.SnowPantherEntity;
-import net.geckspy.geckspymm.entity.tiger.TigerEntity;
+import net.geckspy.geckspymm.entity.animals.penguin.PenguinEntity;
+import net.geckspy.geckspymm.entity.animals.rhinoceros.RhinocerosEntity;
+import net.geckspy.geckspymm.entity.animals.snow_panther.SnowPantherEntity;
+import net.geckspy.geckspymm.entity.animals.tiger.TigerEntity;
+import net.geckspy.geckspymm.entity.spear.ThrownSpear;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -26,6 +27,8 @@ public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, MyMod.MOD_ID);
 
+    // Weapons
+        // TNT
     public static final ResourceKey<EntityType<?>> TNT_V2_KEY =
             ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "tnt_v2"));
     public static final Supplier<EntityType<PrimedTntV2>> TNT_V2 = ENTITY_TYPES.register("tnt_v2",
@@ -35,7 +38,6 @@ public class ModEntities {
                     .updateInterval(10)
                     .build(TNT_V2_KEY)
     );
-
 
     public static final ResourceKey<EntityType<?>> TNT_V3_KEY =
             ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "tnt_v3"));
@@ -47,7 +49,16 @@ public class ModEntities {
                     .build(TNT_V3_KEY)
     );
 
+    //mobs
+    public static final ResourceKey<EntityType<?>> SPEAR_ENTITY_KEY =
+            ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "spear_entity"));
+    public static final Supplier<EntityType<ThrownSpear>> SPEAR_ENTITY = ENTITY_TYPES.register("spear_entity",
+            ()->EntityType.Builder.<ThrownSpear>of(ThrownSpear::new, MobCategory.MISC)
+                    .sized(0.2f, 0.2f).build(SPEAR_ENTITY_KEY));
 
+
+
+    //mobs
     public static final ResourceKey<EntityType<?>> ORIUM_SPIRIT_KEY =
             ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "orium_spirit"));
     public static final Supplier<EntityType<OriumSpiritEntity>> ORIUM_SPIRIT = ENTITY_TYPES.register("orium_spirit",

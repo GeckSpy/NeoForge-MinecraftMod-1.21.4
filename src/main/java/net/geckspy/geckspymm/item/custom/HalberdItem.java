@@ -12,7 +12,7 @@ import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
 
 
 public class HalberdItem extends SwordItem {
-    public static final double ENTITY_INTERACTION_RANGE_BONUS = 1.75f;
+    public static final double ENTITY_INTERACTION_RANGE_BONUS = 1.8f;
     public static final float ATTACK_SPEED = -3.5f;
     public static final int ATTACK_DAMAGE = 7;
 

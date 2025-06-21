@@ -190,20 +190,21 @@ Orium particle
 Orium Orb: Item
 
 Orium spirit: (looks like allays in yellow)
+    TODO: brain
     TODO: Can fly
     TODO: modify hitbox
     Follow player holding orium orb
-    TODO: When attacked, get angry, summon lightning, die, drops some orium orb
-    TODO: When lightning convertor at less than X blocks, don't go further
-        -> randomly summon lightning on it
+    TODO: When attacked, get angry, summon lightning, die, drops some orium orb ?
+    TODO: When orium gatherer at less than X blocks, don't go further
+        -> randomly brings orium at it
 
-TODO: ligthning convertor:
-    When it by lightning, create an high amount of orium orb
+TODO: Orium gatherer:
 
 
 Orium torch: torch item 
+    TODO: change so that strick monster with low amount of damage, then shut off (switch on by orium spirit)
     craft: redstone torch + electricity orb on top
-    remove click to change state (switch off/on)
+    TODO: remove click to change state (switch off/on)
     emit light when on
     TODO: orium_wall_torch 
 
@@ -232,6 +233,7 @@ TODO: superior orium orb (purple) for harder craft
 ### Animals
 
 Penguin: Group together, follow cod, drop cod
+    TODO: random slides on ice?
 
 Giraffe:
 
@@ -246,7 +248,8 @@ SnowPanther:
     TODO: drop fourrure
 
 
-Elephant: Drop elephant tusk
+Elephant:
+    Drop elephant tusk
     TODO: throw rocks (need to add throwable rocks before)
     TODO: spawn
     TODO: twick comportement and attributes (especially finallize spawn and speed, use ModGoals, loot)
@@ -313,6 +316,10 @@ TODO general:
 
 ## Better Minecraft
 
+### Structures
+Campement -> in every all biomes with variant (can have illagers)
+
+
 ### End
 
 end material (armor and tools) made of pure_end_cristal + ?<rare> in merger ?:
@@ -339,7 +346,11 @@ new arrow (dynamit arrow)
 
 
 ### Mobs
-new mobs: ghost (make you fly), superior end defender (drop end_core, really toff, explosion/lazers?)
+ghost (make you fly)
+superior end defender (drop end_core, really toff, explosion/lazers?)
+ent (tree mob)
+taupe-like monster
+Sorcerer
 
 
 ### Nature
