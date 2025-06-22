@@ -1,6 +1,7 @@
 package net.geckspy.geckspymm.item;
 
 import net.geckspy.geckspymm.MyMod;
+import net.geckspy.geckspymm.block.ModBlocks;
 import net.geckspy.geckspymm.entity.ModEntities;
 import net.geckspy.geckspymm.item.custom.HalberdItem;
 import net.geckspy.geckspymm.item.custom.LightningStaff;
@@ -15,6 +16,19 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MyMod.MOD_ID);
 
 // Better Minecraft
+    // Food
+    public static final DeferredItem<Item> FRIED_EGG = ITEMS.registerItem("fried_egg",
+        properties -> new Item(properties.food(ModFoodProperties.FRIED_EGG)));
+
+    public static final DeferredItem<Item> PEPPER_SEEDS = ITEMS.registerItem("pepper_seeds",
+            properties->new BlockItem(ModBlocks.PEPPER_CROP.get(), properties));
+    public static final DeferredItem<Item> PEPPER = ITEMS.registerItem("pepper",
+            properties -> new Item(properties.food(ModFoodProperties.PEPPER)));
+    public static final DeferredItem<Item> RED_PEPPER = ITEMS.registerItem("red_pepper",
+            properties -> new Item(properties.food(ModFoodProperties.RED_PEPPER, ModFoodProperties.RED_PEPPER_EFFECT)));
+
+
+
     // Copper material
     public static final DeferredItem<SwordItem> COPPER_SWORD = ITEMS.registerItem("copper_sword",
             properties -> new SwordItem(ModToolMaterials.COPPER, 3f, -2.4f, properties));

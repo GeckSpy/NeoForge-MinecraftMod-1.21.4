@@ -1,5 +1,11 @@
 {
   // Better Minecraft
+    // Food
+  "item.geckspymm.fried_egg": "Fried Egg",
+  "item.geckspymm.pepper_seeds": "Pepper Seeds",
+  "item.geckspymm.pepper": "Pepper",
+  "item.geckspymm.red_pepper": "Red Pepper",
+
     // copper
   "item.geckspymm.copper_sword": "Copper Sword",
   "item.geckspymm.copper_axe": "Copper Axe",

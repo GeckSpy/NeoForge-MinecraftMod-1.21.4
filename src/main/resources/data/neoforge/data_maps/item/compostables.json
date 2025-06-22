@@ -1,0 +1,13 @@
+{
+  "values": {
+    "geckspymm:pepper_seeds": {
+      "chance": 0.2
+    },
+    "geckspymm:pepper": {
+      "chance": 0.7
+    },
+    "geckspymm:red_pepper": {
+      "chance": 0.35
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "geckspymm:block/crop/pepper_crop_stage4"
+  }
+}

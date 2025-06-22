@@ -130,13 +130,21 @@ Tools: All
 ### New weapons
 
 Halberd: better range, slower attack, high damage
+    Craft: M:material, /:stick
+         MM
+         /M
+        /
     TODO: enchantability
     TODO: custom entity_range_interaction enchantment?
     TODO: superior end
 
 Spear: throwable
+    Craft: M:material, /:stick
+          M
+         /
+        /
+    TODO: custom enchantment: throwing speed
     TODO: enchantment
-    TODO: pure quartz texture
     TODO: superior end
 
 
@@ -145,14 +153,14 @@ Spear: throwable
 ### New effect
 
 Gigantism: makes you taller, faster, stronger
-    TODO: add slower attack speed and higher damage
+    TODO: add slower attack speed and higher damage and higher resistance
     Craftable with red mushroom
     Gigantism II from Gigantism I and glowstone
     Gigantism III from Gigantism II and glowstone
     Gigantism IV from Gigantism II and glowstone
     
 Miniaturism: makes you smaller, faster, 
-    TODO: reduce damage
+    TODO: reduce given damage
     Craftable with brown mushroom
     Miniaturism II from Miniaturism I and glowstone
     Miniaturism III from Miniaturism II and glowstone
@@ -160,6 +168,7 @@ Miniaturism: makes you smaller, faster,
 
 
 Undying effect: protect you from the deaths
+    Craftable with totem of undying
     When you are supposed to die, you don't, give you two heart of absorption and knockback surrounding living entity
 
 TODO: add translation for arrow with mod effect
@@ -226,7 +235,10 @@ Merger: merge tow item together
     New custom Menu and Screen
     New custom recipe and serializer
     TODO: custom state when using superior orium orb (purple)
+    TODO: change recipe to custom experience amount (see furnace crafts)
 
+
+TODO: Magical furnace (burn thing thank to orium_orb)
 
 TODO: superior orium orb (purple) for harder craft
     TODO: craft: merger: orium orb + end_core + redstone
@@ -304,6 +316,32 @@ New armor trim:
 New trim material: pure_quartz, coal
 
 
+### Food
+
+Fried egg: from egg
+
+Pepper Seeds: Obtainable with Pepper or Red Pepper
+    Pepper: TODO: can be found in new structure / drop from desert village
+    Red Pepper: can sometimes drop from pepper crops
+
+
+
+TODO:
+new plant & food: rice, corn, leek, avocado
+
+cooker machine -> make lunch: really high sasieté
+    craft: S:smoker, C:cobblestone, R:redstone_block, I:iron_igot, _:iron_pressure_plate
+    _
+    ISR
+    CCC
+    crafts:
+    hambuger: bread, beef, tomato, milk
+    sushi/maki: rice, salmon, avocado, kelp
+    tacos: corn, pepper, avocado, chicken
+    noodles: egg, wheat, pork, leak
+
+
+
 ### Other
 TODO: uncomment 'false' in MyMod for Twiked mob generation to add randomness (scale, movement_speed, attack_damage)
 TODO: mob spawning by command get affected (FinalizeSpawnEvent us not called)
@@ -369,21 +407,6 @@ pipes, entering/closing pipes
 block breaker?
 Touret (tourelle, shoot mob) 
 Orium (magic) touret
-
-
-### Food
-Fried eggs
-new plant & food: rice, corn, leek, pepper, avocado
-cooker machine -> make lunch: really high sasieté
-    craft: S:smoker, C:cobblestone, R:redstone_block, I:iron_igot, _:iron_pressure_plate
-         _ 
-        ISR
-        CCC
-    crafts:
-        hambuger: bread, beef, tomato, milk
-        sushi/maki: rice, salmon, avocado, kelp
-        tacos: corn, pepper, avocado, chicken
-     noodles: egg, wheat, pork, leak
 
 
 ### Other

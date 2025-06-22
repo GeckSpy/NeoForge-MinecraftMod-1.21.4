@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+      "geckspymm:red_pepper"
+  ],
+  "result": {
+    "count": 1,
+    "id": "geckspymm:pepper_seeds"
+  }
+}

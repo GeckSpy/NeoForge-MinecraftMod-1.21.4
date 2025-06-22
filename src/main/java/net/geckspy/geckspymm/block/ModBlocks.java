@@ -2,6 +2,7 @@ package net.geckspy.geckspymm.block;
 
 import net.geckspy.geckspymm.MyMod;
 import net.geckspy.geckspymm.block.custom.*;
+import net.geckspy.geckspymm.block.custom.crop.PepperCropBlock;
 import net.geckspy.geckspymm.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -9,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -22,6 +24,11 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MyMod.MOD_ID);
     // double shift to see files, includes Non-project items, Search for BLOCKS and open Blocks from minecraft\world\level\block
+
+    public static final DeferredBlock<Block> PEPPER_CROP = BLOCKS.registerBlock("pepper_crop",
+            properties -> new PepperCropBlock(properties
+                    .randomTicks().sound(SoundType.CROP).noOcclusion().pushReaction(PushReaction.DESTROY)
+                    .instabreak().noCollission()));
 
     public static final DeferredBlock<Block> TNT_V2 = registerBlock(
             "tnt_v2", ()->new TntV2Block(BlockBehaviour.Properties.of()

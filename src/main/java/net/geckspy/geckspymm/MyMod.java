@@ -31,6 +31,8 @@ import net.geckspy.geckspymm.screen.MagicCraftingTableScreen;
 import net.geckspy.geckspymm.screen.MergerBlockScreen;
 import net.geckspy.geckspymm.screen.ModMenuTypes;
 import net.geckspy.geckspymm.worldgen.ModPlacedFeatures;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.Entity;
@@ -128,13 +130,15 @@ public class MyMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.PEPPER_SEEDS);
+
+            event.accept(ModItems.RHINOCEROS_HORN);
+            event.accept(ModItems.ELEPHANT_TUSK);
+
             event.accept(ModItems.PURE_QUARTZ);
             event.accept(ModItems.IMPURE_END_CRISTAL);
             event.accept(ModItems.END_CRISTAL);
             event.accept(ModItems.PURE_QUARTZ_UPGRADE_SMITHING_TEMPLATE);
-
-            event.accept(ModItems.RHINOCEROS_HORN);
-            event.accept(ModItems.ELEPHANT_TUSK);
 
             event.accept(ModItems.VANILLA_SMITHING_TEMPLATE);
             event.accept(ModItems.THIEF_SMITHING_TEMPLATE);
@@ -143,6 +147,10 @@ public class MyMod {
             event.accept(ModItems.DESERT_SMITHING_TEMPLATE);
             event.accept(ModItems.KNIGHT_SMITHING_TEMPLATE);
             event.accept(ModItems.ROBOT_SMITHING_TEMPLATE);
+        }else if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
+            event.accept(ModItems.FRIED_EGG);
+            event.accept(ModItems.PEPPER);
+            event.accept(ModItems.RED_PEPPER);
         }
         else if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.IMPURE_END_CRISTAL_BLOCK);
@@ -233,6 +241,8 @@ public class MyMod {
             EntityRenderers.register(ModEntities.SNOW_PANTHER.get(), SnowPantherRenderer::new);
             EntityRenderers.register(ModEntities.PENGUIN.get(), PenguinRenderer::new);
             EntityRenderers.register(ModEntities.SPEAR_ENTITY.get(), ThrownSpearRenderer::new);
+
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEPPER_CROP.get(), RenderType.cutout());
         }
 
         @SubscribeEvent
@@ -303,6 +313,8 @@ public class MyMod {
         builder.addMix(ModPotions.MINIATURISM_POTION, Items.GLOWSTONE_DUST, ModPotions.MINIATURISM_2_POTION);
         builder.addMix(ModPotions.MINIATURISM_2_POTION, Items.GLOWSTONE_DUST, ModPotions.MINIATURISM_3_POTION);
         builder.addMix(ModPotions.MINIATURISM_3_POTION, Items.GLOWSTONE_DUST, ModPotions.MINIATURISM_4_POTION);
+
+        builder.addMix(Potions.AWKWARD, Items.TOTEM_OF_UNDYING, ModPotions.UNDYING_POTION);
     }
 
     @SubscribeEvent

@@ -33,7 +33,7 @@ public class ModPotions {
             new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.MINIATURISM, 600, 3)));
 
     public static final Holder<Potion> UNDYING_POTION = POTIONS.register("undying_potion", registerName ->
-            new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.UNDYING, 300, 0)));
+            new Potion(registerName.getPath(), new MobEffectInstance(ModEffects.UNDYING, 200, 0)));
 
 
     public static final void register(IEventBus eventBus){
