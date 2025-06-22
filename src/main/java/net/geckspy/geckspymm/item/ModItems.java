@@ -88,8 +88,23 @@ public class ModItems {
             properties -> new HalberdItem(ModToolMaterials.PURE_QUARTZ, HalberdItem.ATTACK_DAMAGE+1, HalberdItem.ATTACK_SPEED, properties));
 
         // Spear
+    public static final DeferredItem<SpearItem> WOOD_SPEAR = ITEMS.registerItem("wooden_spear",
+            properties -> new SpearItem(ToolMaterial.WOOD, SpearItem.ATTACK_DAMAGE, SpearItem.ATTACK_SPEED, properties));
+    public static final DeferredItem<SpearItem> STONE_SPEAR = ITEMS.registerItem("stone_spear",
+            properties -> new SpearItem(ToolMaterial.STONE, SpearItem.ATTACK_DAMAGE, SpearItem.ATTACK_SPEED, properties));
+    public static final DeferredItem<SpearItem> COPPER_SPEAR = ITEMS.registerItem("copper_spear",
+            properties -> new SpearItem(ModToolMaterials.COPPER, SpearItem.ATTACK_DAMAGE, SpearItem.ATTACK_SPEED, properties));
     public static final DeferredItem<SpearItem> IRON_SPEAR = ITEMS.registerItem("iron_spear",
             properties -> new SpearItem(ToolMaterial.IRON, SpearItem.ATTACK_DAMAGE, SpearItem.ATTACK_SPEED, properties));
+    public static final DeferredItem<SpearItem> GOLDEN_SPEAR = ITEMS.registerItem("golden_spear",
+            properties -> new SpearItem(ToolMaterial.GOLD, SpearItem.ATTACK_DAMAGE, SpearItem.ATTACK_SPEED, properties));
+    public static final DeferredItem<SpearItem> DIAMOND_SPEAR = ITEMS.registerItem("diamond_spear",
+            properties -> new SpearItem(ToolMaterial.DIAMOND, SpearItem.ATTACK_DAMAGE, SpearItem.ATTACK_SPEED, properties));
+    public static final DeferredItem<SpearItem> PURE_QUARTZ_SPEAR = ITEMS.registerItem("pure_quartz_spear",
+            properties -> new SpearItem(ModToolMaterials.PURE_QUARTZ, SpearItem.ATTACK_DAMAGE, SpearItem.ATTACK_SPEED, properties));
+    public static final DeferredItem<SpearItem> NETHERITE_SPEAR = ITEMS.registerItem("netherite_spear",
+            properties -> new SpearItem(ToolMaterial.NETHERITE, SpearItem.ATTACK_DAMAGE, SpearItem.ATTACK_SPEED, properties));
+
 
     // Armor Trim
     public static final DeferredItem<Item> THIEF_SMITHING_TEMPLATE = ITEMS.registerItem("thief_armor_trim_smithing_template",

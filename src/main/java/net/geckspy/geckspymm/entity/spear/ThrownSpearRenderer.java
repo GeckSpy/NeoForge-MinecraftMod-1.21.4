@@ -2,15 +2,12 @@ package net.geckspy.geckspymm.entity.spear;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import net.geckspy.geckspymm.MyMod;
 import net.geckspy.geckspymm.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
@@ -26,7 +23,7 @@ public class ThrownSpearRenderer extends EntityRenderer<ThrownSpear, ThrownSpear
 
     @Override
     public void render(ThrownSpearRenderState renderState, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
-        ItemStack stack = new ItemStack(ModItems.IRON_SPEAR.get());
+        ItemStack stack = new ItemStack(renderState.spearItem);
         poseStack.pushPose();
         poseStack.mulPose(Axis.YP.rotationDegrees(renderState.yRot - 90f)); // Yaw
         poseStack.mulPose(Axis.ZP.rotationDegrees(renderState.xRot));   // Pitch
@@ -54,5 +51,6 @@ public class ThrownSpearRenderer extends EntityRenderer<ThrownSpear, ThrownSpear
         renderState.xRot = thrownSpear.getXRot();
         renderState.yRot = thrownSpear.getYRot();
         renderState.isFoil = thrownSpear.isFoil();
+        renderState.spearItem = thrownSpear.getSpearItem();
     }
 }

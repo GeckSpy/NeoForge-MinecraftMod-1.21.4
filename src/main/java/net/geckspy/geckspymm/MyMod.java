@@ -184,7 +184,14 @@ public class MyMod {
             event.accept(ModItems.PURE_QUARTZ_HALBERD);
             event.accept(ModItems.NETHERITE_HALBERD);
 
+            event.accept(ModItems.WOOD_SPEAR);
+            event.accept(ModItems.STONE_SPEAR);
+            event.accept(ModItems.COPPER_SPEAR);
             event.accept(ModItems.IRON_SPEAR);
+            event.accept(ModItems.GOLDEN_SPEAR);
+            event.accept(ModItems.DIAMOND_SPEAR);
+            event.accept(ModItems.PURE_QUARTZ_SPEAR);
+            event.accept(ModItems.NETHERITE_SPEAR);
         }
         else if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS){
             event.accept(ModBlocks.TNT_V2);

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "geckspymm:pure_quartz",
+  "base": "geckspymm:diamond_spear",
+  "result": {
+    "id": "geckspymm:pure_quartz_spear"
+  },
+  "template": "geckspymm:pure_quartz_upgrade_smithing_template"
+}

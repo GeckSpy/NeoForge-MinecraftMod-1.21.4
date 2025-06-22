@@ -2,6 +2,7 @@ package net.geckspy.geckspymm.item.custom;
 
 import net.geckspy.geckspymm.entity.spear.ThrownSpear;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Position;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -14,13 +15,15 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.ItemAbility;
 
 public class SpearItem extends SwordItem implements ProjectileItem {
     public static final float ATTACK_SPEED = -2.8f;
-    public static final int ATTACK_DAMAGE = 4;
+    public static final float ATTACK_DAMAGE = 1;
+    public static final float THROWN_ATTACK_DAMAGE = 4;
     private static final int MIN_CHARGE = 10;
     public ToolMaterial toolMaterial;
 
@@ -28,7 +31,6 @@ public class SpearItem extends SwordItem implements ProjectileItem {
         super(material.applySwordProperties(properties, attackDamage, attackSpeed));
         toolMaterial = material;
     }
-
 
 
 
@@ -48,15 +50,13 @@ public class SpearItem extends SwordItem implements ProjectileItem {
                     SoundSource.NEUTRAL, 0.5f, 0.4f/(level.getRandom().nextFloat()*0.4f+0.8f));
             player.awardStat(Stats.ITEM_USED.get(this));
             if (level instanceof ServerLevel) {
-                System.out.println("releaseUsing");
                 ServerLevel serverlevel = (ServerLevel)level;
                 itemStack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 
-                ThrownSpear thrownSpear = (ThrownSpear)Projectile.spawnProjectileFromRotation(ThrownSpear::new, serverlevel, itemStack, player, 0.0f, 2.5f, 1.0f);
+                ThrownSpear thrownSpear = (ThrownSpear)Projectile.spawnProjectileFromRotation(ThrownSpear::new, serverlevel, itemStack, player, 0.0f, 1.8f, 0.5f);
                 if (player.hasInfiniteMaterials()) {
                     thrownSpear.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
                 } else {
-                    System.out.println("Remove");
                     player.getInventory().removeItem(itemStack);
                 }
             }
@@ -76,21 +76,17 @@ public class SpearItem extends SwordItem implements ProjectileItem {
         return 72000;
     }
 
-    @Override
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        return true;
-    }
-
-    @Override
-    public void postHurtEnemy(ItemStack p_345950_, LivingEntity p_345617_, LivingEntity p_345537_) {
-        p_345950_.hurtAndBreak(1, p_345537_, EquipmentSlot.MAINHAND);
-    }
 
     @Override
     public Projectile asProjectile(Level level, Position position, ItemStack itemStack, Direction direction) {
         ThrownSpear thrownSpear = new ThrownSpear(level, position.x(), position.y(), position.z(), itemStack.copyWithCount(1));
         thrownSpear.pickup = AbstractArrow.Pickup.ALLOWED;
         return thrownSpear;
+    }
+
+    @Override
+    public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
+        return false;
     }
 
 }

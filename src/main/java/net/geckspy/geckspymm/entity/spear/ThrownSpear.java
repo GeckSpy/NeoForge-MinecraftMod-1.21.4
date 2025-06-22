@@ -2,6 +2,7 @@ package net.geckspy.geckspymm.entity.spear;
 
 import net.geckspy.geckspymm.entity.ModEntities;
 import net.geckspy.geckspymm.item.ModItems;
+import net.geckspy.geckspymm.item.ModToolMaterials;
 import net.geckspy.geckspymm.item.custom.SpearItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -33,15 +34,38 @@ import java.util.Map;
 public class ThrownSpear extends AbstractArrow {
     private static final EntityDataAccessor<Byte> ID_LOYALTY;
     private static final EntityDataAccessor<Boolean> ID_FOIL;
+    private static final EntityDataAccessor<String> toolMaterialName =
+            SynchedEntityData.defineId(ThrownSpear.class, EntityDataSerializers.STRING);
+    public static final ToolMaterial DEFAULT_MATERIAL = ToolMaterial.WOOD;
+
+    public int clientSideReturnSpearTickCount;
     private static final float WATER_INERTIA = 0.6F;
     private boolean dealtDamage;
-    public int clientSideReturnSpearTickCount;
+    private int lifeTicks = 0;
+
+
+    public static final Map<String, SpearItem> stringToItem = Map.of(
+            ToolMaterial.WOOD.toString(), ModItems.WOOD_SPEAR.get(),
+            ToolMaterial.STONE.toString(), ModItems.STONE_SPEAR.get(),
+            ModToolMaterials.COPPER.toString(), ModItems.COPPER_SPEAR.get(),
+            ToolMaterial.IRON.toString(), ModItems.IRON_SPEAR.get(),
+            ToolMaterial.GOLD.toString(), ModItems.GOLDEN_SPEAR.get(),
+            ToolMaterial.DIAMOND.toString(), ModItems.DIAMOND_SPEAR.get(),
+            ModToolMaterials.PURE_QUARTZ.toString(), ModItems.PURE_QUARTZ_SPEAR.get(),
+            ToolMaterial.NETHERITE.toString(), ModItems.NETHERITE_SPEAR.get()
+    );
 
 
     public ThrownSpear(Level level, LivingEntity shooter, ItemStack pickupItemStack) {
         super(ModEntities.SPEAR_ENTITY.get(), shooter, level, pickupItemStack, (ItemStack)null);
         this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pickupItemStack));
         this.entityData.set(ID_FOIL, pickupItemStack.hasFoil());
+
+        ToolMaterial material = DEFAULT_MATERIAL;
+        Item item = pickupItemStack.getItem();
+        if(item instanceof SpearItem){material = ((SpearItem) item).toolMaterial;}
+        System.out.println(material);
+        this.entityData.set(toolMaterialName, material.toString());
     }
 
     public ThrownSpear(EntityType<ThrownSpear> thrownSpearEntityType, Level level) {
@@ -52,6 +76,11 @@ public class ThrownSpear extends AbstractArrow {
         super(EntityType.TRIDENT, x, y, z, level, pickupItemStack, pickupItemStack);
         this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pickupItemStack));
         this.entityData.set(ID_FOIL, pickupItemStack.hasFoil());
+
+        ToolMaterial material = DEFAULT_MATERIAL;
+        Item item = pickupItemStack.getItem();
+        if(item instanceof SpearItem){material = ((SpearItem) item).toolMaterial;}
+        this.entityData.set(toolMaterialName, material.toString());
     }
 
 
@@ -59,10 +88,12 @@ public class ThrownSpear extends AbstractArrow {
         super.defineSynchedData(p_326249_);
         p_326249_.define(ID_LOYALTY, (byte)0);
         p_326249_.define(ID_FOIL, false);
+        p_326249_.define(toolMaterialName, DEFAULT_MATERIAL.toString());
     }
 
     public void tick() {
-        if (this.inGroundTime > 120) {this.dealtDamage = true;}
+        this.lifeTicks++;
+        if (this.inGroundTime > 4) {this.dealtDamage = true;}
 
         Entity entity = this.getOwner();
         int i = (Byte)this.entityData.get(ID_LOYALTY);
@@ -95,7 +126,6 @@ public class ThrownSpear extends AbstractArrow {
                 ++this.clientSideReturnSpearTickCount;
             }
         }
-
         super.tick();
     }
 
@@ -115,7 +145,8 @@ public class ThrownSpear extends AbstractArrow {
 
 
     public float getDamageAmount(){
-        return SpearItem.ATTACK_DAMAGE;// + this.toolMaterial.attackDamageBonus();
+        return SpearItem.THROWN_ATTACK_DAMAGE
+                + getSpearItem().toolMaterial.attackDamageBonus();
     }
 
 
@@ -165,12 +196,18 @@ public class ThrownSpear extends AbstractArrow {
         return super.tryPickup(p_150196_) || this.isNoPhysics() && this.ownedBy(p_150196_) && p_150196_.getInventory().add(this.getPickupItem());
     }
 
+    public String getToolMaterialString(){
+        return this.getEntityData().get(toolMaterialName);
+    }
+
+    public SpearItem getSpearItem(){
+        return stringToItem.get(getToolMaterialString());
+    }
 
     @Override
     protected ItemStack getDefaultPickupItem() {
-        System.out.println("getDefaultPickupItem");
-        return new ItemStack(ModItems.IRON_SPEAR.get());
-        //return new ItemStack(item!=null? item : ModItems.IRON_SPEAR.get());
+        //System.out.println("getDefaultPickupItem :" + stringToItem.get(this.getEntityData().get(toolMaterialName)));
+        return new ItemStack(getSpearItem());
     }
 
     @Override
@@ -193,12 +230,14 @@ public class ThrownSpear extends AbstractArrow {
         super.readAdditionalSaveData(compound);
         this.dealtDamage = compound.getBoolean("DealtDamage");
         this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(this.getPickupItemStackOrigin()));
+        this.entityData.set(toolMaterialName, compound.getString("materialName"));
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putBoolean("DealtDamage", this.dealtDamage);
+        compound.putString("materialName", this.getEntityData().get(toolMaterialName));
     }
 
     private byte getLoyaltyFromItem(ItemStack stack) {
@@ -217,7 +256,9 @@ public class ThrownSpear extends AbstractArrow {
     public void tickDespawn() {
         int i = (Byte)this.entityData.get(ID_LOYALTY);
         if (this.pickup != Pickup.ALLOWED || i <= 0) {
-            super.tickDespawn();
+            if(this.lifeTicks>2400){
+                this.discard();
+            }
         }
     }
 
@@ -226,10 +267,12 @@ public class ThrownSpear extends AbstractArrow {
         return WATER_INERTIA;
     }
 
+
     @Override
     public boolean shouldRender(double x, double y, double z) {
         return true;
     }
+
 
     static {
         ID_LOYALTY = SynchedEntityData.defineId(ThrownSpear.class, EntityDataSerializers.BYTE);

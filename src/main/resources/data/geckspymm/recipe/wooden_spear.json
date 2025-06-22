@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": "#minecraft:wooden_tool_materials",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "  M",
+    " S ",
+    "S  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "geckspymm:wooden_spear"
+  }
+}

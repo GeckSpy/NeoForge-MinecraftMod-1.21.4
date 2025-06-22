@@ -43,7 +43,14 @@
 
     // Spear
   "entity.geckspymm.spear": "Spear",
+  "item.geckspymm.wooden_spear": "Wooden Spear",
+  "item.geckspymm.stone_spear": "Stone Spear",
+  "item.geckspymm.copper_spear": "Copper Spear",
   "item.geckspymm.iron_spear": "Iron Spear",
+  "item.geckspymm.golden_spear": "Golden Spear",
+  "item.geckspymm.diamond_spear": "Diamond Spear",
+  "item.geckspymm.pure_quartz_spear": "Pure Quartz Spear",
+  "item.geckspymm.netherite_spear": "Netherite Spear",
 
 
   // Armor trim

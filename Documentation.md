@@ -129,10 +129,14 @@ Tools: All
 
 ### New weapons
 
-#### halberd
-
 Halberd: better range, slower attack, high damage
+    TODO: enchantability
     TODO: custom entity_range_interaction enchantment?
+    TODO: superior end
+
+Spear: throwable
+    TODO: enchantment
+    TODO: pure quartz texture
     TODO: superior end
 
 
@@ -336,7 +340,6 @@ more mobs head
 
 
 ### weapons
-- spear: sthrowable, mid-long range, slow
 - knifes/daggers: short range, very fast
 - roped kunai: trhowable knife, comes back
 

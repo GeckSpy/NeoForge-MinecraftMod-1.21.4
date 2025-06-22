@@ -1,0 +1,6 @@
+{
+  "parent": "item/spear",
+  "textures": {
+    "layer0": "geckspymm:item/golden_spear"
+  }
+}
