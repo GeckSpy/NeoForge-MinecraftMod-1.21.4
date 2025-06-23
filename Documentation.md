@@ -295,6 +295,9 @@ TODO:
 ### Visual
 armor_stand spawn with arms
 
+New trim material: pure_quartz, coal
+
+Are we sure about that? new armor renderer? more 3D armor?
 new armor texture
 
 New armor trim:
@@ -313,7 +316,6 @@ New armor trim:
     Robot: Robot armor trim:
         TODO: Craft
 
-New trim material: pure_quartz, coal
 
 
 ### Food
@@ -324,7 +326,8 @@ Pepper Seeds: Obtainable with Pepper or Red Pepper
     Pepper: TODO: can be found in new structure / drop from desert village
     Red Pepper: can sometimes drop from pepper crops
 
-
+Leek:
+    TODO: spawn in village
 
 TODO:
 new plant & food: rice, corn, leek, avocado
@@ -335,7 +338,7 @@ cooker machine -> make lunch: really high sasieté
     ISR
     CCC
     crafts:
-    hambuger: bread, beef, tomato, milk
+    hamburger: bread, beef, tomato, milk
     sushi/maki: rice, salmon, avocado, kelp
     tacos: corn, pepper, avocado, chicken
     noodles: egg, wheat, pork, leak
@@ -360,6 +363,7 @@ TODO general:
 
 ### Structures
 Campement -> in every all biomes with variant (can have illagers)
+Cabane -> in every biom, can have a villager
 
 
 ### End
@@ -398,19 +402,15 @@ Sorcerer
 Carnivor flower:
     - Rafllesia: attire mobs ?
 
-mob:
-- Venus flytrap: attack near by mobs
 
 
 ### Redstone
 pipes, entering/closing pipes
-block breaker?
 Touret (tourelle, shoot mob) 
 Orium (magic) touret
 
 
 ### Other
-more tnt
 throwable dynamit
 throwable rock
 new elytra
@@ -464,10 +464,10 @@ new armor:
 
 
 
-## Mutant
+## Radior
 
-mutation potion
-vanilla mutant animal: cow, chicken, sheep, bee
-Better Minecraft mutant animal: shark, lizard
-mutant mob: zombie, squeletton, enderman, spider, creeper, ghast
+Radior potion
+vanilla radiant animal: cow, chicken, sheep, bee
+Better Minecraft radiant animal: shark, lizard
+radiant mob: zombie, squeletton, enderman, spider, creeper, ghast
 

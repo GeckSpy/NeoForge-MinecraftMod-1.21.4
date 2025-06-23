@@ -31,11 +31,11 @@ public class ModCreativeModeTabs {
                     .build()
     );
 
-    public static final Supplier<CreativeModeTab> MUTANT_TAB = CREATIVE_MODE_TAB.register(
-            "mutant_tab", () -> CreativeModeTab.builder()
+    public static final Supplier<CreativeModeTab> RADIANT_TAB = CREATIVE_MODE_TAB.register(
+            "radian_tab", () -> CreativeModeTab.builder()
                     .icon(()->new ItemStack(ModItems.END_CRISTAL.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "magic_tab"))
-                    .title(Component.translatable("creativetab.geckspymm.mutant"))
+                    .title(Component.translatable("creativetab.geckspymm.radian"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.MAGIC_CRISTAL);
                     })

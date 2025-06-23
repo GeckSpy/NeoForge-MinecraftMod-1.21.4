@@ -2,6 +2,7 @@ package net.geckspy.geckspymm.block;
 
 import net.geckspy.geckspymm.MyMod;
 import net.geckspy.geckspymm.block.custom.*;
+import net.geckspy.geckspymm.block.custom.crop.LeekCropBlock;
 import net.geckspy.geckspymm.block.custom.crop.PepperCropBlock;
 import net.geckspy.geckspymm.item.ModItems;
 import net.minecraft.core.registries.Registries;
@@ -29,6 +30,12 @@ public class ModBlocks {
             properties -> new PepperCropBlock(properties
                     .randomTicks().sound(SoundType.CROP).noOcclusion().pushReaction(PushReaction.DESTROY)
                     .instabreak().noCollission()));
+
+    public static final DeferredBlock<Block> LEEK_CROP = BLOCKS.registerBlock("leek_crop",
+            properties -> new LeekCropBlock(properties
+                    .randomTicks().sound(SoundType.CROP).noOcclusion().pushReaction(PushReaction.DESTROY)
+                    .instabreak().noCollission()));
+
 
     public static final DeferredBlock<Block> TNT_V2 = registerBlock(
             "tnt_v2", ()->new TntV2Block(BlockBehaviour.Properties.of()

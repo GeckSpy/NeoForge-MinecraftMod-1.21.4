@@ -27,6 +27,8 @@ public class ModItems {
     public static final DeferredItem<Item> RED_PEPPER = ITEMS.registerItem("red_pepper",
             properties -> new Item(properties.food(ModFoodProperties.RED_PEPPER, ModFoodProperties.RED_PEPPER_EFFECT)));
 
+    public static final DeferredItem<Item> LEEK = ITEMS.registerItem("leek",
+            properties -> new BlockItem(ModBlocks.LEEK_CROP.get(), properties.food(ModFoodProperties.LEEK)));
 
 
     // Copper material

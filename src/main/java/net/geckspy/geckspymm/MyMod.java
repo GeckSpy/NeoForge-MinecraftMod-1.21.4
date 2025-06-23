@@ -30,7 +30,6 @@ import net.geckspy.geckspymm.recipe.ModRecipes;
 import net.geckspy.geckspymm.screen.MagicCraftingTableScreen;
 import net.geckspy.geckspymm.screen.MergerBlockScreen;
 import net.geckspy.geckspymm.screen.ModMenuTypes;
-import net.geckspy.geckspymm.worldgen.ModPlacedFeatures;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -113,7 +112,6 @@ public class MyMod {
         ModEnchantmentEffects.register(modEventBus);
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
-        ModPlacedFeatures.register(modEventBus);
 
 
         // Register the item to a creative tab
@@ -149,6 +147,7 @@ public class MyMod {
             event.accept(ModItems.ROBOT_SMITHING_TEMPLATE);
         }else if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
             event.accept(ModItems.FRIED_EGG);
+            event.accept(ModItems.LEEK);
             event.accept(ModItems.PEPPER);
             event.accept(ModItems.RED_PEPPER);
         }
@@ -243,6 +242,7 @@ public class MyMod {
             EntityRenderers.register(ModEntities.SPEAR_ENTITY.get(), ThrownSpearRenderer::new);
 
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEPPER_CROP.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.LEEK_CROP.get(), RenderType.cutout());
         }
 
         @SubscribeEvent

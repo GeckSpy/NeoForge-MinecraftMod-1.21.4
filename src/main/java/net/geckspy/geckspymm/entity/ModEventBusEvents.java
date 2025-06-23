@@ -1,7 +1,6 @@
-package net.geckspy.geckspymm.event;
+package net.geckspy.geckspymm.entity;
 
 import net.geckspy.geckspymm.MyMod;
-import net.geckspy.geckspymm.entity.ModEntities;
 import net.geckspy.geckspymm.entity.animals.elephant.ElephantEntity;
 import net.geckspy.geckspymm.entity.animals.elephant.ElephantModel;
 import net.geckspy.geckspymm.entity.animals.giraffe.GiraffeEntity;

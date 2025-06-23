@@ -2,6 +2,7 @@
   // Better Minecraft
     // Food
   "item.geckspymm.fried_egg": "Fried Egg",
+  "item.geckspymm.leek": "Leek",
   "item.geckspymm.pepper_seeds": "Pepper Seeds",
   "item.geckspymm.pepper": "Pepper",
   "item.geckspymm.red_pepper": "Red Pepper",
@@ -177,5 +178,5 @@
 
 // Tabs
   "creativetab.geckspymm.magic": "Magic",
-  "creativetab.geckspymm.mutant": "W.I.P."
+  "creativetab.geckspymm.radiant": "W.I.P."
 }
