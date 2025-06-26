@@ -85,9 +85,15 @@
   "item.geckspymm.tnt_v3": "TNT V3",
 
     // Orium
+  "item.geckspymm.wires": "Wires",
+  "item.geckspymm.circuit_board": "Circuit Board",
   "item.geckspymm.orium_orb": "Orium Orb",
   "item.geckspymm.orium_torch": "Orium Torch",
   "item.geckspymm.merger_block": "Merger",
+  "block.geckspymm.battery": "Battery",
+  "item.geckspymm.battery": "Battery",
+
+
   "item.geckspymm.orium_spirit_spawn_egg": "Orium Spirit Spawn Egg",
   "entity.geckspymm.orium_spirit": "Orium Spirit",
 

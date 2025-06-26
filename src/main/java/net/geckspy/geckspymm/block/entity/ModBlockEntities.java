@@ -22,6 +22,12 @@ public class ModBlockEntities {
                         ModBlocks.MERGER_BLOCK.get()
                     ));
 
+    public static final Supplier<BlockEntityType<OriumTorchBlockEntity>> ORIUM_TORCH_BLOCK_BE =
+            BLOCK_ENTITIES.register("orium_torch_block_be", ()-> new BlockEntityType<>(
+                    OriumTorchBlockEntity::new,
+                    ModBlocks.ORIUM_TORCH.get()
+            ));
+
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);
     }

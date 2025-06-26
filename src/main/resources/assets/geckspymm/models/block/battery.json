@@ -1,0 +1,34 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "geckspymm:block/battery",
+    "all": "geckspymm:block/battery",
+    "core": "geckspymm:block/battery_core"
+  },
+  "elements": [
+    {
+      "from": [4, 0, 4],
+      "to": [12, 8, 12],
+      "faces": {
+        "north": {"uv": [4, 4, 12, 12], "texture": "#all" },
+        "south": {"uv": [4, 4, 12, 12], "texture": "#all" },
+        "west":  {"uv": [4, 4, 12, 12], "texture": "#all" },
+        "east":  {"uv": [4, 4, 12, 12], "texture": "#all" },
+        "up":    {"uv": [4, 4, 12, 12], "texture": "#all" },
+        "down":  {"uv": [4, 4, 12, 12], "texture": "#all" }
+      }
+    },
+    {
+      "from": [5, 1, 5],
+      "to": [11, 7, 11],
+      "faces": {
+        "north": {"uv": [5, 5, 11, 11], "texture": "#core" },
+        "south": {"uv": [5, 5, 11, 11], "texture": "#core" },
+        "west":  {"uv": [5, 5, 11, 11], "texture": "#core" },
+        "east":  {"uv": [5, 5, 11, 11], "texture": "#core" },
+        "up":    {"uv": [5, 5, 11, 11], "texture": "#core" },
+        "down":  {"uv": [5, 5, 11, 11], "texture": "#core" }
+      }
+    }
+  ]
+}

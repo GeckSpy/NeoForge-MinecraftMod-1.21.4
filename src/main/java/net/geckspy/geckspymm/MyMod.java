@@ -128,6 +128,7 @@ public class MyMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+
             event.accept(ModItems.PEPPER_SEEDS);
 
             event.accept(ModItems.RHINOCEROS_HORN);
@@ -201,11 +202,14 @@ public class MyMod {
             event.accept(ModItems.NETHERITE_SPEAR);
         }
         else if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS){
-            event.accept(ModBlocks.TNT_V2);
-            event.accept(ModBlocks.TNT_V3);
+            event.accept(ModItems.WIRES);
+            event.accept(ModItems.CIRCUIT_BOARD);
             event.accept(ModItems.ORIUM_ORB);
             event.accept(ModBlocks.ORIUM_TORCH);
             event.accept(ModBlocks.MERGER_BLOCK);
+            event.accept(ModBlocks.BATTERY);
+            event.accept(ModBlocks.TNT_V2);
+            event.accept(ModBlocks.TNT_V3);
         }
         else if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
             event.accept(ModItems.RHINOCEROS_SPAWN_EGG);
@@ -243,6 +247,7 @@ public class MyMod {
 
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEPPER_CROP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.LEEK_CROP.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.BATTERY.get(), RenderType.cutout());
         }
 
         @SubscribeEvent

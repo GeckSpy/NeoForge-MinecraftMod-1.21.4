@@ -76,7 +76,7 @@ New lead craft only based on strings:
     S
 
 Name Tag: shapeless
-    P:paperx2, S:string
+    P:paper x2, S:string
 
 Saddle
     W:#minecraft:wool, L:minecraft:leather, T:minecraft:tripwire_hook
@@ -171,7 +171,7 @@ Undying effect: protect you from the deaths
     Craftable with totem of undying
     When you are supposed to die, you don't, give you two heart of absorption and knockback surrounding living entity
 
-TODO: add translation for arrow with mod effect
+TODO: add translation for arrow with mod effects
 
 
 ### Redstone
@@ -202,26 +202,44 @@ Orium particle
 
 Orium Orb: Item
 
+TODO Orium generator
+
 Orium spirit: (looks like allays in yellow)
     TODO: brain
     TODO: Can fly
     TODO: modify hitbox
+    TODO: bread with orium orb
+    TODO: go to orium generator if block at less than 3 block and empty
     Follow player holding orium orb
-    TODO: When attacked, get angry, summon lightning, die, drops some orium orb ?
-    TODO: When orium gatherer at less than X blocks, don't go further
-        -> randomly brings orium at it
+    TODO: When attacked, get angry, summon lightning, die
+    TODO: drops orium orb when dead
+    TODO: spawn when lighting of ligthin rod
 
 TODO: Orium gatherer:
 
 
 Orium torch: torch item 
-    TODO: change so that strick monster with low amount of damage, then shut off (switch on by orium spirit)
+    TODO; can be plased underwater
+    Switch when used
     craft: redstone torch + electricity orb on top
-    TODO: remove click to change state (switch off/on)
     emit light when on
     TODO: orium_wall_torch 
 
 
+Wires: Craft: I:copper_ingot, R:redstone 
+     I
+    IRI
+     I
+
+Circuit Board: Craft: W:wires, C:comparator, I:iron ingot, G:gold ingot
+    WCW
+    GIG
+
+Battery: A block
+    Craft: R:redstone block, O:orium orb, W:wires, I:Iron ingot
+        IWI
+        ORO
+        IWI
 
 
 Merger: merge tow item together
@@ -238,7 +256,9 @@ Merger: merge tow item together
     TODO: change recipe to custom experience amount (see furnace crafts)
 
 
-TODO: Magical furnace (burn thing thank to orium_orb)
+TODO: Orium furnace (burn thing thank to orium_orb)
+
+TODO: 
 
 TODO: superior orium orb (purple) for harder craft
     TODO: craft: merger: orium orb + end_core + redstone
@@ -327,10 +347,11 @@ Pepper Seeds: Obtainable with Pepper or Red Pepper
     Red Pepper: can sometimes drop from pepper crops
 
 Leek:
-    TODO: spawn in village
+    TODO: spawn in village or cabane
+
 
 TODO:
-new plant & food: rice, corn, leek, avocado
+new plant & food: rice, corn, avocado, tomato, salad
 
 cooker machine -> make lunch: really high sasieté
     craft: S:smoker, C:cobblestone, R:redstone_block, I:iron_igot, _:iron_pressure_plate
@@ -338,7 +359,7 @@ cooker machine -> make lunch: really high sasieté
     ISR
     CCC
     crafts:
-    hamburger: bread, beef, tomato, milk
+    hamburger: bread, beef, tomato, salad
     sushi/maki: rice, salmon, avocado, kelp
     tacos: corn, pepper, avocado, chicken
     noodles: egg, wheat, pork, leak
@@ -394,7 +415,7 @@ new arrow (dynamit arrow)
 ghost (make you fly)
 superior end defender (drop end_core, really toff, explosion/lazers?)
 ent (tree mob)
-taupe-like monster
+taupe-like monster -> drop seed and food
 Sorcerer
 
 

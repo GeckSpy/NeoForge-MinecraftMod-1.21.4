@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "W":"geckspymm:wires",
+    "C":"minecraft:comparator",
+    "I":"minecraft:iron_ingot",
+    "G":"minecraft:gold_ingot"
+  },
+  "pattern": [
+    "WCW",
+    "GIG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "geckspymm:circuit_board"
+  }
+}

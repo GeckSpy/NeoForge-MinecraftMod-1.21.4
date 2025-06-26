@@ -141,6 +141,8 @@ public class ModItems {
 
 
     // Orium
+    public static final DeferredItem<Item> WIRES = ITEMS.registerItem("wires", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> CIRCUIT_BOARD = ITEMS.registerItem("circuit_board", Item::new, new Item.Properties());
     public static final DeferredItem<Item> ORIUM_ORB = ITEMS.registerItem("orium_orb", Item::new, new Item.Properties());
     public static final DeferredItem<Item> ORIUM_SPIRIT_SPAWN_EGG = ITEMS.registerItem("orium_spirit_spawn_egg",
             properties -> new SpawnEggItem(ModEntities.ORIUM_SPIRIT.get(), properties));
