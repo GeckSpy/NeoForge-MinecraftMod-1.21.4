@@ -208,6 +208,7 @@ public class MyMod {
             event.accept(ModBlocks.ORIUM_TORCH);
             event.accept(ModBlocks.MERGER_BLOCK);
             event.accept(ModBlocks.BATTERY);
+            event.accept(ModBlocks.CONTROL_UNIT);
             event.accept(ModBlocks.TNT_V2);
             event.accept(ModBlocks.TNT_V3);
         }

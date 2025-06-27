@@ -235,11 +235,17 @@ Circuit Board: Craft: W:wires, C:comparator, I:iron ingot, G:gold ingot
     WCW
     GIG
 
-Battery: A block
+Battery: A small block
     Craft: R:redstone block, O:orium orb, W:wires, I:Iron ingot
         IWI
         ORO
         IWI
+
+Control Unit: a small block
+    Craft: W:wires, C:circuit board, B:battery
+        WCW
+        CBC
+        WCW
 
 
 Merger: merge tow item together

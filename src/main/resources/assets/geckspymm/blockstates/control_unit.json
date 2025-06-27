@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=up":    { "model": "geckspymm:block/control_unit", "x": 0,   "y": 0 },
+    "facing=down":  { "model": "geckspymm:block/control_unit", "x": 180, "y": 0 },
+    "facing=north": { "model": "geckspymm:block/control_unit", "x": 90,  "y": 0 },
+    "facing=south": { "model": "geckspymm:block/control_unit", "x": 270, "y": 0 },
+    "facing=west":  { "model": "geckspymm:block/control_unit", "x": 90,  "y": 270 },
+    "facing=east":  { "model": "geckspymm:block/control_unit", "x": 90,  "y": 90 }
+  }
+}

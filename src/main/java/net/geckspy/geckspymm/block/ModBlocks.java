@@ -76,7 +76,10 @@ public class ModBlocks {
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:battery")))
                     .strength(1.0f).noOcclusion().sound(SoundType.METAL)
                     .lightLevel(state->3).mapColor(MapColor.COLOR_RED)));
-
+    public static final DeferredBlock<Block> CONTROL_UNIT = registerBlock("control_unit",
+            () -> new ModSkullBlock(BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:control_unit")))
+                    .strength(1.0f).noOcclusion().sound(SoundType.METAL).mapColor(MapColor.COLOR_RED)));
 
     public static final DeferredBlock<Block> IMPURE_END_CRISTAL_BLOCK = registerBlock(
             "impure_end_cristal_block", ()->new Block(BlockBehaviour.Properties.of()
