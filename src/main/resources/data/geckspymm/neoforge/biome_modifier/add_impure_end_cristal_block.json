@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_end",
+  "features": "geckspymm:impure_end_cristal_block_placed",
+  "step": "underground_ores"
+}

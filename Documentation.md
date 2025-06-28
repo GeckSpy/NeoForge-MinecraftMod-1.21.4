@@ -385,6 +385,8 @@ TODO general:
 
 
 # Idea
+Double shift for project file
+got to External Libraries/Gradle: neoforge-21.4.33-client-extra-aka-minecraft-resources.jar/
 
 ## Better Minecraft
 
