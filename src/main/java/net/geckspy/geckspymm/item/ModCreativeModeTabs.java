@@ -21,6 +21,15 @@ public class ModCreativeModeTabs {
                     .icon(()->new ItemStack(ModItems.MAGIC_CRISTAL.get()))
                     .title(Component.translatable("creativetab.geckspymm.magic"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.TREND_LOG);
+                        output.accept(ModBlocks.TREND_WOOD);
+                        output.accept(ModBlocks.TREND_WOOD_HEART);
+                        output.accept(ModBlocks.TREND_FLOWER);
+                        output.accept(ModItems.TREND_HEART);
+
+                        output.accept(ModBlocks.IMPURE_END_CRISTAL_BLOCK);
+                        output.accept(ModBlocks.END_CRISTAL_BLOCK);
+
                         output.accept(ModBlocks.MAGIC_CRAFTING_TABLE);
                         output.accept(ModItems.MAGIC_ORB);
                         output.accept(ModItems.INVOCATION_ORB);

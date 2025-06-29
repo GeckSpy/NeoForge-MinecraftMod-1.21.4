@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "geckspymm:block/trend_flower"
+  }
+}

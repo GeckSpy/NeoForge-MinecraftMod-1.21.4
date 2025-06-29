@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=up":    { "model": "geckspymm:block/trend_flower", "x": 0 },
+    "facing=down":  { "model": "geckspymm:block/trend_flower", "x": 180 },
+    "facing=north": { "model": "geckspymm:block/trend_flower", "x": 90 },
+    "facing=south": { "model": "geckspymm:block/trend_flower", "x": 90, "y": 180 },
+    "facing=west":  { "model": "geckspymm:block/trend_flower", "x": 90, "y": 270 },
+    "facing=east":  { "model": "geckspymm:block/trend_flower", "x": 90, "y": 90 }
+  }
+}

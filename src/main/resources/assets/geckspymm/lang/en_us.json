@@ -164,6 +164,11 @@
 
 
   // Magical Minecraft
+  "item.geckspymm.trend_log": "Trend Log",
+  "item.geckspymm.trend_wood": "Trend Wood",
+  "item.geckspymm.trend_wood_heart": "Trend Wood Heart",
+  "item.geckspymm.trend_heart": "Trend Heart",
+  "item.geckspymm.trend_flower": "Trend Flower",
   "item.geckspymm.impure_end_cristal": "Impure End Cristal",
   "item.geckspymm.end_cristal": "End Cristal",
   "item.geckspymm.magic_cristal": "Magic Cristal",

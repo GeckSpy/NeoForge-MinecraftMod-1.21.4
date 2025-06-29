@@ -172,6 +172,8 @@ public class ModItems {
 
 
     // Magical Minecraft
+    public static final DeferredItem<Item> TREND_HEART = ITEMS.registerItem(
+            "trend_heart", Item::new, new Item.Properties());
     public static final DeferredItem<Item> IMPURE_END_CRISTAL = ITEMS.registerItem(
             "impure_end_cristal", Item::new, new Item.Properties());
     public static final DeferredItem<Item> END_CRISTAL = ITEMS.registerItem(

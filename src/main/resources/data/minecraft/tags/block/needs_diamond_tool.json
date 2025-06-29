@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "geckspymm:impure_end_cristal_block"
+    "geckspymm:impure_end_cristal_block",
+    "geckspymm:trend_wood",
+    "geckspymm:trend_log",
+    "geckspymm:trend_wood_heart",
+    "geckspymm:trend_flower"
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "geckspymm:block/trend_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "geckspymm:block/trend_log"
+    },
+    "axis=z": {
+      "model": "geckspymm:block/trend_log_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "geckspymm:block/trend_log_top",
+    "side": "geckspymm:block/trend_log"
+  }
+}

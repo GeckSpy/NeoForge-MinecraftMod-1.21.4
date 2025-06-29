@@ -153,8 +153,7 @@ public class MyMod {
             event.accept(ModItems.RED_PEPPER);
         }
         else if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
-            event.accept(ModBlocks.IMPURE_END_CRISTAL_BLOCK);
-            event.accept(ModBlocks.END_CRISTAL_BLOCK);
+
         }
         else if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
             event.accept(ModItems.COPPER_SHOVEL);
@@ -249,6 +248,8 @@ public class MyMod {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEPPER_CROP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.LEEK_CROP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.BATTERY.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.TREND_FLOWER.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_TREND_FLOWER.get(), RenderType.cutout());
         }
 
         @SubscribeEvent

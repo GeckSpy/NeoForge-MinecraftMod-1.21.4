@@ -4,8 +4,16 @@
 
 ## Magical Minecraft
 
+Trend: Spawn in end dimension
+    trend log: need diamond axe
+    trend wood: need diamond axe, craft from 4 trend log
+    trend wood heart, need diamond axe -> drop trend_heart
+    trend flower: need diamond hoe to drop
+
+Trend woods material
+
 Impure End Cristal Block:
-    TODO: spawn in end dimension
+    spawn in end dimension
 
 Impure End Cristal:
     drop from Impure End Cristal Block, need at least diamond pickaxe

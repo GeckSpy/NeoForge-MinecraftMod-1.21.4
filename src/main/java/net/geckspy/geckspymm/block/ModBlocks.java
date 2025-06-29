@@ -10,8 +10,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -52,6 +52,7 @@ public class ModBlocks {
     );
 
 
+
     public static final DeferredBlock<Block> ORIUM_TORCH = registerBlock(
             "orium_torch", ()->new OriumTorchBlock(BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:orium_torch")))
@@ -81,12 +82,47 @@ public class ModBlocks {
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:control_unit")))
                     .strength(1.0f).noOcclusion().sound(SoundType.METAL).mapColor(MapColor.COLOR_RED)));
 
+
+
+    // Magical
+    public static final DeferredBlock<RotatedPillarBlock> TREND_LOG = registerBlock(
+            "trend_log", ()->new RotatedPillarBlock(RotatedPillarBlock.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:trend_log")))
+                    .strength(3F, 8.0F).noOcclusion()
+                    .requiresCorrectToolForDrops().sound(SoundType.WOOD))
+    );
+    public static final DeferredBlock<Block> TREND_WOOD = registerBlock(
+            "trend_wood", ()->new Block(BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:trend_wood")))
+                    .strength(3F, 8.0F).noOcclusion()
+                    .requiresCorrectToolForDrops().sound(SoundType.WOOD))
+    );
+    public static final DeferredBlock<Block> TREND_WOOD_HEART = registerBlock(
+            "trend_wood_heart", ()->new Block(BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:trend_wood_heart")))
+                    .strength(3.2F, 6.0F).noOcclusion()
+                    .requiresCorrectToolForDrops().sound(SoundType.WOOD))
+    );
+    public static final DeferredBlock<TrendFlower> TREND_FLOWER = registerBlock(
+            "trend_flower", ()->new TrendFlower(BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:trend_flower")))
+                    .noOcclusion().pushReaction(PushReaction.DESTROY).noCollission()
+                    .strength(2.8f, 2.0f)
+                    .requiresCorrectToolForDrops().sound(SoundType.FLOWERING_AZALEA))
+    );
+    public static final DeferredBlock<Block> POTTED_TREND_FLOWER = registerBlock(
+            "potted_trend_flower", ()->new FlowerPotBlock(TREND_FLOWER.get(), BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:potted_trend_flower")))
+                    )
+    );
+
+
+
     public static final DeferredBlock<Block> IMPURE_END_CRISTAL_BLOCK = registerBlock(
             "impure_end_cristal_block", ()->new Block(BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:impure_end_cristal_block")))
                     .strength(3.2F, 9.0F).noOcclusion()
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.STONE))
+                    .requiresCorrectToolForDrops().sound(SoundType.STONE))
     );
 
     public static final DeferredBlock<Block> END_CRISTAL_BLOCK = registerBlock(
@@ -106,6 +142,7 @@ public class ModBlocks {
                     .sound(SoundType.STONE)
             )
     );
+
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
