@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "geckspymm:block/trend_planks",
+    "side": "geckspymm:block/trend_planks",
+    "top": "geckspymm:block/trend_planks"
+  }
+}

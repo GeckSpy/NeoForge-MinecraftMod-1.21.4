@@ -11,11 +11,17 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> ENDWORLD_IMPURE_END_CRISTAL_BLOCK_KEY = registerKey("impure_end_cristal");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREND_KEY = registerKey("trend");
 
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
@@ -23,6 +29,7 @@ public class ModConfiguredFeatures {
 
         register(context, ENDWORLD_IMPURE_END_CRISTAL_BLOCK_KEY, Feature.ORE, new OreConfiguration(endstoneReplaceables,
                 ModBlocks.IMPURE_END_CRISTAL_BLOCK.get().defaultBlockState(), 5));
+
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name){

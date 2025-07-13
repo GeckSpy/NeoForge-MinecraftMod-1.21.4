@@ -25,7 +25,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.TREND_WOOD);
                         output.accept(ModBlocks.TREND_WOOD_HEART);
                         output.accept(ModBlocks.TREND_FLOWER);
-                        output.accept(ModItems.TREND_HEART);
+                        output.accept(ModBlocks.TREND_HEART);
+
+                        output.accept(ModBlocks.TREND_PLANKS);
+                        output.accept(ModBlocks.TREND_STAIRS);
+                        output.accept(ModBlocks.TREND_SLAB);
 
                         output.accept(ModBlocks.IMPURE_END_CRISTAL_BLOCK);
                         output.accept(ModBlocks.END_CRISTAL_BLOCK);

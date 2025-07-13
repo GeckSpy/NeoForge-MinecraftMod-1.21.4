@@ -10,6 +10,7 @@ import net.geckspy.geckspymm.entity.ModEntities;
 import net.geckspy.geckspymm.entity.animals.elephant.ElephantRenderer;
 import net.geckspy.geckspymm.entity.animals.giraffe.GiraffeRenderer;
 import net.geckspy.geckspymm.entity.animals.lion.LionRenderer;
+import net.geckspy.geckspymm.entity.ghost.GhostRenderer;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritRenderer;
 import net.geckspy.geckspymm.entity.animals.penguin.PenguinRenderer;
 import net.geckspy.geckspymm.entity.renderer.PrimedTntV2Renderer;
@@ -30,6 +31,7 @@ import net.geckspy.geckspymm.recipe.ModRecipes;
 import net.geckspy.geckspymm.screen.MagicCraftingTableScreen;
 import net.geckspy.geckspymm.screen.MergerBlockScreen;
 import net.geckspy.geckspymm.screen.ModMenuTypes;
+import net.geckspy.geckspymm.worldgen.ModWorldGen;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -95,6 +97,7 @@ public class MyMod {
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+        ModWorldGen.register(modEventBus);
 
         ModCreativeModeTabs.register(modEventBus);
 
@@ -128,11 +131,11 @@ public class MyMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-
             event.accept(ModItems.PEPPER_SEEDS);
 
             event.accept(ModItems.RHINOCEROS_HORN);
             event.accept(ModItems.ELEPHANT_TUSK);
+            event.accept(ModItems.DAMNED_SOUL);
 
             event.accept(ModItems.PURE_QUARTZ);
             event.accept(ModItems.IMPURE_END_CRISTAL);
@@ -219,7 +222,10 @@ public class MyMod {
             event.accept(ModItems.TIGER_SPAWN_EGG);
             event.accept(ModItems.SNOW_PANTHER_SPAWN_EGG);
             event.accept(ModItems.PENGUIN_SPAWN_EGG);
+
+            event.accept(ModItems.GHOST_SPAWN_EGG);
             event.accept(ModItems.ORIUM_SPIRIT_SPAWN_EGG);
+
         }
     }
 
@@ -243,6 +249,9 @@ public class MyMod {
             EntityRenderers.register(ModEntities.TIGER.get(), TigerRenderer::new);
             EntityRenderers.register(ModEntities.SNOW_PANTHER.get(), SnowPantherRenderer::new);
             EntityRenderers.register(ModEntities.PENGUIN.get(), PenguinRenderer::new);
+
+            EntityRenderers.register(ModEntities.GHOST.get(), GhostRenderer::new);
+
             EntityRenderers.register(ModEntities.SPEAR_ENTITY.get(), ThrownSpearRenderer::new);
 
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEPPER_CROP.get(), RenderType.cutout());

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "geckspymm:block/trend_slab"
+    },
+    "type=double": {
+      "model": "geckspymm:block/trend_planks"
+    },
+    "type=top": {
+      "model": "geckspymm:block/trend_slab_top"
+    }
+  }
+}

@@ -5,6 +5,7 @@ import net.geckspy.geckspymm.block.custom.*;
 import net.geckspy.geckspymm.block.custom.crop.LeekCropBlock;
 import net.geckspy.geckspymm.block.custom.crop.PepperCropBlock;
 import net.geckspy.geckspymm.item.ModItems;
+import net.geckspy.geckspymm.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -19,6 +20,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -85,6 +87,14 @@ public class ModBlocks {
 
 
     // Magical
+        // Trend
+            // Tree
+    public static final DeferredBlock<TrendHeart> TREND_HEART = registerBlockWithFun("trend_heart",
+            (properties) -> new TrendHeart(ModTreeGrowers.TREND,
+                    properties.mapColor(MapColor.PLANT).noCollission().randomTicks()
+                    .strength(2f).sound(SoundType.COBWEB).pushReaction(PushReaction.DESTROY),
+                    () -> Blocks.END_STONE)
+    );
     public static final DeferredBlock<RotatedPillarBlock> TREND_LOG = registerBlock(
             "trend_log", ()->new RotatedPillarBlock(RotatedPillarBlock.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:trend_log")))
@@ -115,6 +125,19 @@ public class ModBlocks {
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:potted_trend_flower")))
                     )
     );
+            // Trend woods block
+    public static final DeferredBlock<Block> TREND_PLANKS = registerBlock(
+                    "trend_planks", ()->new Block(BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:trend_planks")))
+                    .mapColor(MapColor.WOOD).strength(2.4F, 5.0F).sound(SoundType.WOOD))
+    );
+    public static final DeferredBlock<StairBlock> TREND_STAIRS = registerBlockWithFun("trend_stairs",
+            (properties)->new StairBlock(ModBlocks.TREND_PLANKS.get().defaultBlockState(),
+                    properties.strength(2.4F, 5.0F).requiresCorrectToolForDrops())
+    );
+    public static final DeferredBlock<SlabBlock> TREND_SLAB = registerBlockWithFun("trend_slab",
+            (properties) -> new SlabBlock(properties.strength(2.4F, 5.0F).requiresCorrectToolForDrops())
+    );
 
 
 
@@ -124,13 +147,11 @@ public class ModBlocks {
                     .strength(3.2F, 9.0F).noOcclusion()
                     .requiresCorrectToolForDrops().sound(SoundType.STONE))
     );
-
     public static final DeferredBlock<Block> END_CRISTAL_BLOCK = registerBlock(
             "end_cristal_block", ()->new Block(BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:end_cristal_block")))
                     .strength(2.0F, 8.5F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.METAL))
+                    .requiresCorrectToolForDrops().sound(SoundType.METAL))
     );
 
 
@@ -147,6 +168,12 @@ public class ModBlocks {
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> DeferredBlock<T> registerBlockWithFun(String name, Function<BlockBehaviour.Properties, T> block){
+        DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
     }

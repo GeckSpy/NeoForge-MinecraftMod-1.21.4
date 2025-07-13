@@ -7,6 +7,8 @@ import net.geckspy.geckspymm.entity.animals.giraffe.GiraffeEntity;
 import net.geckspy.geckspymm.entity.animals.giraffe.GiraffeModel;
 import net.geckspy.geckspymm.entity.animals.lion.LionEntity;
 import net.geckspy.geckspymm.entity.animals.lion.LionModel;
+import net.geckspy.geckspymm.entity.ghost.GhostEntity;
+import net.geckspy.geckspymm.entity.ghost.GhostModel;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritEntity;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritModel;
 import net.geckspy.geckspymm.entity.animals.penguin.PenguinEntity;
@@ -16,8 +18,10 @@ import net.geckspy.geckspymm.entity.animals.rhinoceros.RhinocerosModel;
 import net.geckspy.geckspymm.entity.animals.snow_panther.SnowPantherModel;
 import net.geckspy.geckspymm.entity.animals.tiger.TigerEntity;
 import net.geckspy.geckspymm.entity.animals.tiger.TigerModel;
+import net.minecraft.world.entity.FlyingMob;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -39,6 +43,7 @@ public class ModEventBusEvents {
         event.registerLayerDefinition(SnowPantherModel.LAYER_LOCATION, SnowPantherModel::createBodyLayer);
         event.registerLayerDefinition(PenguinModel.LAYER_LOCATION, PenguinModel::createBodyLayer);
 
+        event.registerLayerDefinition(GhostModel.LAYER_LOCATION, GhostModel::createBodyLayer);
     }
 
     @SubscribeEvent
@@ -51,6 +56,8 @@ public class ModEventBusEvents {
         event.put(ModEntities.LION.get(), LionEntity.createAttributes().build());
         event.put(ModEntities.SNOW_PANTHER.get(), LionEntity.createAttributes().build());
         event.put(ModEntities.PENGUIN.get(), PenguinEntity.createAttributes().build());
+
+        event.put(ModEntities.GHOST.get(), GhostEntity.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -69,5 +76,8 @@ public class ModEventBusEvents {
                 Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(ModEntities.PENGUIN.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.GHOST.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.WORLD_SURFACE_WG,
+                GhostEntity::checkGhostSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 }

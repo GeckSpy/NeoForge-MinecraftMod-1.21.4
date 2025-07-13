@@ -4,6 +4,7 @@ import net.geckspy.geckspymm.MyMod;
 import net.geckspy.geckspymm.entity.animals.elephant.ElephantEntity;
 import net.geckspy.geckspymm.entity.animals.giraffe.GiraffeEntity;
 import net.geckspy.geckspymm.entity.animals.lion.LionEntity;
+import net.geckspy.geckspymm.entity.ghost.GhostEntity;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritEntity;
 import net.geckspy.geckspymm.entity.custom.PrimedTntV2;
 import net.geckspy.geckspymm.entity.custom.PrimedTntV3;
@@ -109,6 +110,13 @@ public class ModEntities {
                     .sized(.5f, 1f).build(PENGUIN_KEY));
 
 
+
+    // Mobs
+    public static final ResourceKey<EntityType<?>> GHOST_KEY = ResourceKey.create(
+            Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "ghost"));
+    public static final Supplier<EntityType<GhostEntity>> GHOST = ENTITY_TYPES.register("ghost",
+            ()->EntityType.Builder.of(GhostEntity::new, MobCategory.MONSTER)
+                    .sized(.8f, 1.8f).build(GHOST_KEY));
 
 
 

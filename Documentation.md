@@ -4,13 +4,15 @@
 
 ## Magical Minecraft
 
-Trend: Spawn in end dimension
+Trend: Spawn in end dimension: new custom tree shape
     trend log: need diamond axe
     trend wood: need diamond axe, craft from 4 trend log
     trend wood heart, need diamond axe -> drop trend_heart
     trend flower: need diamond hoe to drop
 
-Trend woods material
+Trend Heart: sapling-like: can be placed on end_stone
+
+Trend woods material: planks, slab, stairs
 
 Impure End Cristal Block:
     spawn in end dimension
@@ -324,6 +326,12 @@ TODO:
     Bear?
     Small spider?
 
+
+### Mobs
+
+Ghost: Make you fly and have blindness
+    drop damned soul (TODO: something with it: necromancian armor)
+    Spawn like classic monster
 
 
 ### Visual

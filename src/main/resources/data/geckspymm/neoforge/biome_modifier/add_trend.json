@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:small_end_islands",
+    "geckspymm:trend_forest"
+  ],
+  "features": "geckspymm:trend_placed",
+  "step": "vegetal_decoration"
+}

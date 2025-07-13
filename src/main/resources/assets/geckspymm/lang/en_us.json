@@ -119,6 +119,12 @@
   "entity.geckspymm.penguin": "Penguin",
 
 
+  //Mobs
+  "item.geckspymm.ghost_spawn_egg": "Ghost Spawn Egg",
+  "entity.geckspymm.ghost": "Ghost",
+  "item.geckspymm.damned_soul": "Damned Soul",
+
+
     //attributes
   "attribute.name.geckspymm.entity_interaction_range": "Mod Entity Interaction Range",
   "attribute.name.geckspymm.block_interaction_range": "Mod Block Interaction Range",
@@ -169,6 +175,10 @@
   "item.geckspymm.trend_wood_heart": "Trend Wood Heart",
   "item.geckspymm.trend_heart": "Trend Heart",
   "item.geckspymm.trend_flower": "Trend Flower",
+  "item.geckspymm.trend_planks": "Trend Planks",
+  "item.geckspymm.trend_stairs": "Trend Stairs",
+  "item.geckspymm.trend_slab": "Trend Slab",
+
   "item.geckspymm.impure_end_cristal": "Impure End Cristal",
   "item.geckspymm.end_cristal": "End Cristal",
   "item.geckspymm.magic_cristal": "Magic Cristal",
