@@ -25,6 +25,7 @@ import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.phys.Vec3;
 import org.apache.commons.lang3.tuple.Triple;
 import org.jetbrains.annotations.NotNull;
@@ -198,7 +199,7 @@ public class GhostEntity extends FlyingMob implements Enemy {
     }
 
     public static boolean checkGhostSpawnRules(EntityType<? extends Mob> entityType, LevelAccessor level, EntitySpawnReason spawnReason, BlockPos pos, RandomSource random) {
-        return level.getBlockState(pos.below()).isSolid() && level.getRawBrightness(pos, 0) < 8;
+        return level.getBlockState(pos.below()).isSolid() && level.getBrightness(LightLayer.BLOCK, pos) <= 7;
     }
 
     public class GhostGrabAndDropGoal extends Goal {

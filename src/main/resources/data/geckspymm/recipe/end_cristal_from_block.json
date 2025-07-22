@@ -1,11 +1,12 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
+  "category": "building",
   "ingredients": [
-      "geckspymm:end_cristal_block"
+    "geckspymm:ent_head_item",
+    "minecraft:torch"
   ],
   "result": {
-    "count": 9,
-    "id": "geckspymm:end_cristal"
+    "count": 1,
+    "id": "geckspymm:ent_head_lit_item"
   }
 }

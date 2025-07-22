@@ -1,11 +1,13 @@
 package net.geckspy.geckspymm.util;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -55,4 +57,24 @@ public class ModFunctions {
         }
         return nearest;
     }
+
+
+    public BlockPos getRandomGroundBlockNear(BlockPos blockPos, Level level, int radius) {
+        RandomSource random = level.getRandom();
+
+        for (int i = 0; i < 10; i++) {
+            int dx = random.nextInt(radius * 2 + 1) - radius;
+            int dz = random.nextInt(radius * 2 + 1) - radius;
+            int x = blockPos.getX() + dx;
+            int z = blockPos.getZ() + dz;
+
+            BlockPos groundPos = level.getHeightmapPos(Heightmap.Types.WORLD_SURFACE, new BlockPos(x, 0, z));
+
+            if (level.getBlockState(groundPos.below()).isSolid()) {
+                return groundPos;
+            }
+        }
+        return blockPos;
+    }
+
 }

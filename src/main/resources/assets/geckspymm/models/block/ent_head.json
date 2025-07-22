@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "geckspymm:block/ent_face",
+    "side": "minecraft:block/oak_log",
+    "top": "minecraft:block/oak_log_top"
+  }
+}

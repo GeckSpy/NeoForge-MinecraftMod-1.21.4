@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "geckspymm:block/ent_head" },
+    "facing=south": { "model": "geckspymm:block/ent_head", "y": 180 },
+    "facing=west":  { "model": "geckspymm:block/ent_head", "y": 270 },
+    "facing=east":  { "model": "geckspymm:block/ent_head", "y": 90 }
+  }
+}

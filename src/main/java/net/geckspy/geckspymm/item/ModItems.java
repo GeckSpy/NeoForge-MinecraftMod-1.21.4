@@ -5,6 +5,7 @@ import net.geckspy.geckspymm.block.ModBlocks;
 import net.geckspy.geckspymm.entity.ModEntities;
 import net.geckspy.geckspymm.item.custom.HalberdItem;
 import net.geckspy.geckspymm.item.custom.LightningStaff;
+import net.geckspy.geckspymm.item.custom.ModHeadWearbleItem;
 import net.geckspy.geckspymm.item.custom.SpearItem;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorType;
@@ -175,6 +176,16 @@ public class ModItems {
     public static final DeferredItem<Item> GHOST_SPAWN_EGG = ITEMS.registerItem("ghost_spawn_egg",
             properties -> new SpawnEggItem(ModEntities.GHOST.get(), properties));
     public static final DeferredItem<Item> DAMNED_SOUL = ITEMS.registerItem("damned_soul", Item::new, new Item.Properties());
+
+    public static final DeferredItem<Item> ENT_SPAWN_EGG = ITEMS.registerItem("ent_spawn_egg",
+            properties -> new SpawnEggItem(ModEntities.ENT.get(), properties));
+    public static final DeferredItem<Item> ENT_HEAD_ITEM = ITEMS.registerItem("ent_head_item",
+            properties->new ModHeadWearbleItem(ModBlocks.ENT_HEAD.get(), properties));
+    public static final DeferredItem<Item> ENT_HEAD_LIT_ITEM = ITEMS.registerItem("ent_head_lit_item",
+            properties->new ModHeadWearbleItem(ModBlocks.ENT_HEAD_LIT.get(), properties));
+
+    public static final DeferredItem<Item> NEIDER_SPAWN_EGG = ITEMS.registerItem("neider_spawn_egg",
+            properties -> new SpawnEggItem(ModEntities.NEIDER.get(), properties));
 
 
 

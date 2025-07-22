@@ -6,11 +6,14 @@ import net.geckspy.geckspymm.block.entity.ModBlockEntities;
 import net.geckspy.geckspymm.effect.ModEffects;
 import net.geckspy.geckspymm.effect.UndyingEffect;
 import net.geckspy.geckspymm.enchantment.ModEnchantmentEffects;
+import net.geckspy.geckspymm.entity.ent.EntRenderer;
 import net.geckspy.geckspymm.entity.ModEntities;
 import net.geckspy.geckspymm.entity.animals.elephant.ElephantRenderer;
 import net.geckspy.geckspymm.entity.animals.giraffe.GiraffeRenderer;
 import net.geckspy.geckspymm.entity.animals.lion.LionRenderer;
 import net.geckspy.geckspymm.entity.ghost.GhostRenderer;
+import net.geckspy.geckspymm.entity.neider.NeiderEntity;
+import net.geckspy.geckspymm.entity.neider.NeiderRenderer;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritRenderer;
 import net.geckspy.geckspymm.entity.animals.penguin.PenguinRenderer;
 import net.geckspy.geckspymm.entity.renderer.PrimedTntV2Renderer;
@@ -156,7 +159,8 @@ public class MyMod {
             event.accept(ModItems.RED_PEPPER);
         }
         else if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
-
+            event.accept(ModItems.ENT_HEAD_ITEM);
+            event.accept(ModItems.ENT_HEAD_LIT_ITEM);
         }
         else if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
             event.accept(ModItems.COPPER_SHOVEL);
@@ -224,6 +228,8 @@ public class MyMod {
             event.accept(ModItems.PENGUIN_SPAWN_EGG);
 
             event.accept(ModItems.GHOST_SPAWN_EGG);
+            event.accept(ModItems.ENT_SPAWN_EGG);
+            event.accept(ModItems.NEIDER_SPAWN_EGG);
             event.accept(ModItems.ORIUM_SPIRIT_SPAWN_EGG);
 
         }
@@ -251,6 +257,8 @@ public class MyMod {
             EntityRenderers.register(ModEntities.PENGUIN.get(), PenguinRenderer::new);
 
             EntityRenderers.register(ModEntities.GHOST.get(), GhostRenderer::new);
+            EntityRenderers.register(ModEntities.ENT.get(), EntRenderer::new);
+            EntityRenderers.register(ModEntities.NEIDER.get(), NeiderRenderer::new);
 
             EntityRenderers.register(ModEntities.SPEAR_ENTITY.get(), ThrownSpearRenderer::new);
 
@@ -320,12 +328,12 @@ public class MyMod {
     @SubscribeEvent
     public void registerBrewingRecipes(RegisterBrewingRecipesEvent event){
         PotionBrewing.Builder builder = event.getBuilder();
-        builder.addMix(Potions.AWKWARD, Items.RED_MUSHROOM, ModPotions.GIGANTISM_POTION);
+        builder.addMix(Potions.AWKWARD, ModItems.ENT_HEAD_ITEM.get(), ModPotions.GIGANTISM_POTION);
         builder.addMix(ModPotions.GIGANTISM_POTION, Items.GLOWSTONE_DUST, ModPotions.GIGANTISM_2_POTION);
         builder.addMix(ModPotions.GIGANTISM_2_POTION, Items.GLOWSTONE_DUST, ModPotions.GIGANTISM_3_POTION);
         builder.addMix(ModPotions.GIGANTISM_3_POTION, Items.GLOWSTONE_DUST, ModPotions.GIGANTISM_4_POTION);
 
-        builder.addMix(Potions.AWKWARD, Items.BROWN_MUSHROOM, ModPotions.MINIATURISM_POTION);
+        builder.addMix(Potions.AWKWARD, ModItems.ENT_HEAD_LIT_ITEM.get(), ModPotions.MINIATURISM_POTION);
         builder.addMix(ModPotions.MINIATURISM_POTION, Items.GLOWSTONE_DUST, ModPotions.MINIATURISM_2_POTION);
         builder.addMix(ModPotions.MINIATURISM_2_POTION, Items.GLOWSTONE_DUST, ModPotions.MINIATURISM_3_POTION);
         builder.addMix(ModPotions.MINIATURISM_3_POTION, Items.GLOWSTONE_DUST, ModPotions.MINIATURISM_4_POTION);

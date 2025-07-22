@@ -160,9 +160,25 @@ public class ModBlocks {
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:magic_crafting_table")))
                     .strength(2.0F, 7.0F)
                     .requiresCorrectToolForDrops()
-                    .sound(SoundType.STONE)
+                    .sound(SoundType.STONE))
+    );
+    public static final DeferredBlock<ModFacingBlock> ENT_HEAD = registerBlock(
+            "ent_head", ()->new ModFacingBlock(BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:ent_head")))
+                    .strength(2.0F).sound(SoundType.WOOD).ignitedByLava(),
+                    ModItems.ENT_HEAD_ITEM
+                    )
+    );
+    public static final DeferredBlock<ModFacingBlock> ENT_HEAD_LIT = registerBlock(
+            "ent_head_lit", ()->new ModFacingBlock(BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.parse("geckspymm:ent_head_lit")))
+                    .strength(2.0F).sound(SoundType.WOOD).ignitedByLava()
+                    .lightLevel(state->12).mapColor(MapColor.COLOR_ORANGE),
+                    ModItems.ENT_HEAD_LIT_ITEM
             )
     );
+
+
 
 
 

@@ -1,10 +1,12 @@
 package net.geckspy.geckspymm.entity;
 
 import net.geckspy.geckspymm.MyMod;
+import net.geckspy.geckspymm.entity.ent.EntEntity;
 import net.geckspy.geckspymm.entity.animals.elephant.ElephantEntity;
 import net.geckspy.geckspymm.entity.animals.giraffe.GiraffeEntity;
 import net.geckspy.geckspymm.entity.animals.lion.LionEntity;
 import net.geckspy.geckspymm.entity.ghost.GhostEntity;
+import net.geckspy.geckspymm.entity.neider.NeiderEntity;
 import net.geckspy.geckspymm.entity.orium_spirit.OriumSpiritEntity;
 import net.geckspy.geckspymm.entity.custom.PrimedTntV2;
 import net.geckspy.geckspymm.entity.custom.PrimedTntV3;
@@ -118,6 +120,18 @@ public class ModEntities {
             ()->EntityType.Builder.of(GhostEntity::new, MobCategory.MONSTER)
                     .sized(.8f, 1.8f).build(GHOST_KEY));
 
+    public static final ResourceKey<EntityType<?>> ENT_KEY = ResourceKey.create(
+            Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "ent"));
+    public static final Supplier<EntityType<EntEntity>> ENT = ENTITY_TYPES.register("ent",
+            ()->EntityType.Builder.of(EntEntity::new, MobCategory.MONSTER)
+                    .sized(1.2f, 2.4f).build(ENT_KEY));
+
+
+    public static final ResourceKey<EntityType<?>> NEIDER_KEY = ResourceKey.create(
+            Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MyMod.MOD_ID, "neider"));
+    public static final Supplier<EntityType<NeiderEntity>> NEIDER = ENTITY_TYPES.register("neider",
+            ()->EntityType.Builder.of(NeiderEntity::new, MobCategory.MONSTER)
+                    .sized(1.2f, 2.4f).build(NEIDER_KEY));
 
 
 

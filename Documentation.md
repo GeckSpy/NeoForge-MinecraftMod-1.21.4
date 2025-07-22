@@ -162,16 +162,17 @@ Spear: throwable
 
 ### New effect
 
+
 Gigantism: makes you taller, faster, stronger
     TODO: add slower attack speed and higher damage and higher resistance
-    Craftable with red mushroom
+    Craftable with lit_ent_head
     Gigantism II from Gigantism I and glowstone
     Gigantism III from Gigantism II and glowstone
     Gigantism IV from Gigantism II and glowstone
     
 Miniaturism: makes you smaller, faster, 
     TODO: reduce given damage
-    Craftable with brown mushroom
+    Craftable with ent_head
     Miniaturism II from Miniaturism I and glowstone
     Miniaturism III from Miniaturism II and glowstone
     Miniaturism IV from Miniaturism III and glowstone 
@@ -325,6 +326,7 @@ TODO:
     Crocodile
     Bear?
     Small spider?
+    
 
 
 ### Mobs
@@ -332,6 +334,21 @@ TODO:
 Ghost: Make you fly and have blindness
     drop damned soul (TODO: something with it: necromancian armor)
     Spawn like classic monster
+    TODO: add event "killed: drop by ghost"
+    TODO: twik brain
+
+
+Ent: Mob that heal and boost other nearby monster
+    Spawn in forest
+
+ent head: dropped from ent
+
+lit ent head:
+    craft: ent head + torch
+
+
+TODO: nether spider
+
 
 
 ### Visual
