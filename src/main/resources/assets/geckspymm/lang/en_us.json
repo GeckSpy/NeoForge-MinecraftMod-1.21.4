@@ -124,6 +124,16 @@
   "entity.geckspymm.ghost": "Ghost",
   "item.geckspymm.damned_soul": "Damned Soul",
 
+  "item.geckspymm.ent_spawn_egg": "Ent Spawn Egg",
+  "entity.geckspymm.ent": "Ent",
+  "block.geckspymm.ent_head": "Ent Head",
+  "item.geckspymm.ent_head_item": "Ent Head",
+  "block.geckspymm.ent_head_lit": "Lit Ent Head",
+  "item.geckspymm.ent_head_lit_item": "Lit Ent Head",
+
+  "item.geckspymm.neider_spawn_egg": "Neider Spawn Egg",
+  "entity.geckspymm.neider": "Neider",
+
 
     //attributes
   "attribute.name.geckspymm.entity_interaction_range": "Mod Entity Interaction Range",
